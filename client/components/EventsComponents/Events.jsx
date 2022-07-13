@@ -5,7 +5,7 @@ import UpcomingEvents from './UpcomingEvents/UpcomingEvents'
 
 const Events = () => {
   return (
-    <div>Events</div>
+    <section>Events</section>
   )
 }
 
