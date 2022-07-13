@@ -1,24 +1,10 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import NavBar from './Nav/NavBar'
+import Hero from './Hero/Hero'
 
-import Nav from './Nav'
-import Fruits from './Fruits'
-import { cacheUser } from '../auth0-utils'
-import { useAuth0 } from '@auth0/auth0-react'
-import Register from './Register'
-
-function App() {
-  cacheUser(useAuth0)
+const App = () => {
   return (
-    <>
-      <Router>
-        <Nav />
-        <Routes>
-          <Route path="/" element={<Fruits />} />
-          <Route path="register" element={<Register />} />
-        </Routes>
-      </Router>
-    </>
+    <div>App</div>
   )
 }
 
