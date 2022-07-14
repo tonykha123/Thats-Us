@@ -1,7 +1,9 @@
 const connection = require('./connection')
-module.exports = { getEvent, addEvent }
 
-function getEvent(db = connection) {
+module.exports = { getEvents, addEvent, getEventsById }
+
+
+function getEvents(db = connection) {
   return db('events').select()
 }
 
@@ -16,4 +18,8 @@ function addEvent(newEvent, db = connection) {
     IMG,
     description,
   })
+}
+
+function getEventsById(id, db = connection) {
+  return db('events').where('event_id', id).select()
 }
