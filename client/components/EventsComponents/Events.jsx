@@ -8,8 +8,8 @@ const Events = () => {
   return (
     <section>Events:
       {/* <UpcomingEvents /> */}
-      {/* <PastEvents /> */}
-      <LiveEvents />
+      <PastEvents />
+      {/* <LiveEvents /> */}
     </section>
   )
 }
