@@ -18,7 +18,10 @@ const NavBar = () => {
         </div>
         {/* transition in softly */}
         {showAdmin && (
-          <a className=" hover:text-white mx-4 " href="https://www.google.com">
+          <a
+            className=" hover:text-white mx-4 ease-in-out duration-500"
+            href="https://www.google.com"
+          >
             Your Events
           </a>
         )}
