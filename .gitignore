@@ -5,3 +5,7 @@ bundle.*
 .env
 server/public/styles.css
 server/public/styles.css
+<<<<<<< HEAD
+=======
+server/public/styles.css
+>>>>>>> origin/auth0-setup

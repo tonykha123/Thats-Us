@@ -633,11 +633,14 @@ video {
   position: relative;
 }
 
+<<<<<<< HEAD
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
 }
 
+=======
+>>>>>>> origin/auth0-setup
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
