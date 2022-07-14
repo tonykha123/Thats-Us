@@ -1,23 +1,19 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import SinglePastTile from './SinglePastTile'
-
-// API IMPORTS:
 import { getAllEvents } from '../../apiFuncs/eventApi'
 
 const PastEvents = () => {
-  const [allEvents, setAllEvents] = useState([])
+  const [events, setEvents] = useState([])
 
-  console.log('lets fuckn go')
   useEffect(async () => {
+    const all = await getAllEvents()
+    const evts = all.filter((evt) => evt.status == 'previous')
     try {
-      const eventData = await getAllEvents()
-      console.log('front', eventData)
-      setAllEvents([...allEvents, eventData])
+      setEvents(evts)
+    } catch {
+      console.error('failed to fetch all past events')
     }
-    catch {
-      console.log('rams')
-    }
-  },[])
+  }, [])
 
   const testData = [
     {
@@ -48,17 +44,15 @@ const PastEvents = () => {
     },
   ]
 
-
-  
   return (
     <div>
-      {testData.map((data) => (
+      {events.map(({ event_id, name, date, max, description }) => (
         <SinglePastTile
-          key={data.event_id}
-          name={data.name}
-          date={data.date}
-          max={data.max}
-          description={data.description}
+          key={event_id}
+          name={name}
+          date={date}
+          max={max}
+          description={description}
         />
       ))}
     </div>
