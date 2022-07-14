@@ -1,7 +1,24 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import SinglePastTile from './SinglePastTile'
 
+// API IMPORTS:
+import { getAllEvents } from '../../apiFuncs/eventApi'
+
 const PastEvents = () => {
+  const [allEvents, setAllEvents] = useState([])
+
+  console.log('lets fuckn go')
+  useEffect(async () => {
+    try {
+      const eventData = await getAllEvents()
+      console.log('front', eventData)
+      setAllEvents([...allEvents, eventData])
+    }
+    catch {
+      console.log('rams')
+    }
+  },[])
+
   const testData = [
     {
       event_id: 1,
@@ -30,6 +47,9 @@ const PastEvents = () => {
         'Looking for another team to join our tournament, beaches, balls & bikinis',
     },
   ]
+
+
+  
   return (
     <div>
       {testData.map((data) => (

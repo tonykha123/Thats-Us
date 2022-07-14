@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
+
+// COMPONENT IMPORTS:
 import LiveEvents from './LiveEvents/LiveEvents'
 import PastEvents from './PastEvents/PastEvents'
 import UpcomingEvents from './UpcomingEvents/UpcomingEvents'
+
+// API IMPORTS:
+
 
 const Events = () => {
   const [showEvents, setShowEvents] = useState(0)
@@ -21,17 +26,17 @@ const Events = () => {
   )
 
   const events = [
-    <LiveEvents key="1" />,
+    <LiveEvents key="1"/>, 
     <UpcomingEvents key="2" />,
     <PastEvents key="3" />,
   ]
+
 
   return (
     <section>
       Events:
     {eventBtnsMarkup}
     {events[showEvents]}
-
     </section>
   )
 }
