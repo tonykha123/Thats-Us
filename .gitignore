@@ -4,3 +4,4 @@ bundle.*
 *.sqlite3
 .env
 server/public/styles.css
+server/public/styles.css
