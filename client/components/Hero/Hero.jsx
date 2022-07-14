@@ -11,9 +11,9 @@ const Hero = () => {
           sequence={['Ball?', 3500, 'Drinkups?', 3500, 'Crew?', 3500]}
           wrapper="p"
           repeat={Infinity}
-          className="text-4xl w-full font-extrabold sm:text-6xl "
+          className="text-5xl w-full font-extrabold sm:text-6xl "
         />
-        <p className="text-4xl w-full font-extrabold sm:text-6xl ">Thats us.</p>
+        <p className="text-5xl w-full font-extrabold sm:text-6xl ">Thats us.</p>
         <p className="mt-2 mb:4 sm:my-5">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
           veritatis et accusantium deserunt atque molestias, molestiae assumenda
@@ -23,7 +23,7 @@ const Hero = () => {
       </div>
       <div className="self-center">
         <img
-          className="shadow-xl object-fill my-5 mx-auto"
+          className=" w-full h-auto shadow-xl object-fill my-5 mx-auto block"
           src="/images/Friendly.jpeg"
           alt="Group of friendly people laughing"
         />
