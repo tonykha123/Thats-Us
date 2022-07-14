@@ -633,6 +633,11 @@ video {
   position: relative;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
@@ -641,11 +646,6 @@ video {
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
-}
-
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .mr-5 {
@@ -684,12 +684,12 @@ video {
   height: 90vh;
 }
 
-.h-\[75px\] {
-  height: 75px;
-}
-
 .h-auto {
   height: auto;
+}
+
+.h-\[75px\] {
+  height: 75px;
 }
 
 .w-full {
@@ -769,11 +769,6 @@ video {
 
 .text-center {
   text-align: center;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
 }
 
 .text-5xl {
