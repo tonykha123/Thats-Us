@@ -34,7 +34,6 @@ const UpcomingEvents = () => {
   ]
   return (
     <div>
-      UpcomingEvents: asdasdas
       {testData.map((data) => (
         <SingleUpcomingTile
           key={data.event_id}

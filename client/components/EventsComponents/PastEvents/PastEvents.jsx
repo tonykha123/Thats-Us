@@ -32,7 +32,6 @@ const PastEvents = () => {
   ]
   return (
     <div>
-      PastEvents
       {testData.map((data) => (
         <SinglePastTile
           key={data.event_id}

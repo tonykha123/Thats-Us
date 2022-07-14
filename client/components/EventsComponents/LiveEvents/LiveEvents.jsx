@@ -32,7 +32,6 @@ const LiveEvents = () => {
   ]
   return (
     <div>
-      LiveEvents
       {testData.map((data) => (
         <SingleLiveTile
           key={data.event_id}
