@@ -7,8 +7,8 @@ import UpcomingEvents from './UpcomingEvents/UpcomingEvents'
 const Events = () => {
   return (
     <section>Events:
-      {/* <UpcomingEvents /> */}
-      <PastEvents />
+      <UpcomingEvents />
+      {/* <PastEvents /> */}
       {/* <LiveEvents /> */}
     </section>
   )
