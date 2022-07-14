@@ -9,7 +9,7 @@ const App = () => {
   return (
     <>
       {/* outer most container */}
-      <div className="bg-neutral-400 flex flex-col ">
+      <div className="bg-neutral-400 flex flex-col items-center">
         <Router>
           <NavBar />
           <Routes>
