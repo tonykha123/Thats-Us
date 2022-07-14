@@ -1,10 +1,19 @@
 const connection = require('./connection')
-module.exports = { getEvents, addEvents }
+module.exports = { getEvent, addEvent }
 
-function getEvents(db = connection) {
+function getEvent(db = connection) {
   return db('events').select()
 }
 
-function addEvents(db = connection) {
-  return db('events')
+function addEvent(newEvent, db = connection) {
+  const { name, status, date, time, max, IMG, description } = newEvent
+  return db('events').insert({
+    name,
+    status,
+    date,
+    time,
+    max,
+    IMG,
+    description,
+  })
 }

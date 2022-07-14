@@ -633,11 +633,6 @@ video {
   position: relative;
 }
 
-.sticky {
-  position: -webkit-sticky;
-  position: sticky;
-}
-
 .block {
   display: block;
 }
@@ -676,11 +671,6 @@ video {
 
 .border {
   border-width: 1px;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
 }
 
 .uppercase {
