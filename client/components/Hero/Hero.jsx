@@ -2,8 +2,8 @@ import React from 'react'
 
 const Hero = () => {
   return (
-    <section className="w-full flex flex-col p-4 sm:flex-row sm:w-10/12 my-5 sm:px-10 s:py-6 sm:justify-center">
-      <div className=" w-6/12 mr-5 sm:w-6/12 self-center text-center sm:text-left">
+    <section className="w-full h-[90vh] flex flex-col p-4 sm:flex-row sm:w-10/12 my-5 sm:px-10 s:pt-6 sm:justify-center">
+      <div className=" w-2/3 mr-5 sm:w-6/12 self-center text-center sm:text-left">
         {/*text side */}
         <p className="text-4xl w-full font-extrabold sm:text-6xl ">
           Lorem ipsum dolor sit amet.
