@@ -9,6 +9,7 @@ const Events = () => {
     <section>Events:
       <UpcomingEvents />
       <PastEvents />
+      <LiveEvents />
     </section>
   )
 }
