@@ -35,3 +35,15 @@ router.post('/', async (req, res) => {
     res.status(500).send(err.message)
   }
 })
+
+// router.get('/:id', async (req, res) => {
+//   const eventId = Number(req.params.id)
+//   try {
+//     const foundEvent = await db.getEventsById(eventId)
+
+//     const event = JSON.parse(JSON.stringify(foundEvent))
+//     return res.json(event)
+//   } catch (err) {
+//     res.status(500).json({ error: err.message })
+//   }
+// })
