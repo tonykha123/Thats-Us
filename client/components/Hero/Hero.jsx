@@ -1,5 +1,4 @@
 import React from 'react'
-import Typed from 'react-typed'
 import TypeAnimation from 'react-type-animation'
 
 const Hero = () => {
@@ -7,13 +6,6 @@ const Hero = () => {
     <section className="w-full h-[90vh] flex flex-col p-4 mx-auto sm:flex-row sm:w-10/12 my-5 sm:px-10 s:pt-6 sm:justify-center">
       <div className=" w-2/3 mr-5 sm:w-6/12 self-center text-center sm:text-left">
         {/*text side */}
-        <Typed
-          strings={['Ball?', 'Drinkups?', 'Crew?']}
-          typeSpeed={300}
-          backSpeed={300}
-          loop
-          className="text-4xl w-full font-extrabold sm:text-6xl "
-        />
         <TypeAnimation
           cursor={true}
           sequence={['Ball?', 3500, 'Drinkups?', 3500, 'Crew?', 3500]}
