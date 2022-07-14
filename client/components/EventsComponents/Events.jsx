@@ -8,6 +8,7 @@ const Events = () => {
   return (
     <section>Events:
       <UpcomingEvents />
+      <PastEvents />
     </section>
   )
 }
