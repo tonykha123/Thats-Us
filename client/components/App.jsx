@@ -5,18 +5,19 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import NavBar from './Nav/NavBar'
 import Home from './Home/Home'
 
-
 const App = () => {
   return (
     <>
-      App
-      <Router>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </Router>
-      </>
+      {/* outer most container */}
+      <div className="w-full bg-neutral-400 flex flex-col items-center">
+        <Router>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </Router>
+      </div>
+    </>
   )
 }
 
