@@ -10,7 +10,7 @@ module.exports = router
 // GET /api/v1/events
 router.get('/', async (req, res) => {
   try {
-    const events = await db.getEvent()
+    const events = await db.getEvents()
     res.json({ events })
   } catch (err) {
     console.error(err)
