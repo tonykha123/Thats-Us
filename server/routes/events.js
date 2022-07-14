@@ -10,7 +10,7 @@ module.exports = router
 // GET /api/v1/events
 router.get('/', async (req, res) => {
   try {
-    const events = await db.getEvents()
+    const events = await db.getEvent()
     res.json({ events })
   } catch (err) {
     console.error(err)
@@ -21,15 +21,19 @@ router.get('/', async (req, res) => {
 // use checkJwt as middleware
 // POST /api/v1/events
 router.post('/', async (req, res) => {
-  const { event } = req.body
-  const auth0Id = req.user?.sub
-  const newEvent = {
-    added_by_user: auth0Id,
-    name: event.name,
-  }
+  const data = req.body
+  // const auth0Id = req.user?.sub
+  // const newEvent = {
+  //   // added_by_user: auth0Id,
+  //   name: events.name,
+  //   status: events.status,
+  //   date: events.date,
+  //   max: events.max,
+  //   description: events.description,
+  // }
   try {
-    const events = await db.addEvent(newEvent)
-    res.json({ events })
+    const newEvent = await db.addEvent(data)
+    res.json(newEvent)
   } catch (err) {
     console.error(err)
     res.status(500).send(err.message)
