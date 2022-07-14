@@ -7,7 +7,7 @@ const LiveEvents = () => {
 
   useEffect(async () => {
     const all = await getAllEvents()
-    const evts = all.filter((evt) => evt.status == 'current')
+    const evts = all.filter((evt) => evt.status === 'current')
     try {
       setEvents(evts)
     } catch {

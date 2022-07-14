@@ -7,7 +7,7 @@ const UpcomingEvents = () => {
 
   useEffect(async () => {
     const all = await getAllEvents()
-    const evts = all.filter((evt) => evt.status == 'upcoming')
+    const evts = all.filter((evt) => evt.status === 'upcoming')
     try {
       setEvents(evts)
     } catch {

@@ -5,7 +5,7 @@ const SingleLiveTile = ({ name, date, max, description }) => {
     <div style={{margin: '2em'}}>
       <h2>{name}</h2>
       <p>{date}</p>
-      <p>{max} people needed!</p>
+      <p>{max} players</p>
       <article>{description}</article>
     </div>
   )
