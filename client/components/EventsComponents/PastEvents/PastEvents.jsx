@@ -16,7 +16,7 @@ const PastEvents = () => {
   }, [])
 
   return (
-    <div>
+    <>
       {events.map(({ event_id, name, date, max, description }) => (
         <SinglePastTile
           key={event_id}
@@ -26,7 +26,7 @@ const PastEvents = () => {
           description={description}
         />
       ))}
-    </div>
+    </>
   )
 }
 

@@ -16,7 +16,7 @@ const UpcomingEvents = () => {
   }, [])
 
   return (
-    <div>
+    <>
       {events.map(({ event_id, name, date, max, description }) => (
         <SingleUpcomingTile
           key={event_id}
@@ -26,7 +26,7 @@ const UpcomingEvents = () => {
           description={description}
         />
       ))}
-    </div>
+    </>
   )
 }
 

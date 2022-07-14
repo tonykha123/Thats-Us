@@ -1,8 +1,8 @@
 import React from 'react'
 
-const SinglePastTile = ({name, date, max, description}) => {
+const SinglePastTile = ({ name, date, max, description }) => {
   return (
-    <div style={{margin: '2em'}}>
+    <div className=" h-auto bg-white w-10/12 p-2 mx-auto my-4">
       <h2>{name}</h2>
       <p>{date}</p>
       <p>{max} players</p>
