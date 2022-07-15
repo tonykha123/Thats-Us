@@ -3,9 +3,7 @@ bundle.*
 *.log
 *.sqlite3
 .env
-<<<<<<< HEAD
 server/public/styles.css
 server/public/styles.css
 server/public/styles.css
-=======
->>>>>>> 61cb4c37507d84350e890051b6a738e48c7d2414
+
