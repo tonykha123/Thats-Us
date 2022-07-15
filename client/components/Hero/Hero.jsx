@@ -8,7 +8,7 @@ const Hero = () => {
         {/*text side */}
         <TypeAnimation
           cursor={true}
-          sequence={['Ball?', 3500, 'Drinkups?', 3500, 'Crew?', 3500]}
+          sequence={['Ball?', 3500, 'Drinks?', 3500, 'Crew?', 3500]}
           wrapper="p"
           repeat={Infinity}
           className="text-5xl w-full font-extrabold sm:text-6xl "
