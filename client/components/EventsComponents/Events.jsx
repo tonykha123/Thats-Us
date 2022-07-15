@@ -37,7 +37,7 @@ const Events = () => {
       </div>
       {eventBtnsMarkup}
       {/* entire container for eventsv */}
-      <div className=" w-full flex flex-col items-center sm:grid sm:grid-cols-2 lg:flex lg:flex-row lg:flex-nowrap ">
+      <div className=" w-full flex flex-col items-center sm:grid sm:grid-cols-2 lg:flex lg:flex-row lg:flex-nowrap lg:overflow-x-scroll lg:whitespace-nowrap lg:w-full lg:h-full scroll-smooth">
         {events[showEvents]}
       </div>
     </section>
