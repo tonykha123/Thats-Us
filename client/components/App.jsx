@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import NavBar from './Nav/NavBar'
 import Home from './Home/Home'
 import Details from './Details/Details'
-import AddEvent from '../slices/AddEvent'
+import AddEvent from './EventsComponents/AddEvent/AddEvent'
 
 const App = () => {
   return (
