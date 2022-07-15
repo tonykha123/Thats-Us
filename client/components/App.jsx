@@ -10,6 +10,7 @@ import NavBar from './Nav/NavBar'
 import Register from './Register/Register'
 import Home from './Home/Home'
 import Details from './Details/Details'
+import AddEvent from '../slices/AddEvent'
 
 const App = () => {
   cacheUser(useAuth0)
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<Register />} />
             <Route path="/description" element={<Details />} />
+            <Route path="/add" element={<AddEvent />} />
           </Routes>
         </Router>
       </div>
