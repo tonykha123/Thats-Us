@@ -28,11 +28,13 @@ const Events = () => {
   ]
 
   return (
-    <section className="flex flex-col items-center">
+    <section className=" w-11/12 h-auto flex flex-col items-center ">
       <h1 className=" mx-auto p-4 mb-5 font-bold text-4xl">Events</h1>
       {eventBtnsMarkup}
       {/* entire container for eventsv */}
-      <div className="flex flex-col items-center">{events[showEvents]}</div>
+      <div className="flex flex-col items-center sm:grid-cols-3 gap-8">
+        {events[showEvents]}
+      </div>
     </section>
   )
 }

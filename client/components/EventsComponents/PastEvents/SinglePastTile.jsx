@@ -2,11 +2,13 @@ import React from 'react'
 
 const SinglePastTile = ({ name, date, max, description }) => {
   return (
-    <div className=" h-auto bg-white w-10/12 p-2 mx-auto my-4">
-      <h2>{name}</h2>
-      <p>{date}</p>
-      <p>{max} players</p>
-      <article>{description}</article>
+    // each card
+    <div className=" h-[20vh] bg-white w-[85vw] p-4 mx-auto my-4 flex flex-col items-center rounded-md shadow-xl hover:scale-110 duration-300">
+      <h2 className="font-bold text-xl">{name}</h2>
+      <p className="self-start my-2">
+        {date} {max} players
+      </p>
+      <article className="self-start my-1">{description}</article>
     </div>
   )
 }
