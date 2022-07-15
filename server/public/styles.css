@@ -744,8 +744,24 @@ video {
   width: 66.666667%;
 }
 
-.w-10 {
-  width: 2.5rem;
+.w-\[120vw\] {
+  width: 120vw;
+}
+
+.w-\[100vw\] {
+  width: 100vw;
+}
+
+.w-\[95vw\] {
+  width: 95vw;
+}
+
+.w-\[2vw\] {
+  width: 2vw;
+}
+
+.w-\[200vw\] {
+  width: 200vw;
 }
 
 .shrink {
@@ -823,9 +839,9 @@ video {
   background-color: rgb(71 85 105 / var(--tw-bg-opacity));
 }
 
-.bg-purple-300 {
+.bg-neutral-800 {
   --tw-bg-opacity: 1;
-  background-color: rgb(216 180 254 / var(--tw-bg-opacity));
+  background-color: rgb(38 38 38 / var(--tw-bg-opacity));
 }
 
 .object-fill {
@@ -1005,10 +1021,6 @@ video {
 }
 
 @media (min-width: 1024px) {
-  .lg\:w-\[3vw\] {
-    width: 3vw;
-  }
-
   .lg\:w-\[20vw\] {
     width: 20vw;
   }
@@ -1019,9 +1031,5 @@ video {
 
   .lg\:justify-between {
     justify-content: space-between;
-  }
-
-  .lg\:overflow-y-auto {
-    overflow-y: auto;
   }
 }

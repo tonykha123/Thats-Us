@@ -6,7 +6,8 @@ import Events from '../EventsComponents/Events'
 
 const Home = () => {
   return (
-    <main className="flex flex-col items-center justify-start">
+    // outermost container
+    <main className="w-full bg-neutral-400 flex flex-col items-center">
       <Hero />
       <Events />
     </main>

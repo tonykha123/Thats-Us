@@ -9,16 +9,13 @@ import Details from './Details/Details'
 const App = () => {
   return (
     <>
-      {/* outer most container */}
-      <div className="w-full bg-neutral-400 flex flex-col items-center">
-        <Router>
-          <NavBar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/description" element={<Details />} />
-          </Routes>
-        </Router>
-      </div>
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/description" element={<Details />} />
+        </Routes>
+      </Router>
     </>
   )
 }
