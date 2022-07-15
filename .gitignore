@@ -3,4 +3,3 @@ bundle.*
 *.log
 *.sqlite3
 .env
-server/public/styles.css
