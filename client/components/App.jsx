@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import NavBar from './Nav/NavBar'
 import Home from './Home/Home'
 import Details from './Details/Details'
+import AddEvent from '../slices/AddEvent'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/description" element={<Details />} />
+            <Route path="/add" element={<AddEvent />} />
           </Routes>
         </Router>
       </div>
