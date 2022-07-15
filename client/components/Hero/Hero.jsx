@@ -3,7 +3,8 @@ import TypeAnimation from 'react-type-animation'
 
 const Hero = () => {
   return (
-    <section className="w-full h-[90vh] flex flex-col p-4 mx-auto sm:flex-row sm:w-10/12 my-5 sm:px-10 s:pt-6 sm:justify-center">
+    // main hero container
+    <section className="w-full h-[90vh] flex flex-col p-4  sm:flex-row sm:w-11/12  sm:px-10 s:pt-6 sm:justify-center">
       <div className=" w-2/3 mr-5 sm:w-6/12 self-center text-center sm:text-left">
         {/*text side */}
         <TypeAnimation
@@ -21,6 +22,8 @@ const Hero = () => {
           libero sunt natus aspernatur!
         </p>
       </div>
+      {/* text container of hero div ends */}
+      {/* image section */}
       <div className="self-center">
         <img
           className=" w-full h-auto shadow-xl object-fill my-5 mx-auto block"
@@ -28,6 +31,7 @@ const Hero = () => {
           alt="Group of friendly people laughing"
         />
       </div>
+      {/* image section ends */}
     </section>
   )
 }

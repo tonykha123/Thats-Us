@@ -8,8 +8,8 @@ const Events = () => {
   const [showEvents, setShowEvents] = useState(0)
 
   const eventBtnsMarkup = (
-    <div className="w-full h-auto mx-auto flex justify-center">
-      <span className="mx-2" onClick={() => setShowEvents(0)}>
+    <div className="w-full h-auto flex self-center sm:self-start">
+      <span className="mr-2" onClick={() => setShowEvents(0)}>
         Live Events
       </span>
       <span className="mx-2" onClick={() => setShowEvents(1)}>
@@ -28,11 +28,16 @@ const Events = () => {
   ]
 
   return (
-    <section className=" w-11/12 h-auto flex flex-col items-center ">
-      <h1 className=" mx-auto p-4 mb-5 font-bold text-4xl">Events</h1>
+    // events container including h1
+    <section className=" w-11/12 h-auto flex flex-col items-center sm:px-10 sm:pt-6">
+      <div className="self-center sm:self-start">
+        <h1 className="font-bold text-4xl self-center sm:self-start ">
+          Events
+        </h1>
+      </div>
       {eventBtnsMarkup}
       {/* entire container for eventsv */}
-      <div className="flex flex-col items-center sm:grid sm:grid-cols-2 lg:grid-cols-3 lg:justify-items-center lg:gap-10">
+      <div className="flex flex-col items-center sm:grid sm:grid-cols-2 sm:justify-items-center lg:grid-cols-3 lg:justify-items-center lg:gap-10">
         {events[showEvents]}
       </div>
     </section>
