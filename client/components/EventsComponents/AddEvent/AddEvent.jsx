@@ -1,12 +1,13 @@
-import React, {useState,} from 'react';
+import React, {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { addNewEvent } from '../../../slices/AddEvent';
+import {  fetchEvent } from '../../../slices/AddEvent';
+import { addEvent } from '../../apiFuncs/eventApi';
 
 
 
 
-function NewEvent() {
+function AddEvent() {
   const [name, setName] = useState('')
   const [date, setDate] = useState('')
   const [time, setTime] = useState('')
@@ -40,9 +41,9 @@ function NewEvent() {
 
  function handleSubmit(event) {
   event.preventDefault()
-  setName('')
-  dispatch(
-    addNewEvent({
+  // setName('')
+  
+    addEvent({
       event_id: id,
       name: name,
       date: date,
@@ -51,12 +52,18 @@ function NewEvent() {
       description: description,
 
     })
-  )
+    .then(() => {
+      dispatch(fetchEvent(id))
+    })
+    .catch((err) =>{
+      console.error(err.message)
+    })
 
   }
 
   return(
     <>
+    <h1>hello world</h1>
       <form className="input-wrapper">
         <input
           className="event-input"
@@ -94,4 +101,4 @@ function NewEvent() {
  
 }
 
-export default NewEvent
+export default AddEvent

@@ -10,7 +10,7 @@ import NavBar from './Nav/NavBar'
 import Register from './Register/Register'
 import Home from './Home/Home'
 import Details from './Details/Details'
-import AddEvent from '../slices/AddEvent'
+import AddEvent from './EventsComponents/AddEvent/AddEvent'
 
 const App = () => {
   cacheUser(useAuth0)

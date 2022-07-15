@@ -633,9 +633,10 @@ video {
   position: relative;
 }
 
-.sticky {
-  position: -webkit-sticky;
-  position: sticky;
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+
 }
 
 .mx-4 {
