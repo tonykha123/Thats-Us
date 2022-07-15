@@ -1,11 +1,26 @@
 import React from "react";
-import Map from "./Map"
 
-export default function Details(){
+//imported components that we want in details
+import Map from "./Map"
+import AttendButton from "./AttendButton"
+import EventDetails from "./EventDetails"
+
+const Details = () => {
   return(
-    <section>
-      <Map />
-    </section>
+  
+    <Map />
+
   )
 }
 
+export default Details
+/* <aside>
+      
+    </aside>
+    <section>
+      <AttendButton />
+    </section>
+    <section>
+      <SelectedEvent />
+    </section> */
+    
