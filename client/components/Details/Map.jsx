@@ -3,8 +3,8 @@ import React from "react";
 
 const Map = () => {
   return(
-    <MapContainer center={[-36.86667, 174.76667]}
-     zoom={13} 
+    <MapContainer center={[-36.86447, 174.77630]}
+     zoom={12} 
      scrollWheelZoom={false}
      style={{width: '40%', height: '300px', marginLeft: 'auto'}}>
     <TileLayer
