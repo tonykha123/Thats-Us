@@ -8,7 +8,7 @@ const Events = () => {
   const [showEvents, setShowEvents] = useState(0)
 
   const eventBtnsMarkup = (
-    <div className="w-full h-auto flex self-center sm:self-start">
+    <div className="w-full h-auto flex flex-row justify-center sm:justify-start">
       <span className="mr-2" onClick={() => setShowEvents(0)}>
         Live Events
       </span>
