@@ -772,10 +772,6 @@ video {
   justify-content: flex-start;
 }
 
-.justify-end {
-  justify-content: flex-end;
-}
-
 .justify-center {
   justify-content: center;
 }
@@ -790,6 +786,14 @@ video {
 
 .self-center {
   align-self: center;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-x-visible {
+  overflow-x: visible;
 }
 
 .rounded-md {
@@ -936,6 +940,10 @@ video {
     height: 30vh;
   }
 
+  .sm\:h-\[35vh\] {
+    height: 35vh;
+  }
+
   .sm\:w-\[30vw\] {
     width: 30vw;
   }
@@ -946,6 +954,10 @@ video {
 
   .sm\:w-6\/12 {
     width: 50%;
+  }
+
+  .sm\:w-\[35vw\] {
+    width: 35vw;
   }
 
   .sm\:grid-cols-2 {
@@ -992,6 +1004,10 @@ video {
 }
 
 @media (min-width: 1024px) {
+  .lg\:w-\[40vw\] {
+    width: 40vw;
+  }
+
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1002,5 +1018,18 @@ video {
 
   .lg\:gap-10 {
     gap: 2.5rem;
+  }
+
+  .lg\:gap-x-10 {
+    -moz-column-gap: 2.5rem;
+         column-gap: 2.5rem;
+  }
+
+  .lg\:overflow-auto {
+    overflow: auto;
+  }
+
+  .lg\:overflow-x-visible {
+    overflow-x: visible;
   }
 }

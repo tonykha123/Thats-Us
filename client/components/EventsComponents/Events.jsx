@@ -37,7 +37,7 @@ const Events = () => {
       </div>
       {eventBtnsMarkup}
       {/* entire container for eventsv */}
-      <div className="flex flex-col items-center sm:grid sm:grid-cols-2 sm:justify-items-center lg:grid-cols-3 lg:justify-items-center lg:gap-10">
+      <div className="flex flex-col items-center sm:grid sm:grid-cols-2 sm:justify-items-center lg:grid-cols-3 lg:justify-items-center lg:gap-x-10 lg:overflow-auto">
         {events[showEvents]}
       </div>
     </section>
