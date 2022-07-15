@@ -4,7 +4,7 @@ import TypeAnimation from 'react-type-animation'
 const Hero = () => {
   return (
     // main hero container
-    <section className="w-full h-[90vh] flex flex-col p-4  sm:flex-row sm:w-11/12  sm:px-10 s:pt-6 sm:justify-center">
+    <section className="w-full h-[90vh] flex flex-col sm:flex-row sm:w-11/12  s:pt-6 sm:justify-center">
       <div className=" w-2/3 mr-5 sm:w-6/12 self-center text-center sm:text-left">
         {/*text side */}
         <TypeAnimation

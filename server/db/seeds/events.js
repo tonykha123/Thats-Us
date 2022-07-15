@@ -7,7 +7,6 @@ exports.seed = async function (knex) {
   await knex('events').del()
   await knex('events').insert([
     {
-     
       name: 'Tag',
       status: 'current',
       date: '14/7/2021',
@@ -17,7 +16,33 @@ exports.seed = async function (knex) {
       description: 'tag at vic park, need 6 to make a game and run a few subs',
     },
     {
-      
+      name: 'Tag',
+      status: 'current',
+      date: '14/7/2021',
+      time: 'arvo',
+      max: '6',
+      IMG: ' ',
+      description: 'tag at vic park, need 6 to make a game and run a few subs',
+    },
+    {
+      name: 'Tag',
+      status: 'current',
+      date: '14/7/2021',
+      time: 'arvo',
+      max: '6',
+      IMG: ' ',
+      description: 'tag at vic park, need 6 to make a game and run a few subs',
+    },
+    {
+      name: 'Tag',
+      status: 'current',
+      date: '14/7/2021',
+      time: 'arvo',
+      max: '6',
+      IMG: ' ',
+      description: 'tag at vic park, need 6 to make a game and run a few subs',
+    },
+    {
       name: 'Basketball',
       status: 'current',
       date: '14/7/2021',
@@ -27,7 +52,6 @@ exports.seed = async function (knex) {
       description: 'ball at Grey Lynn, need 3 to run against',
     },
     {
-   
       name: 'Basketball',
       status: 'current',
       date: '14/7/2021',
@@ -37,7 +61,6 @@ exports.seed = async function (knex) {
       description: 'ball at Grey Lynn, need 3 to run against',
     },
     {
-     
       name: 'Touch',
       status: 'current',
       date: '14/7/2021',
@@ -47,7 +70,6 @@ exports.seed = async function (knex) {
       description: 'touch at the park need 4 ',
     },
     {
-     
       name: 'Basketball',
       status: 'current',
       date: '14/7/2021',
@@ -57,7 +79,6 @@ exports.seed = async function (knex) {
       description: 'ball at Grey Lynn, need 3 to run against',
     },
     {
-      
       name: 'Basketball',
       status: 'current',
       date: '14/7/2021',
@@ -67,7 +88,6 @@ exports.seed = async function (knex) {
       description: 'ball at Grey Lynn, need 3 to run against',
     },
     {
-     
       name: ' Laser Tag',
       status: 'previous',
       date: '12/7/2021',
