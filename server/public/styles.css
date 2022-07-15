@@ -638,14 +638,14 @@ video {
   position: sticky;
 }
 
-.my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 .mr-5 {
@@ -684,16 +684,16 @@ video {
   display: none;
 }
 
+.h-3\/6 {
+  height: 50%;
+}
+
 .h-\[90vh\] {
   height: 90vh;
 }
 
 .h-\[75px\] {
   height: 75px;
-}
-
-.h-full {
-  height: 100%;
 }
 
 .w-full {
