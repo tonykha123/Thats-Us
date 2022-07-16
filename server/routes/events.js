@@ -1,5 +1,7 @@
 const express = require('express')
 // TODO: import checkJwt
+// JWT CHECK IMPORT
+const checkJwt = require('../auth0.js')
 const db = require('../db/events')
 
 const router = express.Router()
@@ -20,7 +22,7 @@ router.get('/', async (req, res) => {
 
 // use checkJwt as middleware
 // POST /api/v1/events
-router.post('/', async (req, res) => {
+router.post('/', checkJwt, async (req, res) => {
   const data = req.body
   try {
     const newEvent = await db.addEvent(data)
@@ -36,7 +38,6 @@ router.get('/:id', async (req, res) => {
   const eventId = Number(req.params.id)
   try {
     const foundEvent = await db.getEventsById(eventId)
-    console.log(foundEvent)
     return res.json(foundEvent)
   } catch (err) {
     res.status(500).json({ error: err.message })
