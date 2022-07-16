@@ -694,20 +694,16 @@ video {
   margin-bottom: 1rem;
 }
 
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
 .mr-5 {
   margin-right: 1.25rem;
 }
 
 .mt-2 {
   margin-top: 0.5rem;
-}
-
-.ml-14 {
-  margin-left: 3.5rem;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
 }
 
 .block {
@@ -774,16 +770,12 @@ video {
   width: 83.333333%;
 }
 
-.w-2\/3 {
-  width: 66.666667%;
-}
-
-.w-\[15vw\] {
-  width: 15vw;
-}
-
 .w-\[25vw\] {
   width: 25vw;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
 }
 
 .shrink {
@@ -1088,16 +1080,8 @@ video {
 }
 
 @media (min-width: 1024px) {
-  .lg\:ml-14 {
-    margin-left: 3.5rem;
-  }
-
   .lg\:ml-16 {
     margin-left: 4rem;
-  }
-
-  .lg\:ml-\[-4\] {
-    margin-left: -4;
   }
 
   .lg\:ml-\[-4rem\] {
@@ -1114,14 +1098,6 @@ video {
 
   .lg\:h-\[250px\] {
     height: 250px;
-  }
-
-  .lg\:h-\[30vh\] {
-    height: 30vh;
-  }
-
-  .lg\:h-\[35vh\] {
-    height: 35vh;
   }
 
   .lg\:h-\[25vh\] {
@@ -1160,28 +1136,8 @@ video {
     align-items: center;
   }
 
-  .lg\:justify-center {
-    justify-content: center;
-  }
-
-  .lg\:justify-between {
-    justify-content: space-between;
-  }
-
   .lg\:justify-around {
     justify-content: space-around;
-  }
-
-  .lg\:space-x-5 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(1.25rem * var(--tw-space-x-reverse));
-    margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
-  }
-
-  .lg\:space-x-10 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(2.5rem * var(--tw-space-x-reverse));
-    margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .lg\:overflow-x-scroll {
