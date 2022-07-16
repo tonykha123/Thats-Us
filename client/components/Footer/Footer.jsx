@@ -18,10 +18,18 @@ const Footer = () => {
           <p className="mb-4 text-lg font-medium">Follow Us</p>
           {/* icons container */}
           <div className="flex justify-between w-full">
-            <FaFacebookSquare size={30} className="" />
-            <FaInstagram size={30} />
-            <FaTwitterSquare size={30} />
-            <FaGithubSquare size={30} />
+            <a href="https://www.facebook.com/">
+              <FaFacebookSquare size={30} className="" />
+            </a>
+            <a href="https://www.instagram.com/">
+              <FaInstagram size={30} className="" />
+            </a>
+            <a href="https://www.twitter.com/">
+              <FaTwitterSquare size={30} className="" />
+            </a>
+            <a href="https://github.com/matai-2022/Player-finder">
+              <FaGithubSquare size={30} className="" />
+            </a>
           </div>
         </div>
         {/* About */}
