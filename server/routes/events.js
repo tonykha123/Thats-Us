@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
 
 // use checkJwt as middleware
 // POST /api/v1/events
-router.post('/', checkJwt, async (req, res) => {
+router.post('/', async (req, res) => {
   const data = req.body
   try {
     const newEvent = await db.addEvent(data)

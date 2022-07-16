@@ -10,9 +10,8 @@ export const getAllEvents = async () => {
 }
 
 export async function addEvent(event) {
-  const newEvent = await request.post('/api/v1/events').send(event)
+    const newEvent = await request.post('/api/v1/events').send(event)
   try {
-    console.log(newEvent.body)
     return newEvent.body
   } catch (error) {
     console.error(error.message)
