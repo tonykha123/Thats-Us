@@ -1,13 +1,21 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useAuth0 } from '@auth0/auth0-react'
 // COMPONENT IMPORTS:
 import LiveEvents from './LiveEvents/LiveEvents'
 import PastEvents from './PastEvents/PastEvents'
 import UpcomingEvents from './UpcomingEvents/UpcomingEvents'
 
+const isAuthenticated = () => {
+  const { isAuthenticated } = useAuth0()
+  return isAuthenticated
+}
+
 const Events = () => {
   const [showEvents, setShowEvents] = useState(0)
   const navigate = useNavigate()
+  const {loginWithRedirect} = useAuth0()
+
 
   const eventBtnsMarkup = (
     <div className="w-full h-auto flex flex-row justify-center sm:justify-start">
@@ -29,6 +37,12 @@ const Events = () => {
     <PastEvents key="2" />,
   ]
 
+  const permission = isAuthenticated()
+
+  function showAddEvt() {
+    return permission ? navigate('/add') : loginWithRedirect()
+  }
+
   return (
     // events container including h1
     <section className=" w-11/12 h-auto flex flex-col items-center sm:px-10 sm:pt-6">
@@ -42,7 +56,7 @@ const Events = () => {
       <div className=" w-full flex flex-col items-center sm:grid sm:grid-cols-2 lg:flex lg:flex-row lg:flex-nowrap lg:overflow-x-scroll lg:whitespace-nowrap lg:w-full lg:h-full scroll-smooth">
         {events[showEvents]}
       </div>
-      <button onClick={() => navigate('/add')}>Add event</button>
+      <button onClick={showAddEvt}>Add event</button>
     </section>
   )
 }
