@@ -10,6 +10,7 @@ import NavBar from './Nav/NavBar'
 import Register from './Register/Register'
 import Home from './Home/Home'
 import Details from './Details/Details'
+import Footer from './Footer/Footer'
 import AddEvent from './EventsComponents/AddEvent/AddEvent'
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
             <Route path="/event/:id" element={<Details />} />
             <Route path="/add" element={<AddEvent />} />
           </Routes>
+          <Footer />
         </Router>
       </div>
     </>

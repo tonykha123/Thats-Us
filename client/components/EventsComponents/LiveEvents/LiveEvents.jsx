@@ -22,7 +22,8 @@ const LiveEvents = () => {
   }
 
   return (
-    <div>
+    // entire container for events
+    <>
       {events.map(({ event_id, name, date, max, description }) => (
         <SingleLiveTile
           key={event_id}
@@ -34,7 +35,7 @@ const LiveEvents = () => {
           style={{backgroundColor: 'blue'}}
         />
       ))}
-    </div>
+    </>
   )
 }
 
