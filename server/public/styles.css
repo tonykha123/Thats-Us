@@ -750,6 +750,18 @@ video {
   height: 75px;
 }
 
+.h-\[40vh\] {
+  height: 40vh;
+}
+
+.h-\[50vh\] {
+  height: 50vh;
+}
+
+.h-\[65vh\] {
+  height: 65vh;
+}
+
 .w-full {
   width: 100%;
 }
@@ -776,6 +788,14 @@ video {
 
 .w-2\/3 {
   width: 66.666667%;
+}
+
+.w-8\/12 {
+  width: 66.666667%;
+}
+
+.w-9\/12 {
+  width: 75%;
 }
 
 .shrink {
@@ -897,6 +917,16 @@ video {
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .font-bold {
