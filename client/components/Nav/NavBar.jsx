@@ -52,6 +52,9 @@ const NavBar = () => {
       </div>
       {/* right side nav   */}
       <div>
+        <a className="mx-4 hover:text-white" href="/">
+        <IfNotAuthenticated>          
+        <a onClick={handleLogin} className="mx-4 hover:text-white" href="https://www.google.com">
         <IfNotAuthenticated>          
         <a onClick={handleLogin} className="mx-4 hover:text-white" href="https://www.google.com">
           Login
