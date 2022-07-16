@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 // COMPONENT IMPORTS:
 import LiveEvents from './LiveEvents/LiveEvents'
 import PastEvents from './PastEvents/PastEvents'
@@ -6,6 +7,7 @@ import UpcomingEvents from './UpcomingEvents/UpcomingEvents'
 
 const Events = () => {
   const [showEvents, setShowEvents] = useState(0)
+  const navigate = useNavigate()
 
   const eventBtnsMarkup = (
     <div className="w-full h-auto flex flex-row justify-center sm:justify-start">
@@ -40,6 +42,7 @@ const Events = () => {
       <div className=" w-full flex flex-col items-center sm:grid sm:grid-cols-2 lg:flex lg:flex-row lg:flex-nowrap lg:overflow-x-scroll lg:whitespace-nowrap lg:w-full lg:h-full scroll-smooth">
         {events[showEvents]}
       </div>
+      <button onClick={() => navigate('/add')}>Add event</button>
     </section>
   )
 }

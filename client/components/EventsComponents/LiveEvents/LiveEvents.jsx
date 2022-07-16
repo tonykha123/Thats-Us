@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import SingleLiveTile from './SingleLiveTile'
 import { getAllEvents } from '../../apiFuncs/eventApi'
 
 const LiveEvents = () => {
   const [events, setEvents] = useState([])
+  const navigate = useNavigate()
 
   useEffect(async () => {
     const all = await getAllEvents()
@@ -15,6 +17,10 @@ const LiveEvents = () => {
     }
   }, [])
 
+  function showEvent(e, id) {
+    navigate(`/event/${id}`)
+  }
+
   return (
     // entire container for events
     <>
@@ -25,6 +31,8 @@ const LiveEvents = () => {
           date={date}
           max={max}
           description={description}
+          showEvent={(e) => showEvent(e, event_id)}
+          style={{backgroundColor: 'blue'}}
         />
       ))}
     </>
