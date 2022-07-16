@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+// TODO: import a proper isAuthenticated function
+import { useAuth0 } from '@auth0/auth0-react' //todo done <-
+
 import { SingleUpcomingTile } from './SingleUpcomingTile'
 import { getAllEvents } from '../../apiFuncs/eventApi'
 
+const isAuthenticated = () => {
+  const { isAuthenticated } = useAuth0()
+  return isAuthenticated
+}
+
 const UpcomingEvents = () => {
   const [events, setEvents] = useState([])
+  const {loginWithRedirect} = useAuth0()
   const navigate = useNavigate()
 
   useEffect(async () => {
@@ -17,8 +26,10 @@ const UpcomingEvents = () => {
     }
   }, [])
 
+  const permission = isAuthenticated()
+
   function showEvent(e, id) {
-    navigate(`/event/${id}`)
+    return permission ? navigate(`/event/${id}`) : loginWithRedirect()
   }
 
   return (
