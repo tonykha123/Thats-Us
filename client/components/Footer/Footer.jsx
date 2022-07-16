@@ -52,7 +52,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <p className="text-md">© 2022 That's Us</p>
+      <p className="text-md m-4">© 2022 That's Us</p>
     </footer>
   )
 }
