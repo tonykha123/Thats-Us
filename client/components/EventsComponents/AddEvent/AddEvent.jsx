@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import {  fetchEvent } from '../../../slices/AddEvent';
 import { addEvent } from '../../apiFuncs/eventApi';
 
@@ -15,6 +15,7 @@ function AddEvent() {
   const [description, setDescription] = useState('')
   const dispatch = useDispatch()
   const {id} = useParams()
+  const navigate = useNavigate()
 
   // const eventData = useSelector((state) => state.events)
   // const eventslah =  eventData.find((data) => data.event_id === Number(id))
@@ -55,6 +56,8 @@ function AddEvent() {
     })
     .then(() => {
       dispatch(fetchEvent(id))
+      navigate('/')
+
     })
     .catch((err) =>{
       console.error(err.message)
