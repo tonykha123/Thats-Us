@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
-
 // API IMPORT:
 import { getEvtById } from '../apiFuncs/eventApi'
+
 
 //imported components that we want in details
 import Map from './Map'
@@ -36,7 +36,6 @@ const Details = () => {
         <p>{event.date}</p>
         <p>{event.time}</p>
         <p>{event.description}</p>
-      
       </div>
       <div >
         <Map />
