@@ -52,15 +52,11 @@ const NavBar = () => {
       </div>
       {/* right side nav   */}
       <div>
-<<<<<<< HEAD
-        <a className="mx-4 hover:text-white">
-          Home
-        </a>
-        <a className="mx-4 hover:text-white" href="https://www.google.com">
-=======
+        <a className="mx-4 hover:text-white" href="/">
         <IfNotAuthenticated>          
         <a onClick={handleLogin} className="mx-4 hover:text-white" href="https://www.google.com">
->>>>>>> 344f2afcc6eff4c7265a13ba6c8a2f7ae14ccaee
+        <IfNotAuthenticated>          
+        <a onClick={handleLogin} className="mx-4 hover:text-white" href="https://www.google.com">
           Login
         </a>
         <a onClick={handleSignup} className="hover:text-white" href="/register">
