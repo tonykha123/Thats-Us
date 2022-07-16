@@ -5,15 +5,16 @@ export async function cacheUser(useAuth0) {
   const state = store.getState()
 
   // TODO: call the useAuth0 and destructure:
+  const {isAuthenticated, getAccessTokenSilently, user} = useAuth0()
   // isAuthenticated, getAccessTokenSilently and user
 
-  const isAuthenticated = false // <- TODO: delete this and use the value from useAuth0()
   if (isAuthenticated && !state?.token) {
+    const accessToken = await getAccessTokenSilently()
     try {
       const userToSave = {
-        auth0Id: '',
-        email: '',
-        token: '',
+        auth0Id: user.sub,
+        email: user.email,
+        token: accessToken,
       }
 
       store.dispatch(setUser(userToSave))

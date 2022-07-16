@@ -15,7 +15,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Fruits />} />
-          <Route path="register" element={<Register />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </Router>
     </>

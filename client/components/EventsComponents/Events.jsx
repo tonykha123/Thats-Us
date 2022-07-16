@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 // COMPONENT IMPORTS:
 import LiveEvents from './LiveEvents/LiveEvents'
 import PastEvents from './PastEvents/PastEvents'
@@ -6,6 +7,7 @@ import UpcomingEvents from './UpcomingEvents/UpcomingEvents'
 
 const Events = () => {
   const [showEvents, setShowEvents] = useState(0)
+  const navigate = useNavigate() 
 
   const eventBtnsMarkup = (
     <div>
@@ -21,6 +23,7 @@ const Events = () => {
   </div>
   )
 
+
   const events = [
     <LiveEvents key='0'/>, 
     <UpcomingEvents key='1' />,
@@ -28,11 +31,18 @@ const Events = () => {
   ]
 
   return (
+    <>
     <section style={{margin: '2em'}}>
       Events
     {eventBtnsMarkup}
     {events[showEvents]}
     </section>
+      <button 
+      onClick={() => navigate('/add')}
+    >
+     Add event
+    </button>
+    </>
   )
 }
 
