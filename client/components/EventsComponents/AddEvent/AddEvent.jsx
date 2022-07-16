@@ -4,6 +4,9 @@ import { useParams, useNavigate } from 'react-router-dom';
 import {  fetchEvent } from '../../../slices/AddEvent';
 import { addEvent } from '../../apiFuncs/eventApi';
 
+import Map from './Map'
+import SearchBox from './SearchBox';
+
 
 
 
@@ -67,6 +70,8 @@ function AddEvent() {
 
   return(
     <>
+    <div>
+      <div>
     <h1>ADD NEW EVENT</h1>
       <form className="input-wrapper">
         <input
@@ -100,6 +105,18 @@ function AddEvent() {
           onClick={handleSubmit} 
           >Add Event</button>  
       </form>
+      </div>
+        <div style={{ display: 'flex', flexDirection: 'row', width: '100vw', height: '100vh'}}>
+          <div style={{ width: '50vh', height: "100%"}}>
+            <Map />
+          </div>
+        <div style={{border: '2px solid red', width: '50vh'}}>
+          <SearchBox />
+        </div>
+      </div>
+
+      </div>
+
     </>
   )
  

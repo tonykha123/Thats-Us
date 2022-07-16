@@ -4,7 +4,7 @@ import {
   FaGithubSquare,
   FaInstagram,
   FaTwitterSquare,
-} from 'react-icons/FaFacebookSquare'
+} from 'react-icons/fa'
 
 const Footer = () => {
   return (
