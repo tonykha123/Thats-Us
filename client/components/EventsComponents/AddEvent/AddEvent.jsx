@@ -50,6 +50,7 @@ function AddEvent() {
       time: time,
       max: max,
       description: description,
+      status: 'current',
 
     })
     .then(() => {
