@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { cacheUser } from '../auth0-utils'
 
 import { useAuth0 } from '@auth0/auth0-react'
+import { IfAuthenticated, IfNotAuthenticated } from './Authenticated/Authenticated'
 
 // COMPONENT IMPORTS
 import NavBar from './Nav/NavBar'
@@ -24,7 +25,9 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<Register />} />
+            {/* <IfAuthenticated> */}
             <Route path="/event/:id" element={<Details />} />
+            {/* </IfAuthenticated> */}
             <Route path="/add" element={<AddEvent />} />
           </Routes>
           <Footer />
