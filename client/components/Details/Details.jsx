@@ -8,6 +8,8 @@ import { getEvtById } from '../apiFuncs/eventApi'
 import Map from './Map'
 import AttendButton from './AttendButton'
 import EventDetails from './EventDetails'
+import Events from '../EventsComponents/Events'
+
 
 const Details = () => {
   const [event, setEvent] = useState({})
@@ -36,8 +38,9 @@ const Details = () => {
         <p>{event.description}</p>
       
       </div>
-      <div>
+      <div >
         <Map />
+        <AttendButton />
       </div>
     </div>
   )

@@ -13,7 +13,7 @@ function AddEvent() {
   const [time, setTime] = useState('')
   const [max, setMax] = useState('')
   const [description, setDescription] = useState('')
-  const dispatch = useDispatch
+  const dispatch = useDispatch()
   const {id} = useParams()
 
   // const eventData = useSelector((state) => state.events)
@@ -63,19 +63,19 @@ function AddEvent() {
 
   return(
     <>
-    <h1>hello world</h1>
+    <h1>ADD NEW EVENT</h1>
       <form className="input-wrapper">
         <input
           className="event-input"
           placeholder="Event Title"
           onChange={handleName}
           />
-        <input
+        <input type="date"
           className='date-input'
           placeholder="Event Date"
           onChange={handleDate}
           />
-        <input
+        <input type="time"
           className='time-input'
           placeholder="Event Time"
           onChange={handleTime}
