@@ -18,3 +18,12 @@ export async function addEvent(event) {
     console.error(error.message)
   }
 }
+
+export const getEvtById = async (id) => {
+  const event = await request.get(`/api/v1/events/${id}`)
+  try {
+    return event.body[0]
+  } catch (err) {
+    console.error(err.message)
+  }
+}
