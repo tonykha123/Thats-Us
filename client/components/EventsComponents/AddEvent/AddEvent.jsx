@@ -13,6 +13,7 @@ function AddEvent() {
   const [time, setTime] = useState('')
   const [max, setMax] = useState('')
   const [description, setDescription] = useState('')
+  const [image, setImage] = useState('')
   const dispatch = useDispatch()
   const {id} = useParams()
   const navigate = useNavigate()
@@ -40,6 +41,10 @@ function AddEvent() {
   setDescription(event.target.value)
  }
 
+ function handleImage(event){
+  setImage(event.target.value)
+ }
+
  function handleSubmit(event) {
   event.preventDefault()
   // setName('')
@@ -51,6 +56,7 @@ function AddEvent() {
       time: time,
       max: max,
       description: description,
+      IMG: image,
       status: 'upcoming',
 
     })
@@ -93,6 +99,11 @@ function AddEvent() {
           className='description-input'
           placeholder="Event Description"
           onChange={handleDescription}
+          />
+        <input type="file"
+          className='image-input'
+          placeholder="Upload Image"
+          onChange={handleImage}
           />
         <button
           className='submit-button'
