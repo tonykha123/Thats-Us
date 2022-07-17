@@ -14,8 +14,7 @@ const isAuthenticated = () => {
 const Events = () => {
   const [showEvents, setShowEvents] = useState(0)
   const navigate = useNavigate()
-  const {loginWithRedirect} = useAuth0()
-
+  const { loginWithRedirect } = useAuth0()
 
   const eventBtnsMarkup = (
     <div className="w-full h-auto flex flex-row justify-center sm:justify-start">
@@ -55,7 +54,7 @@ const Events = () => {
       {/* entire container for eventsv */}
       <div className=" w-full flex flex-col items-center sm:grid sm:grid-cols-2 lg:flex lg:flex-row lg:flex-nowrap lg:overflow-x-scroll lg:whitespace-nowrap lg:w-full lg:h-full scroll-smooth">
         {events[showEvents]}
-      </div
+      </div>
       <button
         className="my-10 mx-auto font-semibold text-white bg-gray-200 hover:bg-gray-100 w-[120px] h-[60px] shadow-xl rounded-md p-2 lg:w-[12vw] lg:h-[4vw]"
         onClick={showAddEvt}
