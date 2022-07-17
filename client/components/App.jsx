@@ -4,7 +4,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { cacheUser } from '../auth0-utils'
 
 import { useAuth0 } from '@auth0/auth0-react'
-import { IfAuthenticated, IfNotAuthenticated } from './Authenticated/Authenticated'
+import {
+  IfAuthenticated,
+  IfNotAuthenticated,
+} from './Authenticated/Authenticated'
 
 // COMPONENT IMPORTS
 import NavBar from './Nav/NavBar'
@@ -13,6 +16,8 @@ import Home from './Home/Home'
 import Details from './Details/Details'
 import Footer from './Footer/Footer'
 import AddEvent from './EventsComponents/AddEvent/AddEvent'
+
+
 
 const App = () => {
   cacheUser(useAuth0)

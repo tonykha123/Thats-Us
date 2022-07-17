@@ -5,6 +5,10 @@ import { useAuth0 } from '@auth0/auth0-react'
 import LiveEvents from './LiveEvents/LiveEvents'
 import PastEvents from './PastEvents/PastEvents'
 import UpcomingEvents from './UpcomingEvents/UpcomingEvents'
+import AddEvent from './AddEvent/AddEvent'
+//Modal imports
+import Rodal from 'rodal'
+import 'rodal/lib/rodal.css'
 
 const isAuthenticated = () => {
   const { isAuthenticated } = useAuth0()
@@ -12,6 +16,8 @@ const isAuthenticated = () => {
 }
 
 const Events = () => {
+  // modal
+  const [visible, setVisible] = useState(false)
   const [showEvents, setShowEvents] = useState(0)
   const navigate = useNavigate()
   const { loginWithRedirect } = useAuth0()
@@ -39,7 +45,8 @@ const Events = () => {
   const permission = isAuthenticated()
 
   function showAddEvt() {
-    return permission ? navigate('/add') : loginWithRedirect()
+    // return permission ? navigate('/add') : loginWithRedirect()
+    setVisible(true)
   }
 
   return (
@@ -55,12 +62,23 @@ const Events = () => {
       <div className=" w-full flex flex-col items-center sm:grid sm:grid-cols-2 lg:flex lg:flex-row lg:flex-nowrap lg:overflow-x-scroll lg:whitespace-nowrap lg:w-full lg:h-full scroll-smooth">
         {events[showEvents]}
       </div>
+
+      {/* add event button */}
       <button
         className="my-10 mx-auto font-semibold text-white bg-gray-200 hover:bg-gray-100 w-[120px] h-[60px] shadow-xl rounded-md p-2 lg:w-[12vw] lg:h-[4vw]"
         onClick={showAddEvt}
       >
         Add Event
       </button>
+      <Rodal
+        enterAnimation="zoom"
+        leaveAnimation="zoom"
+        closeOnEsc
+        visible={visible}
+        onClose={() => setVisible(false)}
+      >
+        <div>Content</div>
+      </Rodal>
     </section>
   )
 }
