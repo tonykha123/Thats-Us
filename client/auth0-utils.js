@@ -14,6 +14,7 @@ export async function cacheUser(useAuth0) {
       const userToSave = {
         auth0Id: user.sub,
         email: user.email,
+        username: user.username,
         token: accessToken,
       }
 
