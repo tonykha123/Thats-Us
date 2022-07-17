@@ -746,24 +746,12 @@ video {
   height: 90vh;
 }
 
-.h-\[65vh\] {
-  height: 65vh;
+.h-\[88vh\] {
+  height: 88vh;
 }
 
 .h-\[75px\] {
   height: 75px;
-}
-
-.h-\[75vh\] {
-  height: 75vh;
-}
-
-.h-\[85vh\] {
-  height: 85vh;
-}
-
-.h-\[88vh\] {
-  height: 88vh;
 }
 
 .w-full {
@@ -1137,10 +1125,6 @@ video {
 
   .lg\:h-\[25vh\] {
     height: 25vh;
-  }
-
-  .lg\:h-\[65\] {
-    height: 65;
   }
 
   .lg\:h-\[65vh\] {

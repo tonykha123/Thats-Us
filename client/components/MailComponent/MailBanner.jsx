@@ -25,8 +25,8 @@ const MailBanner = () => {
           </p>
         </div>
         <div className="w-full flex flex-col items-center my-4">
-          <BsFillCalendarDayFill size={55} />
-          <h1 className="text-2xl font-bold mx-auto mb-2">Create an event</h1>
+          <BsFillCalendarDayFill size={55} className="mb-2" />
+          <h1 className="text-2xl font-bold mx-auto my-2">Create an event</h1>
           <p className="text-center mx-auto w-9/12">
             Make an event and have it be visible to other members! It's easy as!
           </p>
