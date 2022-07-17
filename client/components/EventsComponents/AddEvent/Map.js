@@ -22,7 +22,7 @@ const Map = () => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://api.maptiler.com/maps/basic/256/{z}/{x}/{y}.png?key=VSPgWg7ngWDVEPAzEOVS"
       />
-      <Marker position={position}>
+      <Marker position={position} icon={icon}>
         <Popup>chur chur</Popup>
       </Marker>
     </MapContainer>
