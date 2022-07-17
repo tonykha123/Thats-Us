@@ -9,7 +9,7 @@ const MailBanner = () => {
       <div className="w-full flex flex-col items-center my-4 lg:my-10">
         <h1 className="text-3xl font-bold mx-auto mb-2">How it works</h1>
         <p className="text-center mx-auto w-9/12">
-          Get to know new people who share your interestes through online and
+          Get to know new people who share your interests through online and
           in-person events.
         </p>
       </div>
