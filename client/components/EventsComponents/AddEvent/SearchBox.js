@@ -15,9 +15,11 @@ const NOMINATIM_BASE_URL = 'https://nominatim.openstreetmap.org/search?'
 //   addressdetails: 'addressdetails',
 // }
 
-export default function SearchBox() {
+export default function SearchBox(props) {
+  const { selectPostion, setSelectPosition } = props
   const [searchText, setSearchText] = useState('')
-  console.log(searchText)
+  const [listPlace, setListPlace] = useState([])
+  // console.log(searchText)
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
       <div style={{ display: 'flex' }}>
@@ -53,6 +55,7 @@ export default function SearchBox() {
                 .then((response) => response.text())
                 .then((result) => {
                   console.log(JSON.parse(result))
+                  setListPlace(JSON.parse(result))
                 })
                 .catch((err) => console.log('err', err))
             }}
@@ -63,10 +66,15 @@ export default function SearchBox() {
       </div>
       <div>
         <List component="nav" aria-label="main mailbox folders">
-          {[1, 2, 3, 4, 5].map((item) => {
+          {listPlace.map((item) => {
             return (
-              <div key={item}>
-                <ListItem button>
+              <div key={item?.osm_id}>
+                <ListItem
+                  button
+                  onClick={() => {
+                    setSelectPosition(item)
+                  }}
+                >
                   <ListItemIcon>
                     <img
                       src="./images/placeholder.png"
@@ -74,7 +82,7 @@ export default function SearchBox() {
                       style={{ width: 36, height: 36 }}
                     />
                   </ListItemIcon>
-                  <ListItemText primary="Inbox" />
+                  <ListItemText primary={item?.display_name} />
                 </ListItem>
                 <Divider />
               </div>
