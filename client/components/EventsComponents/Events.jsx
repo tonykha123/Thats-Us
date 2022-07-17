@@ -55,8 +55,13 @@ const Events = () => {
       {/* entire container for eventsv */}
       <div className=" w-full flex flex-col items-center sm:grid sm:grid-cols-2 lg:flex lg:flex-row lg:flex-nowrap lg:overflow-x-scroll lg:whitespace-nowrap lg:w-full lg:h-full scroll-smooth">
         {events[showEvents]}
-      </div>
-      <button onClick={showAddEvt}>Add event</button>
+      </div
+      <button
+        className="my-10 mx-auto font-semibold text-white bg-gray-200 hover:bg-gray-100 w-[120px] h-[60px] shadow-xl rounded-md p-2 lg:w-[12vw] lg:h-[4vw]"
+        onClick={showAddEvt}
+      >
+        Add Event
+      </button>
     </section>
   )
 }
