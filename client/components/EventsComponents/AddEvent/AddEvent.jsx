@@ -13,6 +13,7 @@ function AddEvent() {
   const [time, setTime] = useState('')
   const [max, setMax] = useState('')
   const [description, setDescription] = useState('')
+  const [image, setImage] = useState('')
   const dispatch = useDispatch()
   const { id } = useParams()
   const navigate = useNavigate()
@@ -43,6 +44,11 @@ function AddEvent() {
     setDescription(event.target.value)
   }
 
+  function handleImage(event) {
+    console.log(event.target)
+    setImage(event.target.value)
+  }
+
   function handleSubmit(event) {
     event.preventDefault()
     // setName('')
@@ -55,6 +61,7 @@ function AddEvent() {
         time: time,
         max: max,
         description: description,
+        IMG: image,
         status: 'upcoming',
       },
       token
@@ -101,10 +108,17 @@ function AddEvent() {
               placeholder="Event Description"
               onChange={handleDescription}
             />
+            <input type="file"
+            className='image-input'
+             placeholder="Upload Image"
+              onChange={handleImage}
+              style={{ width: '30vh'}}
+            />
             <button
               className="submit-button"
               placeholder="Submit"
               onClick={handleSubmit}
+              style={{ width: '10vh'}}
             >
               Add Event
             </button>
@@ -118,7 +132,7 @@ function AddEvent() {
             height: '100vh',
           }}
         >
-          <div style={{ width: '50vh', height: '100%' }}>
+          <div style={{ width: '50vh', height: '40%' }}>
             <Map selectPosition={selectPosition} />
           </div>
           <div style={{ width: '50vh' }}>
