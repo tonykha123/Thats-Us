@@ -45,8 +45,7 @@ const Events = () => {
   const permission = isAuthenticated()
 
   function showAddEvt() {
-    // return permission ? navigate('/add') : loginWithRedirect()
-    setVisible(true)
+    return permission ? setVisible(true) : loginWithRedirect()
   }
 
   return (
@@ -76,8 +75,11 @@ const Events = () => {
         closeOnEsc
         visible={visible}
         onClose={() => setVisible(false)}
+        // width ={}
+        // height={}
       >
-        <div>Content</div>
+        {/* <div>Content</div> */}
+        <AddEvent />
       </Rodal>
     </section>
   )
