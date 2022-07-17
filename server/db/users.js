@@ -1,11 +1,16 @@
 const connection = require('./connection')
 
-module.exports = { addUser }
+module.exports = { addUser, getAllUsers }
 
 function addUser(newUser, db = connection) {
-  const { Auth0_id, email } = newUser
+  const { auth0Id, email, username } = newUser
   return db('users').insert({
-    Auth0_id,
+    auth0_Id: auth0Id,
     email,
+    username
   })
+}
+
+function getAllUsers(db = connection) {
+  return db('users').select()
 }
