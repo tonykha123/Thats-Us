@@ -1,8 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 // API IMPORT:
 import { getEvtById } from '../apiFuncs/eventApi'
-
 
 //imported components that we want in details
 import Map from './Map'
@@ -10,10 +9,9 @@ import AttendButton from './AttendButton'
 import EventDetails from './EventDetails'
 import Events from '../EventsComponents/Events'
 
-
 const Details = () => {
   const [event, setEvent] = useState({})
-  const {id} = useParams()
+  const { id } = useParams()
 
   useEffect(async () => {
     const evt = await getEvtById(id)
@@ -22,26 +20,21 @@ const Details = () => {
     } catch {
       console.error('elo')
     }
-  },[])
-  
-  const tempStyle = {
-    width: '100%',
-    height: '80vh',
-  }
+  }, [])
 
   return (
-    <div style={tempStyle}>
-      <div>
-        <h2>{event.name}</h2>
+    <section className="w-full h-[90vh] flex flex-col bg-slate-300 items-center">
+      <div className="my-5">
+        <h2 className="text-2xl font-semibold">{event.name}</h2>
         <p>{event.date}</p>
         <p>{event.time}</p>
-        <p>{event.description}</p>
       </div>
-      <div >
+      <div className="w-full h-10/12 ">
         <Map />
-        <AttendButton />
       </div>
-    </div>
+      <div>{event.description}</div>
+      <AttendButton />
+    </section>
   )
 }
 
