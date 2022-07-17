@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 import {  fetchEvent } from '../../../slices/AddEvent';
 import { addEvent } from '../../apiFuncs/eventApi';
@@ -22,6 +22,9 @@ function AddEvent() {
 
   // const eventData = useSelector((state) => state.events)
   // const eventslah =  eventData.find((data) => data.event_id === Number(id))
+
+  const token = useSelector((state) => state.user.token)
+
 
  function handleName(event) {
     setName(event.target.value)
@@ -56,7 +59,7 @@ function AddEvent() {
       description: description,
       status: 'upcoming',
 
-    })
+    }, token)
     .then(() => {
       dispatch(fetchEvent(id))
       navigate('/')
