@@ -9,6 +9,12 @@ import AddEvent from './AddEvent/AddEvent'
 //Modal imports
 import Rodal from 'rodal'
 import 'rodal/lib/rodal.css'
+//Modal style
+const style = {
+  backgroundColor: 'white',
+  width: '90vw',
+  height: '70vh',
+}
 
 const isAuthenticated = () => {
   const { isAuthenticated } = useAuth0()
@@ -19,7 +25,6 @@ const Events = () => {
   // modal
   const [visible, setVisible] = useState(false)
   const [showEvents, setShowEvents] = useState(0)
-  const navigate = useNavigate()
   const { loginWithRedirect } = useAuth0()
 
   const eventBtnsMarkup = (
@@ -70,16 +75,17 @@ const Events = () => {
         Add Event
       </button>
       <Rodal
+        className="w-1/2"
         enterAnimation="zoom"
         leaveAnimation="zoom"
         closeOnEsc
         visible={visible}
         onClose={() => setVisible(false)}
-        // width ={}
-        // height={}
+        // width={1000}
+        // height={600}
+        customStyles={style}
       >
-        {/* <div>Content</div> */}
-        <AddEvent />
+        <AddEvent setVisible={setVisible} />
       </Rodal>
     </section>
   )
