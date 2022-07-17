@@ -75,7 +75,6 @@ const Events = () => {
         Add Event
       </button>
       <Rodal
-        className="w-1/2"
         enterAnimation="zoom"
         leaveAnimation="zoom"
         closeOnEsc
