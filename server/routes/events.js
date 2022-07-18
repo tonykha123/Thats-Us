@@ -24,6 +24,7 @@ router.get('/', async (req, res) => {
 // POST /api/v1/events
 router.post('/', async (req, res) => {
   const data = req.body
+  console.log(data, 'testing map')
   try {
     const newEvent = await db.addEvent(data)
     res.json(newEvent)

@@ -22,6 +22,10 @@ const Details = () => {
     }
   }, [])
 
+  console.log(event.coords, 'events details')
+
+  const coords = event.coords
+
   return (
     <section className="w-full h-[90vh] flex flex-col bg-slate-300 items-center">
       <div className="my-5">
@@ -30,7 +34,7 @@ const Details = () => {
         <p>{event.time}</p>
       </div>
       <div className="w-full h-10/12 ">
-        <Map />
+        <Map pin={coords} />
       </div>
       <div>{event.description}</div>
       <AttendButton />

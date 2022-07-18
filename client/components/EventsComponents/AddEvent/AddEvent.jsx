@@ -57,6 +57,7 @@ function AddEvent({ setVisible }) {
         max: max,
         description: description,
         status: 'upcoming',
+        coords: [selectPosition.lat, selectPosition.lon],
       },
       token
     )
@@ -67,6 +68,10 @@ function AddEvent({ setVisible }) {
       .catch((err) => {
         console.error(err.message)
       })
+  }
+  if (selectPosition != null) {
+    //
+    //console.log('letss gooo position', selectPosition.lat, selectPosition.lon)
   }
 
   return (

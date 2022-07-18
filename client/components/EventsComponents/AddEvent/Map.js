@@ -47,7 +47,7 @@ const Map = (props) => {
       />
       {selectPosition && (
         <Marker position={locationSelection} icon={icon}>
-          <Popup>chur chur</Popup>
+          <Popup></Popup>
         </Marker>
       )}
       <ResetCenterView selectPosition={selectPosition} />
