@@ -113,9 +113,12 @@ function AddEvent({ setVisible }) {
         {/* container with map and search */}
 
         <div className="w-[80vw] h-auto flex flex-col items-center">
-          <Map />
+          <Map selectPosition={selectPosition} />
 
-          <SearchBox />
+          <SearchBox
+            setSelectPosition={setSelectPosition}
+            selectPosition={selectPosition}
+          />
         </div>
 
         <input
