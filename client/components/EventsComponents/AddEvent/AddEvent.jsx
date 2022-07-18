@@ -103,15 +103,14 @@ function AddEvent({ setVisible }) {
           />
         </div>
 
-        {/* container with form and search */}
+        {/* container with map and search */}
 
-        <div>
-          <div className="w-[50vw] h-[50vh]">
+        <div className="w-[70vw] h-auto flex flex-col items-center">
+          <div className="w-[100vw] h-[50vh]">
             <Map />
           </div>
-          <div style={{ border: '2px solid red', width: '50vh' }}>
-            <SearchBox />
-          </div>
+
+          <SearchBox />
         </div>
 
         <input

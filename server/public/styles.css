@@ -687,14 +687,6 @@ video {
   margin-bottom: 1.5rem;
 }
 
-.mr-2 {
-  margin-right: 0.5rem;
-}
-
-.mt-6 {
-  margin-top: 1.5rem;
-}
-
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -703,16 +695,20 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
 .mr-5 {
   margin-right: 1.25rem;
 }
 
 .mt-2 {
   margin-top: 0.5rem;
-}
-
-.mb-10 {
-  margin-bottom: 2.5rem;
 }
 
 .block {
@@ -755,6 +751,10 @@ video {
   height: 90vh;
 }
 
+.h-\[50vh\] {
+  height: 50vh;
+}
+
 .h-auto {
   height: auto;
 }
@@ -775,8 +775,56 @@ video {
   height: 75px;
 }
 
+.h-\[70vh\] {
+  height: 70vh;
+}
+
+.h-1 {
+  height: 0.25rem;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.h-\[120vh\] {
+  height: 120vh;
+}
+
+.h-\[30vh\] {
+  height: 30vh;
+}
+
+.h-\[700vh\] {
+  height: 700vh;
+}
+
+.h-\[700px\] {
+  height: 700px;
+}
+
+.h-\[3px\] {
+  height: 3px;
+}
+
+.h-\[40px\] {
+  height: 40px;
+}
+
+.h-\[1000vh\] {
+  height: 1000vh;
+}
+
 .w-full {
   width: 100%;
+}
+
+.w-\[80vw\] {
+  width: 80vw;
+}
+
+.w-\[50vw\] {
+  width: 50vw;
 }
 
 .w-11\/12 {
@@ -811,16 +859,36 @@ video {
   width: 75%;
 }
 
-.w-6\/12 {
-  width: 50%;
+.w-\[120vw\] {
+  width: 120vw;
 }
 
-.w-\[80vw\] {
-  width: 80vw;
+.w-\[30vw\] {
+  width: 30vw;
 }
 
-.w-\[50vw\] {
-  width: 50vw;
+.w-\[60vw\] {
+  width: 60vw;
+}
+
+.w-\[700vw\] {
+  width: 700vw;
+}
+
+.w-\[700px\] {
+  width: 700px;
+}
+
+.w-\[20px\] {
+  width: 20px;
+}
+
+.w-\[300px\] {
+  width: 300px;
+}
+
+.w-\[100vw\] {
+  width: 100vw;
 }
 
 .flex-shrink {
@@ -873,12 +941,6 @@ video {
 
 .justify-between {
   justify-content: space-between;
-}
-
-.space-y-5 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
 }
 
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
@@ -958,11 +1020,6 @@ video {
 .bg-slate-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(71 85 105 / var(--tw-bg-opacity));
-}
-
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .object-fill {

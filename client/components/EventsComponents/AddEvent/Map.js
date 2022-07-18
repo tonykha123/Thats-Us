@@ -15,8 +15,9 @@ const Map = () => {
     <MapContainer
       center={position}
       zoom={12}
-      scrollWheelZoom={false}
-      style={{ width: '65%', height: '65%' }}
+      scrollWheelZoom={true}
+      // className="w-[300px] h-[70vh]"
+      style={{ height: '100%', width: '100%' }}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
