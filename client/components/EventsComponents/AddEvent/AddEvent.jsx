@@ -68,63 +68,65 @@ function AddEvent({ setVisible }) {
   }
 
   return (
+    // Container for form
+
     <>
-      <div>
-        <div>
-          <h1>ADD NEW EVENT</h1>
-          <form className="input-wrapper">
-            <input
-              className="event-input"
-              placeholder="Event Title"
-              onChange={handleName}
-            />
-            <input
-              type="date"
-              className="date-input"
-              placeholder="Event Date"
-              onChange={handleDate}
-            />
-            <input
-              type="time"
-              className="time-input"
-              placeholder="Event Time"
-              onChange={handleTime}
-            />
-            <input
-              className="max-input"
-              placeholder="Max Participants"
-              onChange={handleMax}
-            />
-            <input
-              className="description-input"
-              placeholder="Event Description"
-              onChange={handleDescription}
-            />
-            <button
-              className="submit-button"
-              placeholder="Submit"
-              onClick={handleSubmit}
-            >
-              Add Event
-            </button>
-          </form>
+      <div className=" w-[80vw] self-start text-2xl font-semibold border-b border-black border-solid mb-4">
+        <h1 className="mb-4">Create Event</h1>
+      </div>
+      {/* title goes here */}
+
+      <form className="flex flex-col items-center">
+        <div className=" mb-2">
+          {/* image and title goes here */}
+          <input className="" placeholder="Event Title" onChange={handleName} />
         </div>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            width: '100vw',
-            height: '100vh',
-          }}
-        >
-          <div style={{ width: '50vh', height: '100%' }}>
+
+        <div className="flex flex-col items-start lg:flex-row space-y-2">
+          {/* date time and max container */}
+          <input
+            type="date"
+            className="date-input"
+            placeholder="Event Date"
+            onChange={handleDate}
+          />
+          <input
+            type="time"
+            className="time-input"
+            placeholder="Event Time"
+            onChange={handleTime}
+          />
+          <input
+            className="max-input"
+            placeholder="Max Participants"
+            onChange={handleMax}
+          />
+        </div>
+
+        {/* container with form and search */}
+
+        <div>
+          <div className="w-[50vw] h-[50vh]">
             <Map />
           </div>
           <div style={{ border: '2px solid red', width: '50vh' }}>
             <SearchBox />
           </div>
         </div>
-      </div>
+
+        <input
+          className="description-input"
+          placeholder="Event Description"
+          onChange={handleDescription}
+        />
+        <button
+          className="submit-button"
+          placeholder="Submit"
+          onClick={handleSubmit}
+        >
+          Create Event
+        </button>
+      </form>
     </>
   )
 }

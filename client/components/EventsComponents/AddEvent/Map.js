@@ -1,6 +1,6 @@
 import React from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-// import 'leaflet/dist/leaflet.css'
+import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 
 const icon = L.icon({
@@ -16,7 +16,7 @@ const Map = () => {
       center={position}
       zoom={12}
       scrollWheelZoom={false}
-      style={{ width: '100%', height: '100%' }}
+      style={{ width: '65%', height: '65%' }}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

@@ -13,7 +13,9 @@ import 'rodal/lib/rodal.css'
 const style = {
   backgroundColor: 'white',
   width: '90vw',
-  height: '70vh',
+  height: '90vh',
+  display: 'flex',
+  flexDirection: 'column',
 }
 
 const isAuthenticated = () => {
