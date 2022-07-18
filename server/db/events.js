@@ -1,7 +1,7 @@
 const { json } = require('express')
 const connection = require('./connection')
 
-module.exports = { getEvents, addEvent, getEventsById }
+module.exports = { getEvents, addEvent, getEventsById, attendEvent }
 
 function getEvents(db = connection) {
   return db('events').select()
@@ -23,4 +23,8 @@ function addEvent(newEvent, db = connection) {
 
 function getEventsById(id, db = connection) {
   return db('events').where('event_id', id).select()
+}
+
+function attendEvent(id, db = connection) {
+  return db('events').join('users', 'username', 'events.event_id').select()
 }
