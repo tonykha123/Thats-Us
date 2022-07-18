@@ -78,7 +78,10 @@ export default function SearchBox(props) {
           {showList &&
             listPlace.map((item) => {
               return (
-                <div key={item?.osm_id}>
+                <div
+                  key={item?.osm_id}
+                  className="overflow-y-scroll whitespace-nowrap"
+                >
                   <ListItem button onClick={(e) => mapPin(e, item)}>
                     <ListItemIcon>
                       <img
