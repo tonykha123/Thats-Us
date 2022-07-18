@@ -14,10 +14,10 @@ const Map = () => {
   return (
     <MapContainer
       center={position}
-      zoom={12}
+      zoom={10}
       scrollWheelZoom={true}
-      // className="w-[300px] h-[70vh]"
-      style={{ height: '100%', width: '100%' }}
+      className="w-[65vw] h-[50vw]"
+      // style={{ height: '100%', width: '100%' }}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

@@ -71,7 +71,7 @@ function AddEvent({ setVisible }) {
     // Container for form
 
     <>
-      <div className=" w-[80vw] self-start text-2xl font-semibold border-b border-black border-solid mb-4">
+      <div className=" w-[85vw] self-start text-2xl font-semibold border-b border-black border-solid mb-4">
         <h1 className="mb-4">Create Event</h1>
       </div>
       {/* title goes here */}
@@ -105,10 +105,9 @@ function AddEvent({ setVisible }) {
 
         {/* container with map and search */}
 
-        <div className="w-[70vw] h-auto flex flex-col items-center">
-          <div className="w-[100vw] h-[50vh]">
-            <Map />
-          </div>
+        <div className="w-[80vw] h-auto flex flex-col items-center">
+          
+          <Map />
 
           <SearchBox />
         </div>
