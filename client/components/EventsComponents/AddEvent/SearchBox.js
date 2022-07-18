@@ -47,7 +47,7 @@ export default function SearchBox(props) {
 
   return (
     // entire search container
-    <div className="flex flex-col w-10/12 mt-2 text-sm">
+    <div className="flex flex-col w-10/12 mt-2 text-sm ">
       {/* searchbar input box */}
 
       <OutlinedInput
@@ -69,7 +69,7 @@ export default function SearchBox(props) {
       </Button>
       {/* result container */}
       {/* <div className="w-full h-auto overflow-y-auto"> */}
-      <List className=" w-full h-[200px]  sm:h-[150px] overflow-y-auto">
+      <List className=" w-full h-[200px]  sm:h-[150px]  overflow-y-auto">
         {showList &&
           listPlace.map((item) => {
             return (

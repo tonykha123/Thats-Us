@@ -84,10 +84,10 @@ function AddEvent({ setVisible }) {
       {/* title goes here */}
 
       <form className="flex flex-col items-center w-full">
-        <div className=" mb-2">
+        <div className=" mb-2 md:w-[30vw]">
           {/* image and title goes here */}
           <input
-            className="w-full"
+            className="w-full border rounded-md lg:w-[30vw]"
             placeholder="Event Title"
             onChange={handleName}
           />
@@ -95,23 +95,42 @@ function AddEvent({ setVisible }) {
 
         <div className="flex flex-col items-start md:flex-row md:w-full md:justify-evenly md:my-8">
           {/* date time and max container */}
-          <input type="date" placeholder="Event Date" onChange={handleDate} />
-          <input type="time" placeholder="Event Time" onChange={handleTime} />
-          <input placeholder="Max Participants" onChange={handleMax} />
-          <input placeholder="Event Description" onChange={handleDescription} />
+          <input
+            className="border rounded-md"
+            type="date"
+            placeholder="Event Date"
+            onChange={handleDate}
+          />
+          <input
+            className="border rounded-md"
+            type="time"
+            placeholder="Event Time"
+            onChange={handleTime}
+          />
+          <input
+            className="border rounded-md"
+            placeholder="Max Participants"
+            onChange={handleMax}
+          />
+          <input
+            className="border rounded-md"
+            placeholder="Event Description"
+            onChange={handleDescription}
+          />
         </div>
 
         {/* container with map and search */}
 
         <div className="w-[80vw] h-auto flex flex-col items-center md:flex-row-reverse md:items-start">
           <Map selectPosition={selectPosition} />
-
+          {/* <div className="w-9/12 md:w-7/12 self-center"> */}
           <SearchBox
             className=""
             setSelectPosition={setSelectPosition}
             selectPosition={selectPosition}
           />
         </div>
+        {/* </div> */}
 
         <button
           className="my-10 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 lg:w-[12vw] lg:h-[4vw]"
