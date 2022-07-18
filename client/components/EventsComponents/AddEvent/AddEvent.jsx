@@ -116,6 +116,7 @@ function AddEvent({ setVisible }) {
           <Map selectPosition={selectPosition} />
 
           <SearchBox
+            className=""
             setSelectPosition={setSelectPosition}
             selectPosition={selectPosition}
           />

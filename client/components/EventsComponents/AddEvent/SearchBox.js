@@ -9,95 +9,90 @@ import Divider from '@material-ui/core/Divider'
 
 const NOMINATIM_BASE_URL = 'https://nominatim.openstreetmap.org/search?'
 
-// const params = {
-//   q: '',
-//   format: 'json',
-//   addressdetails: 'addressdetails',
-// }
-
 export default function SearchBox(props) {
   const { selectPostion, setSelectPosition } = props
   const [searchText, setSearchText] = useState('')
   const [listPlace, setListPlace] = useState([])
   const [showList, setShowList] = useState(false)
 
+  const handleSearch = () => {
+    const params = {
+      q: searchText,
+      format: 'json',
+      addressdetails: 1,
+      polygon_geojson: 0,
+    }
+    const queryString = new URLSearchParams(params).toString()
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow',
+    }
+    fetch(`${NOMINATIM_BASE_URL}${queryString}`, requestOptions)
+      .then((response) => response.text())
+      .then((result) => {
+        console.log(JSON.parse(result))
+        setListPlace(JSON.parse(result))
+      })
+      .then(() => {
+        setShowList(true)
+      })
+      .catch((err) => console.log('err', err))
+  }
+
   function mapPin(e, item) {
     console.log('item', item.lat, item.lon)
     setSelectPosition(item)
     setShowList(false)
   }
+
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <div style={{ display: 'flex' }}>
-        <div style={{ flex: 1 }}>
-          <OutlinedInput
-            style={{ width: '100%' }}
-            value={searchText}
-            onChange={(event) => {
-              setSearchText(event.target.value)
-            }}
-          />
-        </div>
-        <div
-          style={{ display: 'flex', alignItems: 'center', padding: '0px 20px' }}
-        >
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={() => {
-              //Search
-              const params = {
-                q: searchText,
-                format: 'json',
-                addressdetails: 1,
-                polygon_geojson: 0,
-              }
-              const queryString = new URLSearchParams(params).toString()
-              const requestOptions = {
-                method: 'GET',
-                redirect: 'follow',
-              }
-              fetch(`${NOMINATIM_BASE_URL}${queryString}`, requestOptions)
-                .then((response) => response.text())
-                .then((result) => {
-                  console.log(JSON.parse(result))
-                  setListPlace(JSON.parse(result))
-                })
-                .then(() => {
-                  setShowList(true)
-                })
-                .catch((err) => console.log('err', err))
-            }}
-          >
-            Search
-          </Button>
-        </div>
-      </div>
-      <div>
-        <List component="nav" aria-label="main mailbox folders">
-          {showList &&
-            listPlace.map((item) => {
-              return (
-                <div
-                  key={item?.osm_id}
-                  className="overflow-y-scroll whitespace-nowrap"
+    // entire search container
+    <div className="flex flex-col w-3/4 mt-2 text-sm">
+      {/* searchbar input box */}
+
+      <OutlinedInput
+        className="w-full mx-auto my-2 h-[5vh]"
+        value={searchText}
+        onChange={(event) => {
+          setSearchText(event.target.value)
+        }}
+      />
+
+      {/* button */}
+      <Button
+        className=""
+        variant="contained"
+        color="primary"
+        onClick={handleSearch}
+      >
+        Search
+      </Button>
+
+      <List>
+        {showList &&
+          listPlace.map((item) => {
+            return (
+              // result container
+              <div key={item?.osm_id} className="w-full">
+                <ListItem
+                  button
+                  onClick={(e) => mapPin(e, item)}
+                  className="w-[50vw]"
                 >
-                  <ListItem button onClick={(e) => mapPin(e, item)}>
-                    <ListItemIcon>
-                      <img
-                        src="./images/placeholder.png"
-                        alt="Placeholder"
-                        style={{ width: 36, height: 36 }}
-                      />
-                    </ListItemIcon>
-                    <ListItemText primary={item?.display_name} />
-                  </ListItem>
-                  <Divider />
-                </div>
-              )
-            })}
-        </List>
-      </div>
+                  <ListItemIcon>
+                    <img
+                      src="./images/placeholder.png"
+                      alt="Placeholder"
+                      style={{ width: 36, height: 36 }}
+                    />
+                  </ListItemIcon>
+                  <ListItemText primary={item?.display_name} />
+                </ListItem>
+                <Divider />
+              </div>
+            )
+          })}
+      </List>
     </div>
   )
 }

@@ -13,7 +13,7 @@ import 'rodal/lib/rodal.css'
 const style = {
   backgroundColor: 'white',
   width: '90vw',
-  height: '90vh',
+  height: '95vh',
   display: 'flex',
   flexDirection: 'column',
 }
@@ -82,8 +82,6 @@ const Events = () => {
         closeOnEsc
         visible={visible}
         onClose={() => setVisible(false)}
-        // width={1000}
-        // height={600}
         customStyles={style}
       >
         <AddEvent setVisible={setVisible} />
