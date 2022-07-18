@@ -47,7 +47,7 @@ export default function SearchBox(props) {
 
   return (
     // entire search container
-    <div className="flex flex-col w-10/12 mt-2 text-sm ">
+    <div className="flex flex-col w-10/12 mt-2 text-sm  ">
       {/* searchbar input box */}
 
       <OutlinedInput

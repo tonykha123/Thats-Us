@@ -121,16 +121,17 @@ function AddEvent({ setVisible }) {
 
         {/* container with map and search */}
 
-        <div className="w-[80vw] h-auto flex flex-col items-center md:flex-row-reverse md:items-start">
+        <div className="w-[80vw] h-auto flex flex-col items-center md:flex-row-reverse md:items-end ">
           <Map selectPosition={selectPosition} />
-          {/* <div className="w-9/12 md:w-7/12 self-center"> */}
-          <SearchBox
-            className=""
-            setSelectPosition={setSelectPosition}
-            selectPosition={selectPosition}
-          />
+          {/* search container */}
+          <div className="flex flex-col items-center md:items-start w-full md:w-7/12 md:self-start">
+            <SearchBox
+              className=""
+              setSelectPosition={setSelectPosition}
+              selectPosition={selectPosition}
+            />
+          </div>
         </div>
-        {/* </div> */}
 
         <button
           className="my-10 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 lg:w-[12vw] lg:h-[4vw]"
