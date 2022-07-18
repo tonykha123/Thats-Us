@@ -19,10 +19,12 @@ export default function SearchBox(props) {
   const { selectPostion, setSelectPosition } = props
   const [searchText, setSearchText] = useState('')
   const [listPlace, setListPlace] = useState([])
+  const [showList, setShowList] = useState(false)
 
   function mapPin(e, item) {
     console.log('item', item.lat, item.lon)
     setSelectPosition(item)
+    setShowList(false)
   }
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -61,6 +63,9 @@ export default function SearchBox(props) {
                   console.log(JSON.parse(result))
                   setListPlace(JSON.parse(result))
                 })
+                .then(() => {
+                  setShowList(true)
+                })
                 .catch((err) => console.log('err', err))
             }}
           >
@@ -70,23 +75,24 @@ export default function SearchBox(props) {
       </div>
       <div>
         <List component="nav" aria-label="main mailbox folders">
-          {listPlace.map((item) => {
-            return (
-              <div key={item?.osm_id}>
-                <ListItem button onClick={(e) => mapPin(e, item)}>
-                  <ListItemIcon>
-                    <img
-                      src="./images/placeholder.png"
-                      alt="Placeholder"
-                      style={{ width: 36, height: 36 }}
-                    />
-                  </ListItemIcon>
-                  <ListItemText primary={item?.display_name} />
-                </ListItem>
-                <Divider />
-              </div>
-            )
-          })}
+          {showList &&
+            listPlace.map((item) => {
+              return (
+                <div key={item?.osm_id}>
+                  <ListItem button onClick={(e) => mapPin(e, item)}>
+                    <ListItemIcon>
+                      <img
+                        src="./images/placeholder.png"
+                        alt="Placeholder"
+                        style={{ width: 36, height: 36 }}
+                      />
+                    </ListItemIcon>
+                    <ListItemText primary={item?.display_name} />
+                  </ListItem>
+                  <Divider />
+                </div>
+              )
+            })}
         </List>
       </div>
     </div>
