@@ -67,15 +67,16 @@ export default function SearchBox(props) {
       >
         Search
       </Button>
-
-      <List>
+      {/* result container */}
+      {/* <div className="w-full h-auto overflow-y-auto"> */}
+      <List className="bg-gray-500 h-[100px] overflow-y-auto">
         {showList &&
           listPlace.map((item) => {
             return (
-              // result container
               <div
                 key={item?.osm_id}
-                className="w-full h-[120vh] overflow-auto"
+                className="w-full h-[100px] lg:h-auto overflow-y-auto"
+                // EACH INVIDIVUAL TILE
               >
                 <ListItem button onClick={(e) => mapPin(e, item)}>
                   <ListItemIcon>
@@ -92,6 +93,7 @@ export default function SearchBox(props) {
             )
           })}
       </List>
+      {/* </div> */}
     </div>
   )
 }

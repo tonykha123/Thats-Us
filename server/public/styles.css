@@ -763,6 +763,10 @@ video {
   height: 5vh;
 }
 
+.h-\[120vh\] {
+  height: 120vh;
+}
+
 .h-\[60px\] {
   height: 60px;
 }
@@ -779,40 +783,52 @@ video {
   height: 75px;
 }
 
-.h-\[40vh\] {
-  height: 40vh;
+.h-full {
+  height: 100%;
+}
+
+.h-\[200vh\] {
+  height: 200vh;
+}
+
+.h-\[200\] {
+  height: 200;
+}
+
+.h-\[500px\] {
+  height: 500px;
+}
+
+.h-\[400px\] {
+  height: 400px;
+}
+
+.h-\[300px\] {
+  height: 300px;
+}
+
+.h-\[200px\] {
+  height: 200px;
+}
+
+.h-\[250px\] {
+  height: 250px;
+}
+
+.h-\[19px\] {
+  height: 19px;
+}
+
+.h-\[185px\] {
+  height: 185px;
+}
+
+.h-\[100px\] {
+  height: 100px;
 }
 
 .h-\[70vh\] {
   height: 70vh;
-}
-
-.h-\[30vh\] {
-  height: 30vh;
-}
-
-.h-\[60vh\] {
-  height: 60vh;
-}
-
-.h-\[\] {
-  height: ;
-}
-
-.h-\[80\] {
-  height: 80;
-}
-
-.h-\[100vh\] {
-  height: 100vh;
-}
-
-.h-\[80vh\] {
-  height: 80vh;
-}
-
-.h-\[120vh\] {
-  height: 120vh;
 }
 
 .w-full {
@@ -831,12 +847,8 @@ video {
   width: 60vw;
 }
 
-.w-3\/4 {
-  width: 75%;
-}
-
-.w-\[50vw\] {
-  width: 50vw;
+.w-10\/12 {
+  width: 83.333333%;
 }
 
 .w-11\/12 {
@@ -849,10 +861,6 @@ video {
 
 .w-\[70vw\] {
   width: 70vw;
-}
-
-.w-10\/12 {
-  width: 83.333333%;
 }
 
 .w-\[25vw\] {
@@ -937,12 +945,12 @@ video {
   overflow: auto;
 }
 
-.overflow-y-auto {
-  overflow-y: auto;
+.overflow-hidden {
+  overflow: hidden;
 }
 
-.overflow-y-scroll {
-  overflow-y: scroll;
+.overflow-y-auto {
+  overflow-y: auto;
 }
 
 .scroll-smooth {
@@ -952,10 +960,6 @@ video {
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.whitespace-nowrap {
   white-space: nowrap;
 }
 
@@ -1014,9 +1018,9 @@ video {
   background-color: rgb(71 85 105 / var(--tw-bg-opacity));
 }
 
-.bg-black {
+.bg-gray-500 {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 
 .object-fill {
@@ -1337,6 +1341,10 @@ video {
 
   .lg\:h-\[65vh\] {
     height: 65vh;
+  }
+
+  .lg\:h-auto {
+    height: auto;
   }
 
   .lg\:w-full {
