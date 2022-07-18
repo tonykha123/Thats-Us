@@ -14,6 +14,7 @@ exports.seed = async function (knex) {
       max: '6',
       IMG: ' ',
       description: 'tag at vic park, need 6 to make a game and run a few subs',
+      coords: '[-36.86447, 174.7763]',
     },
     {
       name: 'Tag',
@@ -23,6 +24,7 @@ exports.seed = async function (knex) {
       max: '6',
       IMG: ' ',
       description: 'tag at vic park, need 6 to make a game and run a few subs',
+      coords: '[-79.4063075 0.3149312]',
     },
     {
       name: 'Tag',

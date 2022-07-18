@@ -1,14 +1,14 @@
+const { json } = require('express')
 const connection = require('./connection')
 
 module.exports = { getEvents, addEvent, getEventsById }
-
 
 function getEvents(db = connection) {
   return db('events').select()
 }
 
 function addEvent(newEvent, db = connection) {
-  const { name, status, date, time, max, IMG, description } = newEvent
+  const { name, status, date, time, max, IMG, description, coords } = newEvent
   return db('events').insert({
     name,
     status,
@@ -17,6 +17,7 @@ function addEvent(newEvent, db = connection) {
     max,
     IMG,
     description,
+    coords: JSON.stringify(coords),
   })
 }
 
