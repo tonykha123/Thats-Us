@@ -20,6 +20,12 @@ export default function SearchBox(props) {
   const [searchText, setSearchText] = useState('')
   const [listPlace, setListPlace] = useState([])
   // console.log(searchText)
+
+  function mapPin(e, item) {
+    console.log('item', item.lat, item.lon)
+    setSelectPosition(item)
+  }
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
       <div style={{ display: 'flex' }}>
@@ -71,9 +77,10 @@ export default function SearchBox(props) {
               <div key={item?.osm_id}>
                 <ListItem
                   button
-                  onClick={() => {
-                    setSelectPosition(item)
-                  }}
+                  // onClick={() => {
+                  //   setSelectPosition(item)
+                  // }}
+                  onClick={(e) => mapPin(e, item)}
                 >
                   <ListItemIcon>
                     <img
