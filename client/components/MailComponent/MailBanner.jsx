@@ -5,7 +5,7 @@ import { IoIosPeople } from 'react-icons/io'
 
 const MailBanner = () => {
   return (
-    <section className="w-full h-[88vh]  lg:h-[65vh] flex flex-col items-center bg-white">
+    <section className="w-full h-[100vh]  lg:h-[65vh] flex flex-col items-center bg-white">
       <div className="w-full flex flex-col items-center my-4 lg:my-10">
         <h1 className="text-3xl font-bold mx-auto mb-2">How it works</h1>
         <p className="text-center mx-auto w-9/12">
