@@ -84,7 +84,7 @@ function AddEvent({ setVisible }) {
           <input className="" placeholder="Event Title" onChange={handleName} />
         </div>
 
-        <div className="flex flex-col items-start lg:flex-row space-y-2">
+        <div className="flex flex-col items-start md:flex-row space-y-2">
           {/* date time and max container */}
           <input
             type="date"
@@ -107,7 +107,7 @@ function AddEvent({ setVisible }) {
 
         {/* container with map and search */}
 
-        <div className="w-[80vw] h-auto flex flex-col items-center">
+        <div className="w-[80vw] h-auto flex flex-col items-center md:flex-row-reverse md:items-start">
           <Map />
 
           <SearchBox />
