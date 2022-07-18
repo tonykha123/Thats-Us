@@ -47,7 +47,7 @@ export default function SearchBox(props) {
 
   return (
     // entire search container
-    <div className="flex flex-col w-3/4 mt-2 text-sm">
+    <div className="flex flex-col w-10/12 mt-2 text-sm">
       {/* searchbar input box */}
 
       <OutlinedInput
@@ -73,12 +73,11 @@ export default function SearchBox(props) {
           listPlace.map((item) => {
             return (
               // result container
-              <div key={item?.osm_id} className="w-full">
-                <ListItem
-                  button
-                  onClick={(e) => mapPin(e, item)}
-                  className="w-[50vw]"
-                >
+              <div
+                key={item?.osm_id}
+                className="w-full h-[120vh] overflow-auto"
+              >
+                <ListItem button onClick={(e) => mapPin(e, item)}>
                   <ListItemIcon>
                     <img
                       src="./images/placeholder.png"
