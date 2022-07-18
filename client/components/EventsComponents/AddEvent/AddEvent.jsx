@@ -7,15 +7,18 @@ import { addEvent } from '../../apiFuncs/eventApi'
 import Map from './Map'
 import SearchBox from './SearchBox'
 
-function AddEvent({ setVisible }) {
+
+function AddEvent({ setVisible }) 
   const [name, setName] = useState('')
   const [date, setDate] = useState('')
   const [time, setTime] = useState('')
   const [max, setMax] = useState('')
   const [description, setDescription] = useState('')
+  const [image, setImage] = useState('')
   const dispatch = useDispatch()
   const { id } = useParams()
   const navigate = useNavigate()
+  const [selectPosition, setSelectPosition] = useState(null)
 
   // const eventData = useSelector((state) => state.events)
   // const eventslah =  eventData.find((data) => data.event_id === Number(id))
