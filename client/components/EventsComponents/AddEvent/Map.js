@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
-// import 'leaflet/dist/leaflet.css'
+
+import React from 'react'
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 
 const icon = L.icon({
@@ -36,9 +37,11 @@ const Map = (props) => {
   return (
     <MapContainer
       center={position}
-      zoom={99}
-      scrollWheelZoom={false}
-      style={{ width: '100%', height: '100%' }}
+
+      zoom={10}
+      scrollWheelZoom={true}
+      className="w-[65vw] h-[50vw]"
+      // style={{ height: '100%', width: '100%' }
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
