@@ -69,7 +69,7 @@ export default function SearchBox(props) {
       </Button>
       {/* result container */}
       {/* <div className="w-full h-auto overflow-y-auto"> */}
-      <List className=" w-full h-[230px] overflow-y-auto">
+      <List className=" w-full h-[200px]  sm:h-[150px] overflow-y-auto">
         {showList &&
           listPlace.map((item) => {
             return (

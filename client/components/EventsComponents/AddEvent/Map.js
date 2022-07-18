@@ -38,7 +38,7 @@ const Map = (props) => {
       center={position}
       zoom={10}
       scrollWheelZoom={true}
-      className="w-[60vw] h-[40vw] sm:w-[60vw] sm:h-[35vw]"
+      className="w-[60vw] h-[40vw] sm:w-[60vw] sm:h-[80%]"
       // style={{ height: '100%', width: '100%' }
     >
       <TileLayer
