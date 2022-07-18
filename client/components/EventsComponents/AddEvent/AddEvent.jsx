@@ -7,8 +7,7 @@ import { addEvent } from '../../apiFuncs/eventApi'
 import Map from './Map'
 import SearchBox from './SearchBox'
 
-
-function AddEvent({ setVisible }) 
+function AddEvent({ setVisible }) {
   const [name, setName] = useState('')
   const [date, setDate] = useState('')
   const [time, setTime] = useState('')
@@ -109,7 +108,6 @@ function AddEvent({ setVisible })
         {/* container with map and search */}
 
         <div className="w-[80vw] h-auto flex flex-col items-center">
-          
           <Map />
 
           <SearchBox />

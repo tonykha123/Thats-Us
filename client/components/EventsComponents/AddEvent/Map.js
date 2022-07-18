@@ -1,6 +1,5 @@
-
-import React from 'react'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import React, { useEffect } from 'react'
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 
@@ -37,7 +36,6 @@ const Map = (props) => {
   return (
     <MapContainer
       center={position}
-
       zoom={10}
       scrollWheelZoom={true}
       className="w-[65vw] h-[50vw]"
