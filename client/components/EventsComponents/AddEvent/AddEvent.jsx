@@ -83,7 +83,7 @@ function AddEvent({ setVisible }) {
       </div>
       {/* title goes here */}
 
-      <form className="flex flex-col items-center">
+      <form className="flex flex-col items-center w-full">
         <div className=" mb-2">
           {/* image and title goes here */}
           <input className="" placeholder="Event Title" onChange={handleName} />
@@ -108,6 +108,11 @@ function AddEvent({ setVisible }) {
             placeholder="Max Participants"
             onChange={handleMax}
           />
+          <input
+            className="description-input"
+            placeholder="Event Description"
+            onChange={handleDescription}
+          />
         </div>
 
         {/* container with map and search */}
@@ -122,11 +127,6 @@ function AddEvent({ setVisible }) {
           />
         </div>
 
-        <input
-          className="description-input"
-          placeholder="Event Description"
-          onChange={handleDescription}
-        />
         <button
           className="submit-button"
           placeholder="Submit"
