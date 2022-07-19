@@ -47,7 +47,7 @@ function AddEvent({ setVisible }) {
   }
 
   function handleCategory(event) {
-    console.log(event.target.value)
+
     setCategory(event.target.value)
   }
 

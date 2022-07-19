@@ -44,7 +44,7 @@ const Details = () => {
             <p>{event.category}</p>
           </div>
           <div>
-            <img src={`../../../server/images/${img}`} />
+            <img src={`/images/${img}`} />
           </div>
         </div>
 
