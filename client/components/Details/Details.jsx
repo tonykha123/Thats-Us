@@ -9,6 +9,7 @@ import AttendButton from './AttendButton'
 import EventDetails from './EventDetails'
 import Events from '../EventsComponents/Events'
 
+
 const Details = () => {
   const [event, setEvent] = useState({})
   const { id } = useParams()
@@ -25,6 +26,8 @@ const Details = () => {
   console.log(event.coords, 'events details')
 
   const coords = event.coords
+  const img = event.IMG
+  console.log(event)
 
   return (
     <section className="w-full h-[90vh] flex flex-col bg-slate-300 items-center">
@@ -32,6 +35,12 @@ const Details = () => {
         <h2 className="text-2xl font-semibold">{event.name}</h2>
         <p>{event.date}</p>
         <p>{event.time}</p>
+        <p>Category:</p>
+        <p>{event.category}</p>
+        
+      </div>
+      <div>
+      <img src={`../../../server/images/${img}`}/>
       </div>
       <div className="w-full h-10/12 ">
         <Map pin={coords} />

@@ -1,3 +1,4 @@
+import { imageOverlay } from 'leaflet'
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useParams, useNavigate } from 'react-router-dom'
@@ -14,6 +15,7 @@ function AddEvent({ setVisible }) {
   const [max, setMax] = useState('')
   const [description, setDescription] = useState('')
   const [image, setImage] = useState('')
+  const [category, setCategory] = useState('')
   const dispatch = useDispatch()
   const { id } = useParams()
   const navigate = useNavigate()
@@ -44,6 +46,16 @@ function AddEvent({ setVisible }) {
     setDescription(event.target.value)
   }
 
+  function handleCategory(event) {
+    console.log(event.target.value)
+    setCategory(event.target.value)
+  }
+
+  function handleImage(event) {
+    const img = event.target.value.replace(/\s/g, '')
+    setImage(`${img}.jpg`)
+  }
+
   function handleSubmit(event) {
     event.preventDefault()
     // setName('')
@@ -58,6 +70,8 @@ function AddEvent({ setVisible }) {
         description: description,
         status: 'upcoming',
         coords: [selectPosition.lat, selectPosition.lon],
+        category: category,
+        IMG: image,
       },
       token
     )
@@ -74,6 +88,7 @@ function AddEvent({ setVisible }) {
     //console.log('letss gooo position', selectPosition.lat, selectPosition.lon)
   }
 
+  
   return (
     // Container for form
 
@@ -108,6 +123,16 @@ function AddEvent({ setVisible }) {
             placeholder="Max Participants"
             onChange={handleMax}
           />
+          
+          <div>
+            <select placeholder='Category' onChange={handleCategory}  onClick={handleImage}>
+              <option>Choose category</option>
+              <option value="Sports" name="sports">Sports</option>
+              <option value="Card Game" name="cardGame">Card Game</option>
+              <option value="Casual Game" name="casualGame">Casual Game</option>
+              <option value="Video Game" name="videoGame">Video Game</option>
+            </select>
+          </div>
         </div>
 
         {/* container with map and search */}
