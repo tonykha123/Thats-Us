@@ -29,41 +29,62 @@ const Details = () => {
       setEvent({ ...evt, user: activeuser.email })
     } catch {
       console.error('setEvent failed')
-
     }
   }, [activeuser])
   console.log(event.attendees, 'go')
 
   useEffect(async () => {
     try {
-      setEventAttendees(event.attendees.replace(/\s/g, "").split(','))
-    }
-    catch {
+      setEventAttendees(event.attendees.replace(/\s/g, '').split(','))
+    } catch {
       console.error('setEventAttendees failed')
     }
-  },[event])
+  }, [event])
   console.log(event.user, 'time')
 
   useEffect(async () => {
     try {
-      eventAttendees.find(attendee => {
-        return attendee === event.user ? setUserIsAttending(true) : setUserIsAttending(false)
+      eventAttendees.find((attendee) => {
+        return attendee === event.user
+          ? setUserIsAttending(true)
+          : setUserIsAttending(false)
       })
-    }
-    catch {
+    } catch {
       console.log('useEffect shit itself')
     }
-  },[eventAttendees])
+  }, [eventAttendees])
   console.log(userIsAttending, 'attending?')
 
   function attendEventHandler() {
-      attendEvent(id, `${event.attendees}, ${event.user}`)
-      navigate(`/event/${id}`)
+    attendEvent(id, `${event.attendees}, ${event.user}`)
+    navigate(`/event/${id}`)
   }
 
   const coords = event.coords
   const img = event.IMG
   event.display_name
+
+  const largeButton = (
+    <a
+      className=" hidden md:block my-5 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh] "
+      href="https://www.google.com"
+      onClick={attendEventHandler}
+    >
+      Attend
+    </a>
+  )
+
+  const smallButton = (
+    <a
+    className="my-5 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh] md:hidden"
+    href="https://www.google.com"
+    onClick={attendEventHandler}
+  >
+    Attend
+  </a>
+  )
+
+
   return (
     // entire section//background
 
@@ -98,12 +119,7 @@ const Details = () => {
             <BsHeartFill size={22} className="hover:text-red-500" />
           </div>
           <div className="mx-4">
-            <a
-              className=" hidden md:block my-5 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh] "
-              href="https://www.google.com"
-            >
-              Attend
-            </a>
+           {userIsAttending ? <p>Youre attending this event already </p> : largeButton}
           </div>
         </div>
 
@@ -160,12 +176,7 @@ const Details = () => {
           </div>
         </div>
 
-        <a
-          className="my-5 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh] md:hidden"
-          href="https://www.google.com"
-        >
-          Attend
-        </a>
+        {userIsAttending ? <p>Youre attending this event already </p> : smallButton}       
 
         <div className="flex flex-col ml-4">
           <p className="text-md font-semibold">Share With Friends</p>

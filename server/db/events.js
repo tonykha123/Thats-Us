@@ -8,9 +8,6 @@ function getEvents(db = connection) {
 }
 
 function addEvent(newEvent, db = connection) {
-<<<<<<< HEAD
-  const { name, status, date, time, max, IMG, description } = newEvent
-=======
   const {
     name,
     status,
@@ -25,7 +22,6 @@ function addEvent(newEvent, db = connection) {
     display_name,
   } = newEvent
 
->>>>>>> origin
   return db('events').insert({
     name,
     status,
@@ -34,13 +30,10 @@ function addEvent(newEvent, db = connection) {
     max,
     IMG,
     description,
-<<<<<<< HEAD
-=======
     category,
     coordsX,
     coordsY,
     display_name,
->>>>>>> origin
   })
 }
 
