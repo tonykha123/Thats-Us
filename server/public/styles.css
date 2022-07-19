@@ -852,6 +852,50 @@ video {
   height: 75px;
 }
 
+.h-\[40px\] {
+  height: 40px;
+}
+
+.h-\[180vh\] {
+  height: 180vh;
+}
+
+.h-\[70vh\] {
+  height: 70vh;
+}
+
+.h-\[1\/3\] {
+  height: 1/3;
+}
+
+.h-24 {
+  height: 6rem;
+}
+
+.h-\[270px\] {
+  height: 270px;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.h-\[40vw\] {
+  height: 40vw;
+}
+
+.h-\[5vh\] {
+  height: 5vh;
+}
+
+.h-\[200px\] {
+  height: 200px;
+}
+
+.h-\[100vh\] {
+  height: 100vh;
+}
+
 .w-full {
   width: 100%;
 }
@@ -1069,6 +1113,16 @@ video {
   background-color: rgb(71 85 105 / var(--tw-bg-opacity));
 }
 
+.bg-sky-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(14 165 233 / var(--tw-bg-opacity));
+}
+
+.bg-slate-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+}
+
 .object-fill {
   -o-object-fit: fill;
      object-fit: fill;
@@ -1137,6 +1191,11 @@ video {
   line-height: 2.25rem;
 }
 
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .font-semibold {
   font-weight: 600;
 }
@@ -1189,6 +1248,11 @@ video {
   color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 
+.text-\[\#00AEFF\] {
+  --tw-text-opacity: 1;
+  color: rgb(0 174 255 / var(--tw-text-opacity));
+}
+
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -1214,6 +1278,12 @@ video {
 .shadow-xl {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-inner {
+  --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -1343,6 +1413,22 @@ video {
 
   .sm\:h-\[30vh\] {
     height: 30vh;
+  }
+
+  .sm\:h-\[230px\] {
+    height: 230px;
+  }
+
+  .sm\:h-\[25vh\] {
+    height: 25vh;
+  }
+
+  .sm\:h-\[35vh\] {
+    height: 35vh;
+  }
+
+  .sm\:h-\[150px\] {
+    height: 150px;
   }
 
   .sm\:w-\[30vw\] {

@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+// /**
+//  * @param { import("knex").Knex } knex
+//  * @returns { Promise<void> }
+//  */
+=======
+>>>>>>> main
 exports.seed = async function (knex) {
   // Deletes ALL existing entries
   await knex('events').del()
@@ -137,6 +144,7 @@ exports.seed = async function (knex) {
       max: '6',
       IMG: 'Sports.jpg',
       description: 'Bull Rush at vic park, need 6 to make a game',
+      attendees: 'bob',
       category: 'Sports',
     },
     {
@@ -147,6 +155,7 @@ exports.seed = async function (knex) {
       max: '3',
       IMG: 'Sports.jpg',
       description: 'ball at Grey Lynn, need 3 to run against',
+      attendees: 'bob',
       category: 'Sports',
     },
     {
@@ -157,6 +166,7 @@ exports.seed = async function (knex) {
       max: '4',
       IMG: 'Sports.jpg',
       description: 'touch at the park need 4 ',
+      attendees: 'bob',
       category: 'Sports',
     },
     {
@@ -167,6 +177,7 @@ exports.seed = async function (knex) {
       max: '4',
       IMG: 'CardGame.jpg',
       description: 'Crew at Devacademy need 4 ',
+      attendees: 'bob',
       category: 'Card Game',
     },
     {
@@ -177,6 +188,7 @@ exports.seed = async function (knex) {
       max: '4',
       IMG: 'CardGame.jpg',
       description: 'Crew at Devacademy need 4 ',
+      attendees: 'bob',
       category: 'Card Game',
     },
     {
@@ -187,6 +199,7 @@ exports.seed = async function (knex) {
       max: '4',
       IMG: 'CardGame.jpg',
       description: 'Crew at Devacademy need 4 ',
+      attendees: 'bob',
       category: 'Card Game',
     },
     {
@@ -197,6 +210,7 @@ exports.seed = async function (knex) {
       max: '4',
       IMG: 'CardGame.jpg',
       description: 'Crew at Devacademy need 4 ',
+      attendees: 'bob',
       category: 'Card Game',
     },
   ])

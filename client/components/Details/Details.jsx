@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 // API IMPORT:
-import { getEvtById } from '../apiFuncs/eventApi'
+import { getEvtById, attendEvent } from '../apiFuncs/eventApi'
+import { activeUser } from '../../slices/user'
 //imported components that we want in details
 import Map from './Map'
-
 import { IoEyeSharp, IoMailOutline } from 'react-icons/io5'
 import { BsCalendar3, BsPeople, BsHeartFill } from 'react-icons/bs'
 import { GrMapLocation } from 'react-icons/gr'
@@ -16,21 +17,73 @@ import L from 'leaflet'
 
 const Details = () => {
   const [event, setEvent] = useState({})
+  const [eventAttendees, setEventAttendees] = useState([])
+  const [userIsAttending, setUserIsAttending] = useState(false)
   const { id } = useParams()
+  const navigate = useNavigate()
+  const activeuser = useSelector(activeUser)
+
+  useEffect(async () => {
+    const evt = await getEvtById(Number(id))
+    try {
+      setEvent({ ...evt, user: activeuser.email })
+    } catch {
+      console.error('setEvent failed')
+    }
+  }, [activeuser])
+  console.log(event.attendees, 'go')
 
   useEffect(async () => {
     try {
-      const evt = await getEvtById(id)
-      setEvent(evt)
+      setEventAttendees(event.attendees.replace(/\s/g, '').split(','))
     } catch {
-      console.error('elo')
+      console.error('setEventAttendees failed')
     }
-  }, [])
-  console.log(event)
+  }, [event])
+  console.log(event.user, 'time')
 
-  const coords = [event.coordsX, event.coordsY]
+  useEffect(async () => {
+    try {
+      eventAttendees.find((attendee) => {
+        return attendee === event.user
+          ? setUserIsAttending(true)
+          : setUserIsAttending(false)
+      })
+    } catch {
+      console.log('useEffect shit itself')
+    }
+  }, [eventAttendees])
+  console.log(userIsAttending, 'attending?')
+
+  function attendEventHandler() {
+    attendEvent(id, `${event.attendees}, ${event.user}`)
+    navigate(`/event/${id}`)
+  }
+
+  const coords = event.coords
   const img = event.IMG
   event.display_name
+
+  const largeButton = (
+    <a
+      className=" hidden md:block my-5 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh] "
+      href="https://www.google.com"
+      onClick={attendEventHandler}
+    >
+      Attend
+    </a>
+  )
+
+  const smallButton = (
+    <a
+    className="my-5 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh] md:hidden"
+    href="https://www.google.com"
+    onClick={attendEventHandler}
+  >
+    Attend
+  </a>
+  )
+
 
   return (
     // entire section//background
@@ -66,12 +119,7 @@ const Details = () => {
             <BsHeartFill size={22} className="hover:text-red-500" />
           </div>
           <div className="mx-4">
-            <a
-              className=" hidden md:block my-5 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh] "
-              href="https://www.google.com"
-            >
-              Attend
-            </a>
+           {userIsAttending ? <p>Youre attending this event already </p> : largeButton}
           </div>
         </div>
 
@@ -128,12 +176,7 @@ const Details = () => {
           </div>
         </div>
 
-        <a
-          className="my-5 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh] md:hidden"
-          href="https://www.google.com"
-        >
-          Attend
-        </a>
+        {userIsAttending ? <p>Youre attending this event already </p> : smallButton}       
 
         <div className="flex flex-col ml-4">
           <p className="text-md font-semibold">Share With Friends</p>

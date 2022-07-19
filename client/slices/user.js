@@ -16,5 +16,6 @@ const slice = createSlice({
   },
 })
 
+export const activeUser = (state) => state.user
 export const { setUser, clearUser } = slice.actions
 export default slice.reducer
