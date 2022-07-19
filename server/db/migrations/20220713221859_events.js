@@ -8,6 +8,7 @@ exports.up = (knex) => {
     table.integer('max')
     table.string('IMG')
     table.string('description')
+    table.string('category')
   })
 }
 
