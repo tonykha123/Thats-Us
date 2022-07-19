@@ -70,10 +70,8 @@ function AddEvent({ setVisible }) {
         status: 'upcoming',
         coordsX: JSON.parse(selectPosition.lat),
         coordsY: JSON.parse(selectPosition.lon),
-        coords: [selectPosition.lat, selectPosition.lon],
         category: category,
         IMG: image,
-
       },
       token
     )
@@ -130,17 +128,39 @@ function AddEvent({ setVisible }) {
               onClick={handleImage}
             >
               <option>Choose category</option>
-              <option value="Sports" name="Sports">Sports</option>
-              <option value="Card Game" name="CardGame">Card Game</option>
-              <option value="Casual Game" name="CasualGame">Casual Game</option>
-              <option value="Video Game" name="VideoGame">Video Game</option>
-              <option value="Music" name="Music">Music</option>
-              <option value="Lunch" name="Lunch">Food</option>
-              <option value="Exercise" name="Exercise">Exercise</option>
-              <option value="Arts" name="Arts">Arts</option>
-              <option value="Social" name="Social">Social</option>
-              <option value="Corporate" name="Corporate">Corporate</option>
-              <option value="Networking" name="Networking">Networking</option>
+              <option value="Sports" name="Sports">
+                Sports
+              </option>
+              <option value="Card Game" name="CardGame">
+                Card Game
+              </option>
+              <option value="Casual Game" name="CasualGame">
+                Casual Game
+              </option>
+              <option value="Video Game" name="VideoGame">
+                Video Game
+              </option>
+              <option value="Music" name="Music">
+                Music
+              </option>
+              <option value="Lunch" name="Lunch">
+                Food
+              </option>
+              <option value="Exercise" name="Exercise">
+                Exercise
+              </option>
+              <option value="Arts" name="Arts">
+                Arts
+              </option>
+              <option value="Social" name="Social">
+                Social
+              </option>
+              <option value="Corporate" name="Corporate">
+                Corporate
+              </option>
+              <option value="Networking" name="Networking">
+                Networking
+              </option>
             </select>
           </div>
           <input
@@ -167,7 +187,6 @@ function AddEvent({ setVisible }) {
           onChange={handleDescription}
         />
         <button
-
           className="my-10 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 lg:w-[12vw] lg:h-[5vh]"
           placeholder="Submit"
           onClick={handleSubmit}

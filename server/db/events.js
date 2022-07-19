@@ -30,7 +30,6 @@ function addEvent(newEvent, db = connection) {
     IMG,
     description,
     category,
-    coords: JSON.stringify(coords),
     coordsX,
     coordsY,
   })

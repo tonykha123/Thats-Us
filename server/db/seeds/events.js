@@ -1,7 +1,3 @@
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
 exports.seed = async function (knex) {
   // Deletes ALL existing entries
   await knex('events').del()
@@ -14,11 +10,9 @@ exports.seed = async function (knex) {
       max: '6',
       IMG: 'CasualGame.jpg',
       description: 'tag at vic park, need 6 to make a game and run a few subs',
-      coords: '[-36.86447, 174.7763]',
       coordsX: -36.86447,
       coordsY: 174.7763,
       category: 'Casual Game',
-
     },
     {
       name: 'Tag',
@@ -28,7 +22,6 @@ exports.seed = async function (knex) {
       max: '6',
       IMG: 'CasualGame.jpg',
       description: 'tag at vic park, need 6 to make a game and run a few subs',
-      coords: '[-79.4063075 0.3149312]',
       coordsX: -36.86447,
       coordsY: 174.7763,
       category: 'Casual Game',
