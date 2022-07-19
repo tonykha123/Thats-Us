@@ -25,21 +25,6 @@ const Details = () => {
   }, [])
 
   return (
-<<<<<<< HEAD
-    <section className="w-full h-[90vh] flex flex-col bg-slate-300 items-center">
-      <div className="my-5">
-        <h2 className="text-2xl font-semibold">{event.name}</h2>
-        <p>{event.date}</p>
-        <p>{event.time}</p>
-        <p>Category:</p>
-        <p>{event.category}</p>
-        
-      </div>
-      <div>
-      <img src={`/Images/${img}`}/>
-=======
-    // entire section
-
     <section className="w-full h-[120vh]">
       <div className="w-full h-[70vh] flex flex-col bg-slate-200 items-center space-y-6 md:flex-row md:items-start">
         <div className="self-start md:w-5/12">
@@ -64,7 +49,6 @@ const Details = () => {
         <div className="w-10/12 h-10/12 md:w-7/12 md:h-full ">
           <Map pin={coords} className="rounded-md" />
         </div>
->>>>>>> 972a88d078b87afe1ba6e3eb7087bedefe3ff9f2
       </div>
       <div className="flex flex-row justify-center">
         <AttendButton />
