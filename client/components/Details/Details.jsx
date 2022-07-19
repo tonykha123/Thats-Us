@@ -35,7 +35,7 @@ const Details = () => {
   return (
     // entire section//background
 
-    <section className="w-full h-[150vh] md:bg-slate-100 md:h-[200vh]">
+    <section className="w-full h-[180vh] md:bg-slate-100 md:h-[200vh]">
       {/* main cotainer */}
       <div className="w-full h-[70vh] flex flex-col mx-auto md:w-9/12 md:bg-white md:h-full md:shadow-xl md:rounded-md md:border">
         <div className="w-full flex flex-col md:flex-row">
@@ -152,15 +152,15 @@ const Details = () => {
           </div>
         </div>
 
-        <div className="w-full  mt-10">
+        <div className="w-full  mt-10 mb-6">
           <Map pin={coords} className="rounded-md" />
         </div>
-        <div className="w-full flex flex-col items-center">
-          <div>{event.name}</div>
+        <div className="w-full flex flex-col items-center space-y-2">
+          <div className="text-xl font-semibold">{event.name}</div>
           <p>at</p>
           <p>Mt Smart Stadium</p>
           <p className="">12 Morgan Street, Auckland ,2025</p>
-          <div className="flex justify-center w-full gap-3">
+          <div className="flex justify-center w-full space-x-4 mt-6">
             <a href="https://www.facebook.com/">
               <FaWalking size={32} className="hover:text-gray-400" />
             </a>
