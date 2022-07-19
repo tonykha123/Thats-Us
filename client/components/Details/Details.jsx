@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 // API IMPORT:
 import { getEvtById, attendEvent } from '../apiFuncs/eventApi'
-import {activeUser} from '../../slices/user'
+import { activeUser } from '../../slices/user'
 
 //imported components that we want in details
 import Map from './Map'
@@ -11,21 +11,48 @@ import AttendButton from './AttendButton'
 
 const Details = () => {
   const [event, setEvent] = useState({})
+  const [eventAttendees, setEventAttendees] = useState([])
+  const [userIsAttending, setUserIsAttending] = useState(false)
   const { id } = useParams()
+  const navigate = useNavigate()
   const activeuser = useSelector(activeUser)
 
   useEffect(async () => {
     const evt = await getEvtById(Number(id))
     try {
-      setEvent({...evt, user: activeuser.email})
+      setEvent({ ...evt, user: activeuser.email })
     } catch {
-      console.error('elo')
+      console.error('setEvent failed')
+
     }
   }, [activeuser])
   console.log(event.attendees, 'go')
 
+  useEffect(async () => {
+    try {
+      setEventAttendees(event.attendees.replace(/\s/g, "").split(','))
+    }
+    catch {
+      console.error('setEventAttendees failed')
+    }
+  },[event])
+  console.log(event.user, 'time')
+
+  useEffect(async () => {
+    try {
+      eventAttendees.find(attendee => {
+        return attendee === event.user ? setUserIsAttending(true) : setUserIsAttending(false)
+      })
+    }
+    catch {
+      console.log('useEffect shit itself')
+    }
+  },[eventAttendees])
+  console.log(userIsAttending, 'attending?')
+
   function attendEventHandler() {
-    attendEvent(id, `${event.attendees}, ${event.user}`)
+      attendEvent(id, `${event.attendees}, ${event.user}`)
+      navigate(`/event/${id}`)
   }
 
   const coords = event.coords
@@ -41,7 +68,8 @@ const Details = () => {
         <Map pin={coords} />
       </div>
       <div>{event.description}</div>
-      <AttendButton attend={attendEventHandler} />
+      {!userIsAttending && <AttendButton attend={attendEventHandler} />}
+      {/* <AttendButton attend={attendEventHandler} /> */}
     </section>
   )
 }
