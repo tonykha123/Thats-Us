@@ -9,9 +9,12 @@ import Map from './Map'
 import AttendButton from './AttendButton'
 import EventDetails from './EventDetails'
 import Events from '../EventsComponents/Events'
-import { IoEyeSharp } from 'react-icons/io5'
+import { IoEyeSharp, IoMailOutline } from 'react-icons/io5'
 import { BsCalendar3, BsPeople } from 'react-icons/bs'
 import { GrMapLocation } from 'react-icons/gr'
+import { FaInstagram } from 'react-icons/fa'
+import { AiOutlineFacebook } from 'react-icons/ai'
+import { FiTwitter } from 'react-icons/fi'
 
 const Details = () => {
   const [event, setEvent] = useState({})
@@ -32,7 +35,7 @@ const Details = () => {
   return (
     // entire section//background
 
-    <section className="w-full h-[120vh]">
+    <section className="w-full h-[150vh]">
       {/* main cotainer */}
       <div className="w-full h-[70vh] flex flex-col mx-auto">
         <div className="w-full flex flex-col">
@@ -58,8 +61,8 @@ const Details = () => {
         <div>{/* share button and attend - hidden show on m */}</div>
 
         {/* column phone- row desktop? */}
-        {/* Entire description container */}
-        <div className="flex flex-col">
+        {/* Entire attributes container */}
+        <div className="flex flex-col mb-10 space-y-2">
           <div className="flex flex-col ml-4 mx-6">
             <div className="flex space-x-2 items-center">
               <BsCalendar3 size={18} />
@@ -91,36 +94,43 @@ const Details = () => {
           </div>
         </div>
 
-        <div>
-          {/* location goes here * max people?/}</div>
-        </div>
-        <div>{/* share with friends */}
-        </div>
-        {/* map div */}
+        {/* about container */}
 
-        <div className="w-full h-10/12 md:w-7/12 md:h-full ">
+        <div className="flex flex-col">
+          <p className="text-lg font-semibold ml-4">About This Event</p>
+          <p className="w-10/12 self-center text-left">
+            {event.description}
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates
+            quod ratione, dignissimos velit consequatur tenetur dolore, autem
+            obcaecati asperiores magnam sequi? Provident, illo assumenda nihil
+            repellat vero cumque animi numquam?
+          </p>
+        </div>
+
+        <AttendButton />
+        <div className="flex flex-col ml-4">
+          <p className="text-md font-semibold">Share With Friends</p>
+          <div className="flex justify-start w-full gap-3">
+            <a href="https://www.facebook.com/">
+              <AiOutlineFacebook size={32} className="hover:text-gray-400" />
+            </a>
+            <a href="https://www.instagram.com/">
+              <FaInstagram size={30} className="hover:text-gray-400" />
+            </a>
+            <a href="https://www.twitter.com/">
+              <FiTwitter size={32} className="hover:text-gray-400" />
+            </a>
+            <a href="https://gmail.com">
+              <IoMailOutline size={30} className="hover:text-gray-400" />
+            </a>
+          </div>
+        </div>
+
+        <div className="w-full  mt-10">
           <Map pin={coords} className="rounded-md" />
         </div>
 
-        {/* <div className="self-start md:w-5/12">
-          <div className="mt-4 space-y-2 mx-4">
-            <h2 className="text-3xl font-semibold ">{event.name}</h2>
-            <p>{event.date}</p>
-            <p>{event.time}</p>
-          </div>
-          <div className="mx-4">
-            <p className="text-xl font-semibold">Details</p>
-            <p>{event.description}</p>
-            <p>Category:</p>
-            <p>{event.category}</p>
-          </div>
-          <div>
-            <img src={`/Images/${img}`} />
-          </div>
-        </div>  */}
-
-        {/* /* <div className="flex flex-row justify-center">
-        <AttendButton /> */}
+        {/* <AttendButton />  */}
       </div>
     </section>
   )

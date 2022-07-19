@@ -17,7 +17,7 @@ const Map = () => {
       center={position}
       zoom={12}
       scrollWheelZoom={false}
-      className="w-full  shadow-xl md:w-11/12 h-[300px] md:h-[60vh] "
+      className="w-full  shadow-xl h-[270px] sm:h-[230px]"
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
