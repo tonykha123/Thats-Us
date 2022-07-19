@@ -8,7 +8,7 @@ import MailBanner from '../MailComponent/MailBanner'
 const Home = () => {
   return (
     // outermost container
-    <main className="w-full bg-neutral-400 flex flex-col items-center">
+    <main className="w-full flex flex-col items-center">
       <Hero />
       <Events />
       <MailBanner />

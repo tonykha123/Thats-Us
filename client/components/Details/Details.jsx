@@ -30,10 +30,10 @@ const Details = () => {
 
     <section className="w-full h-[120vh]">
       {/* main cotainer */}
-      <div className="w-full h-[70vh] flex flex-col bg-slate-200 items-center space-y-6 md:flex-row md:items-start">
-        <div className="flex flex-col">
+      <div className="w-full h-[70vh] flex flex-col mx-auto">
+        <div className="w-full flex flex-col">
           {/* image and title and date goes here */}
-          <div>
+          <div className="h-5/6">
             <img src={`/Images/${img}`} />
           </div>
           <div>
@@ -74,9 +74,8 @@ const Details = () => {
           </div>
         </div>  */}
         </div>
-        {/* <div className="flex flex-row justify-center">
-        <AttendButton />
-   
+        {/* /* <div className="flex flex-row justify-center">
+        <AttendButton /> */}
       </div>
     </section>
   )

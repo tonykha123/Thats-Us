@@ -59,7 +59,7 @@ const Events = () => {
     // events container including h1
     <section className=" w-11/12 h-auto flex flex-col items-center sm:px-10 sm:pt-6">
       <div className="self-center sm:self-start">
-        <h1 className="font-bold text-4xl self-center sm:self-start ">
+        <h1 className="font-bold text-4xl self-center sm:self-start text-[#00AEFF] bg-slate-100 pr-20">
           Events
         </h1>
       </div>

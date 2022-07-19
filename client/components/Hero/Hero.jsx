@@ -12,10 +12,10 @@ const Hero = () => {
           sequence={['Ball?', 3500, 'Drinks?', 3500, 'Lunch?', 3500]}
           wrapper="p"
           repeat={Infinity}
-          className="text-5xl w-full font-extrabold sm:text-6xl "
+          className="text-5xl w-full font-extrabold sm:text-6xl text-[#00AEFF] bg-slate-100 "
         />
         <p className="text-5xl w-full font-extrabold sm:text-6xl ">Thats us.</p>
-        <p className="mt-2 mb:4 sm:my-5">
+        <p className="mt-2 mb:4 sm:my-5 ">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
           veritatis et accusantium deserunt atque molestias, molestiae assumenda
           id, praesentium unde temporibus nihil modi expedita corporis autem
