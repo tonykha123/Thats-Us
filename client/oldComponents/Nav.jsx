@@ -21,12 +21,12 @@ function Nav() {
 
   function handleRegister(e) {
     e.preventDefault()
-    console.log('register')
+
   }
 
   function handleSignIn(e) {
     e.preventDefault()
-    console.log('sign in')
+  
   }
   return (
     <>

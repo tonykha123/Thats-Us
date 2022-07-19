@@ -1,3 +1,4 @@
+import { imageOverlay } from 'leaflet'
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useParams, useNavigate } from 'react-router-dom'
@@ -14,6 +15,7 @@ function AddEvent({ setVisible }) {
   const [max, setMax] = useState('')
   const [description, setDescription] = useState('')
   const [image, setImage] = useState('')
+  const [category, setCategory] = useState('')
   const dispatch = useDispatch()
   const { id } = useParams()
   const navigate = useNavigate()
@@ -44,10 +46,17 @@ function AddEvent({ setVisible }) {
     setDescription(event.target.value)
   }
 
+  function handleCategory(event) {
+    setCategory(event.target.value)
+  }
+
+  function handleImage(event) {
+    const img = event.target.value.replace(/\s/g, '')
+    setImage(`${img}.jpg`)
+  }
+
   function handleSubmit(event) {
     event.preventDefault()
-    // setName('')
-
     addEvent(
       {
         event_id: id,
@@ -57,7 +66,11 @@ function AddEvent({ setVisible }) {
         max: max,
         description: description,
         status: 'upcoming',
-        coords: [selectPosition.lat, selectPosition.lon],
+        coordsX: JSON.parse(selectPosition.lat),
+        coordsY: JSON.parse(selectPosition.lon),
+        category: category,
+        IMG: image,
+        display_name: selectPosition.display_name,
       },
       token
     )
@@ -70,8 +83,7 @@ function AddEvent({ setVisible }) {
       })
   }
   if (selectPosition != null) {
-    //
-    //console.log('letss gooo position', selectPosition.lat, selectPosition.lon)
+    console.log('letss gooo position', selectPosition.display_name)
   }
 
   return (
@@ -108,6 +120,53 @@ function AddEvent({ setVisible }) {
             placeholder="Max Participants"
             onChange={handleMax}
           />
+          <div>
+            <select
+              placeholder="Category"
+              onChange={handleCategory}
+              onClick={handleImage}
+            >
+              <option>Choose category</option>
+              <option value="Sports" name="Sports">
+                Sports
+              </option>
+              <option value="Card Game" name="CardGame">
+                Card Game
+              </option>
+              <option value="Casual Game" name="CasualGame">
+                Casual Game
+              </option>
+              <option value="Video Game" name="VideoGame">
+                Video Game
+              </option>
+              <option value="Music" name="Music">
+                Music
+              </option>
+              <option value="Lunch" name="Lunch">
+                Food
+              </option>
+              <option value="Exercise" name="Exercise">
+                Exercise
+              </option>
+              <option value="Arts" name="Arts">
+                Arts
+              </option>
+              <option value="Social" name="Social">
+                Social
+              </option>
+              <option value="Corporate" name="Corporate">
+                Corporate
+              </option>
+              <option value="Networking" name="Networking">
+                Networking
+              </option>
+            </select>
+          </div>
+          <input
+            className="border rounded-md"
+            placeholder="Event Description"
+            onChange={handleDescription}
+          />
         </div>
 
         {/* container with map and search */}
@@ -127,7 +186,7 @@ function AddEvent({ setVisible }) {
           onChange={handleDescription}
         />
         <button
-          className="submit-button"
+          className="my-10 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 lg:w-[12vw] lg:h-[5vh]"
           placeholder="Submit"
           onClick={handleSubmit}
         >

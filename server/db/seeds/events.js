@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 // /**
 //  * @param { import("knex").Knex } knex
 //  * @returns { Promise<void> }
 //  */
+=======
+>>>>>>> origin
 exports.seed = async function (knex) {
   // Deletes ALL existing entries
   await knex('events').del()
@@ -12,8 +15,16 @@ exports.seed = async function (knex) {
       date: '14/7/2021',
       time: 'arvo',
       max: '6',
-      IMG: ' ',
+      IMG: 'CasualGame.jpg',
       description: 'tag at vic park, need 6 to make a game and run a few subs',
+<<<<<<< HEAD
+=======
+      coordsX: -36.86447,
+      coordsY: 174.7763,
+      category: 'Casual Game',
+      display_name:
+        'Sydney, Council of the City of Sydney, New South Wales, Australia',
+>>>>>>> origin
     },
     {
       name: 'Tag',
@@ -21,8 +32,14 @@ exports.seed = async function (knex) {
       date: '14/7/2021',
       time: 'arvo',
       max: '6',
-      IMG: ' ',
+      IMG: 'CasualGame.jpg',
       description: 'tag at vic park, need 6 to make a game and run a few subs',
+<<<<<<< HEAD
+=======
+      coordsX: -36.86447,
+      coordsY: 174.7763,
+      category: 'Casual Game',
+>>>>>>> origin
     },
     {
       name: 'Tag',
@@ -30,8 +47,9 @@ exports.seed = async function (knex) {
       date: '14/7/2021',
       time: 'arvo',
       max: '6',
-      IMG: ' ',
+      IMG: 'CasualGame.jpg',
       description: 'tag at vic park, need 6 to make a game and run a few subs',
+      category: 'Casual Game',
     },
     {
       name: 'Tag',
@@ -39,8 +57,9 @@ exports.seed = async function (knex) {
       date: '14/7/2021',
       time: 'arvo',
       max: '6',
-      IMG: ' ',
+      IMG: 'CasualGame.jpg',
       description: 'tag at vic park, need 6 to make a game and run a few subs',
+      category: 'Casual Game',
     },
     {
       name: 'Basketball',
@@ -48,8 +67,9 @@ exports.seed = async function (knex) {
       date: '14/7/2021',
       time: 'morning',
       max: '3',
-      IMG: ' ',
+      IMG: 'Sports.jpg',
       description: 'ball at Grey Lynn, need 3 to run against',
+      category: 'Sports',
     },
     {
       name: 'Basketball',
@@ -57,8 +77,9 @@ exports.seed = async function (knex) {
       date: '14/7/2021',
       time: 'morning',
       max: '3',
-      IMG: ' ',
+      IMG: 'Sports.jpg',
       description: 'ball at Grey Lynn, need 3 to run against',
+      category: 'Sports',
     },
     {
       name: 'Touch',
@@ -66,8 +87,9 @@ exports.seed = async function (knex) {
       date: '14/7/2021',
       time: 'morning',
       max: '4',
-      IMG: ' ',
+      IMG: 'Sports.jpg',
       description: 'touch at the park need 4 ',
+      category: 'Sports',
     },
     {
       name: 'Basketball',
@@ -75,8 +97,9 @@ exports.seed = async function (knex) {
       date: '14/7/2021',
       time: 'morning',
       max: '3',
-      IMG: ' ',
+      IMG: 'Sports.jpg',
       description: 'ball at Grey Lynn, need 3 to run against',
+      category: 'Sports',
     },
     {
       name: 'Basketball',
@@ -84,8 +107,9 @@ exports.seed = async function (knex) {
       date: '14/7/2021',
       time: 'morning',
       max: '3',
-      IMG: ' ',
+      IMG: 'Sports.jpg',
       description: 'ball at Grey Lynn, need 3 to run against',
+      category: 'Sports',
     },
     {
       name: ' Laser Tag',
@@ -93,9 +117,10 @@ exports.seed = async function (knex) {
       date: '12/7/2021',
       time: 'Arvo',
       max: '6',
-      IMG: ' ',
+      IMG: 'CasualGame.jpg',
       description:
         'Laser tag at vic park, need 6 to make a game and run a few subs',
+      category: 'Casual Game',
     },
     {
       name: 'Basketball',
@@ -103,8 +128,9 @@ exports.seed = async function (knex) {
       date: '12/7/2021',
       time: 'night',
       max: '3',
-      IMG: ' ',
+      IMG: 'Sports.jpg',
       description: 'ball at Grey Lynn, need 3 to run against',
+      category: 'Sports',
     },
     {
       name: 'Touch',
@@ -112,8 +138,9 @@ exports.seed = async function (knex) {
       date: '9/7/2021',
       time: 'arvo',
       max: '4',
-      IMG: ' ',
+      IMG: 'Sports.jpg',
       description: 'touch at the park need 4 ',
+      category: 'Sports',
     },
     {
       name: 'Bull Rush',
@@ -121,9 +148,13 @@ exports.seed = async function (knex) {
       date: '20/7/2021',
       time: 'morning',
       max: '6',
-      IMG: ' ',
+      IMG: 'Sports.jpg',
       description: 'Bull Rush at vic park, need 6 to make a game',
+<<<<<<< HEAD
       attendees: 'bob'
+=======
+      category: 'Sports',
+>>>>>>> origin
     },
     {
       name: 'Basketball',
@@ -131,9 +162,13 @@ exports.seed = async function (knex) {
       date: '27/7/2021',
       time: 'arvo',
       max: '3',
-      IMG: ' ',
+      IMG: 'Sports.jpg',
       description: 'ball at Grey Lynn, need 3 to run against',
+<<<<<<< HEAD
       attendees: 'bob'
+=======
+      category: 'Sports',
+>>>>>>> origin
     },
     {
       name: 'Touch',
@@ -141,9 +176,13 @@ exports.seed = async function (knex) {
       date: '30/7/2021',
       time: 'arvo',
       max: '4',
-      IMG: ' ',
+      IMG: 'Sports.jpg',
       description: 'touch at the park need 4 ',
+<<<<<<< HEAD
       attendees: 'bob'
+=======
+      category: 'Sports',
+>>>>>>> origin
     },
     {
       name: 'Crew',
@@ -151,9 +190,13 @@ exports.seed = async function (knex) {
       date: '30/7/2021',
       time: 'arvo',
       max: '4',
-      IMG: ' ',
+      IMG: 'CardGame.jpg',
       description: 'Crew at Devacademy need 4 ',
+<<<<<<< HEAD
       attendees: 'bob'
+=======
+      category: 'Card Game',
+>>>>>>> origin
     },
     {
       name: 'Crew',
@@ -161,9 +204,13 @@ exports.seed = async function (knex) {
       date: '30/7/2021',
       time: 'arvo',
       max: '4',
-      IMG: ' ',
+      IMG: 'CardGame.jpg',
       description: 'Crew at Devacademy need 4 ',
+<<<<<<< HEAD
       attendees: 'bob'
+=======
+      category: 'Card Game',
+>>>>>>> origin
     },
     {
       name: 'Crew',
@@ -171,9 +218,13 @@ exports.seed = async function (knex) {
       date: '30/7/2021',
       time: 'arvo',
       max: '4',
-      IMG: ' ',
+      IMG: 'CardGame.jpg',
       description: 'Crew at Devacademy need 4 ',
+<<<<<<< HEAD
       attendees: 'bob'
+=======
+      category: 'Card Game',
+>>>>>>> origin
     },
     {
       name: 'Crew',
@@ -181,9 +232,13 @@ exports.seed = async function (knex) {
       date: '30/7/2021',
       time: 'arvo',
       max: '4',
-      IMG: ' ',
+      IMG: 'CardGame.jpg',
       description: 'Crew at Devacademy need 4 ',
+<<<<<<< HEAD
       attendees: 'bob'
+=======
+      category: 'Card Game',
+>>>>>>> origin
     },
   ])
 }
