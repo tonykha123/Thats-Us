@@ -35,23 +35,24 @@ const Details = () => {
   return (
     // entire section//background
 
-    <section className="w-full h-[150vh]">
+    <section className="w-full h-[150vh] md:bg-slate-100">
       {/* main cotainer */}
-      <div className="w-full h-[70vh] flex flex-col mx-auto">
-        <div className="w-full flex flex-col">
-          {/* image and title and date goes here */}
-          <div className="h-[1/3]">
+      <div className="w-full h-[70vh] flex flex-col mx-auto md:w-9/12 md:bg-white md:h-full md:shadow-xl md:rounded-md md:border">
+        <div className="w-full flex flex-col md:flex-row">
+          <div className="h-[1/3] md:w-2/3">
             <img src={`/Images/${img}`} />
           </div>
 
-          <div className="border-b mt-2">
-            <h2 className="text-2xl font-semibold ">{event.name}</h2>
+          <div className="border-b mt-2 md:self-center md:w-1/3 md:border-none md:text-center md:bg-slate-200 md:h-auto">
+            <h2 className="text-2xl font-semibold mx-auto">{event.name}</h2>
             <p className="text-xl italic">Sports</p>
-            <div className="flex space-x-2 items-center">
+            <div className="flex space-x-2 items-center justify-center">
               <p className="italic">
-                {Math.floor(Math.random() * 100000) + 100} views
+                {Math.floor(Math.random() * 1000) + 100} Views
               </p>
-              <IoEyeSharp size={18} />
+              <div>
+                <IoEyeSharp size={18} />
+              </div>
             </div>
           </div>
         </div>
@@ -107,7 +108,8 @@ const Details = () => {
           </p>
         </div>
 
-        <AttendButton />
+        <AttendButton className="md:hidden" />
+
         <div className="flex flex-col ml-4">
           <p className="text-md font-semibold">Share With Friends</p>
           <div className="flex justify-start w-full gap-3">
