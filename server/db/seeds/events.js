@@ -1,7 +1,7 @@
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
+// /**
+//  * @param { import("knex").Knex } knex
+//  * @returns { Promise<void> }
+//  */
 exports.seed = async function (knex) {
   // Deletes ALL existing entries
   await knex('events').del()
@@ -14,7 +14,6 @@ exports.seed = async function (knex) {
       max: '6',
       IMG: ' ',
       description: 'tag at vic park, need 6 to make a game and run a few subs',
-      coords: '[-36.86447, 174.7763]',
     },
     {
       name: 'Tag',
@@ -24,7 +23,6 @@ exports.seed = async function (knex) {
       max: '6',
       IMG: ' ',
       description: 'tag at vic park, need 6 to make a game and run a few subs',
-      coords: '[-79.4063075 0.3149312]',
     },
     {
       name: 'Tag',
@@ -125,6 +123,7 @@ exports.seed = async function (knex) {
       max: '6',
       IMG: ' ',
       description: 'Bull Rush at vic park, need 6 to make a game',
+      attendees: 'bob'
     },
     {
       name: 'Basketball',
@@ -134,6 +133,7 @@ exports.seed = async function (knex) {
       max: '3',
       IMG: ' ',
       description: 'ball at Grey Lynn, need 3 to run against',
+      attendees: 'bob'
     },
     {
       name: 'Touch',
@@ -143,6 +143,7 @@ exports.seed = async function (knex) {
       max: '4',
       IMG: ' ',
       description: 'touch at the park need 4 ',
+      attendees: 'bob'
     },
     {
       name: 'Crew',
@@ -152,6 +153,7 @@ exports.seed = async function (knex) {
       max: '4',
       IMG: ' ',
       description: 'Crew at Devacademy need 4 ',
+      attendees: 'bob'
     },
     {
       name: 'Crew',
@@ -161,6 +163,7 @@ exports.seed = async function (knex) {
       max: '4',
       IMG: ' ',
       description: 'Crew at Devacademy need 4 ',
+      attendees: 'bob'
     },
     {
       name: 'Crew',
@@ -170,6 +173,7 @@ exports.seed = async function (knex) {
       max: '4',
       IMG: ' ',
       description: 'Crew at Devacademy need 4 ',
+      attendees: 'bob'
     },
     {
       name: 'Crew',
@@ -179,6 +183,7 @@ exports.seed = async function (knex) {
       max: '4',
       IMG: ' ',
       description: 'Crew at Devacademy need 4 ',
+      attendees: 'bob'
     },
   ])
 }
