@@ -9,6 +9,7 @@ import AttendButton from './AttendButton'
 import EventDetails from './EventDetails'
 import Events from '../EventsComponents/Events'
 
+
 const Details = () => {
   const [event, setEvent] = useState({})
   const { id } = useParams()
@@ -25,8 +26,10 @@ const Details = () => {
   console.log(event.coords, 'events details')
 
   const coords = event.coords
+  const img = event.IMG
+  console.log(event)
 
-  return (
+  return 
     // entire section
 
     <section className="w-full h-[120vh]">
@@ -47,8 +50,9 @@ const Details = () => {
 
         <div className="w-10/12 h-10/12 md:w-7/12 md:h-full ">
           <Map pin={coords} className="rounded-md" />
-        </div>
-      </div>
+        </div
+        
+<div>
       <div className="flex flex-row justify-center">
         <AttendButton />
       </div>
