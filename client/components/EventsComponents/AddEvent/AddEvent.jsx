@@ -47,7 +47,6 @@ function AddEvent({ setVisible }) {
   }
 
   function handleCategory(event) {
-
     setCategory(event.target.value)
   }
 
@@ -84,11 +83,8 @@ function AddEvent({ setVisible }) {
       })
   }
   if (selectPosition != null) {
-    //
-    //console.log('letss gooo position', selectPosition.lat, selectPosition.lon)
   }
 
-  
   return (
     // Container for form
 
@@ -127,14 +123,26 @@ function AddEvent({ setVisible }) {
             placeholder="Max Participants"
             onChange={handleMax}
           />
-          
+
           <div>
-            <select placeholder='Category' onChange={handleCategory}  onClick={handleImage}>
+            <select
+              placeholder="Category"
+              onChange={handleCategory}
+              onClick={handleImage}
+            >
               <option>Choose category</option>
-              <option value="Sports" name="Sports">Sports</option>
-              <option value="Card Game" name="CardGame">Card Game</option>
-              <option value="Casual Game" name="CasualGame">Casual Game</option>
-              <option value="Video Game" name="VideoGame">Video Game</option>
+              <option value="Sports" name="Sports">
+                Sports
+              </option>
+              <option value="Card Game" name="CardGame">
+                Card Game
+              </option>
+              <option value="Casual Game" name="CasualGame">
+                Casual Game
+              </option>
+              <option value="Video Game" name="VideoGame">
+                Video Game
+              </option>
             </select>
           </div>
           <input

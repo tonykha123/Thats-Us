@@ -12,6 +12,8 @@ import Events from '../EventsComponents/Events'
 const Details = () => {
   const [event, setEvent] = useState({})
   const { id } = useParams()
+  const img = event.IMG
+  const coords = event.coords
 
   useEffect(async () => {
     const evt = await getEvtById(id)
@@ -21,10 +23,6 @@ const Details = () => {
       console.error('elo')
     }
   }, [])
-
-  const img = event.IMG
-
-  const coords = event.coords
 
   return (
     // entire section
@@ -44,7 +42,7 @@ const Details = () => {
             <p>{event.category}</p>
           </div>
           <div>
-            <img src={`/images/${img}`} />
+            <img src={`/Images/${img}`} />
           </div>
         </div>
 
