@@ -8,7 +8,6 @@ function getEvents(db = connection) {
 }
 
 function addEvent(newEvent, db = connection) {
-
   const {
     name,
     status,
@@ -17,8 +16,7 @@ function addEvent(newEvent, db = connection) {
     max,
     IMG,
     description,
-    category
-    coords,
+    category,
     coordsX,
     coordsY,
   } = newEvent

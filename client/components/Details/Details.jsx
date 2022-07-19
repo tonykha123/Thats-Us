@@ -13,7 +13,7 @@ const Details = () => {
   const [event, setEvent] = useState({})
   const { id } = useParams()
   const img = event.IMG
-  const coords = event.coords
+  // const coords = event.coords
 
   useEffect(async () => {
     try {
@@ -24,9 +24,7 @@ const Details = () => {
     }
   }, [])
 
-
   //props being passed down after event
-
   const coords = [event.coordsX, event.coordsY]
   console.log(coords, 'gummon')
 
@@ -34,33 +32,41 @@ const Details = () => {
     <section className="w-full h-[120vh]">
       <div className="w-full h-[70vh] flex flex-col bg-slate-200 items-center space-y-6 md:flex-row md:items-start">
         <div className="self-start md:w-5/12">
+          {/* NAME, DATE & TIME DIVE */}
           <div className="mt-4 space-y-2 mx-4">
             <h2 className="text-3xl font-semibold ">{event.name}</h2>
             <p>{event.date}</p>
             <p>{event.time}</p>
           </div>
+          {/* DETAILS DIV */}
           <div className="mx-4">
             <p className="text-xl font-semibold">Details</p>
             <p>{event.description}</p>
             <p>Category:</p>
             <p>{event.category}</p>
           </div>
+          {/* IMG DIV */}
           <div>
             <img src={`/Images/${img}`} />
           </div>
         </div>
 
         {/* map div */}
+        <div className="w-full h-10/12 ">
+          {coords[0] === undefined ? (
+            <p>loading...</p>
+          ) : (
+            <Map coords={coords} />
+          )}
 
-      <div className="w-full h-10/12 ">
-        {coords[0] === undefined ? <p>loading...</p> : <Map coords={coords} />}
-
-      <div className="flex flex-row justify-center">
-        <AttendButton />
-
+          <div className="flex flex-row justify-center">
+            <AttendButton />
+          </div>
+        </div>
       </div>
     </section>
   )
+  ß
 }
 
 export default Details
