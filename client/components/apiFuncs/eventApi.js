@@ -26,3 +26,14 @@ export const getEvtById = async (id) => {
     console.error(err.message)
   }
 }
+
+export const attendEvent = async (eventId, updatedAttendees) => {
+  try {
+    console.log(eventId, updatedAttendees, 'eventId + updatedAttendees')
+    const updatedAttendingEvent = await request.patch(`/api/v1/events/attend/${eventId}`).send({updatedAttendees})
+    console.log(updatedAttendingEvent.body, 'apifunc')
+    return updatedAttendingEvent.body
+  } catch (err) {
+    console.error(err.message)
+  }
+}

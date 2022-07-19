@@ -1,28 +1,32 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 // API IMPORT:
-import { getEvtById } from '../apiFuncs/eventApi'
+import { getEvtById, attendEvent } from '../apiFuncs/eventApi'
+import {activeUser} from '../../slices/user'
 
 //imported components that we want in details
 import Map from './Map'
 import AttendButton from './AttendButton'
-import EventDetails from './EventDetails'
-import Events from '../EventsComponents/Events'
 
 const Details = () => {
   const [event, setEvent] = useState({})
   const { id } = useParams()
+  const activeuser = useSelector(activeUser)
 
   useEffect(async () => {
-    const evt = await getEvtById(id)
+    const evt = await getEvtById(Number(id))
     try {
-      setEvent(evt)
+      setEvent({...evt, user: activeuser.email})
     } catch {
       console.error('elo')
     }
-  }, [])
+  }, [activeuser])
+  console.log(event.attendees, 'go')
 
-  console.log(event.coords, 'events details')
+  function attendEventHandler() {
+    attendEvent(id, `${event.attendees}, ${event.user}`)
+  }
 
   const coords = event.coords
 
@@ -37,7 +41,7 @@ const Details = () => {
         <Map pin={coords} />
       </div>
       <div>{event.description}</div>
-      <AttendButton />
+      <AttendButton attend={attendEventHandler} />
     </section>
   )
 }

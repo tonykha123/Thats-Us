@@ -44,12 +44,13 @@ router.get('/:id', async (req, res) => {
     res.status(500).json({ error: err.message })
   }
 })
-
-// PATCH /api/v1/events/:id
+// /api/v1/events/attend/
+// PATCH /api/v1/events/attend/:id
 router.patch('/attend/:id', async (req, res) => {
   try {
     const eventId = Number(req.params.id)
-    const update = req.body.attending
+    const update = req.body.updatedAttendees
+    console.log(eventId, update, 'route')
     const updateEvent = await db.attendEvent(eventId, update)
     res.json(updateEvent)
   }
