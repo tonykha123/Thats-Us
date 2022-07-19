@@ -10,6 +10,7 @@ import { MdLogin, MdLogout } from 'react-icons/md'
 const NavBar = () => {
   // const [showAdmin, SetShowAdmin] = useState(false)
   // TODO: call the useAuth0 hook and destructure logout and loginWithRedirect
+  const navigate = useNavigate()
   const { logout, loginWithRedirect } = useAuth0()
 
   function handleLogoff(e) {
@@ -34,35 +35,43 @@ const NavBar = () => {
 
   return (
     <nav className="w-full h-[75px] flex flex-row justify-between p-5 items-center bg-slate-600">
-      <div className="w-20 h-auto hover:animate-pulse hover:cursor-pointer">
+      <div
+        className="w-20 h-auto hover:animate-pulse hover:cursor-pointer "
+        onClick={() => navigate('/')}
+      >
         <img src="/images/THAT'S.svg" alt="Logo" className=""></img>
       </div>
       {/* right side nav   */}
       <div>
-        <IfNotAuthenticated>
-          <a
-            onClick={handleLogin}
-            className="mx-4 hover:text-white"
-            href="https://www.google.com"
-          >
-            Login
-          </a>
-          <a
-            onClick={handleSignup}
-            className="hover:text-white"
-            href="/register"
-          >
-            Signup
-          </a>
-        </IfNotAuthenticated>
+        <div className="flex flex-row-reverse space-x-4">
+          <IfNotAuthenticated>
+            <MdLogin
+              size={28}
+              className="hover:text-gray-400"
+              onClick={handleLogin}
+            />
+            <a
+              onClick={handleSignup}
+              className="hover:text-white"
+              href="/register"
+            >
+              Signup
+            </a>
+          </IfNotAuthenticated>
+        </div>
         <IfAuthenticated>
-          <a
+          <MdLogout
+            size={28}
+            className="hover:text-gray-400"
+            onClick={handleLogoff}
+          />
+          {/* <a
             onClick={handleLogoff}
             className="hover:text-white"
             href="https://www.google.com"
           >
             Log off
-          </a>
+          </a> */}
         </IfAuthenticated>
       </div>
     </nav>
