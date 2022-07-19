@@ -5,8 +5,6 @@ import { getEvtById } from '../apiFuncs/eventApi'
 //imported components that we want in details
 import Map from './Map'
 
-import EventDetails from './EventDetails'
-import Events from '../EventsComponents/Events'
 import { IoEyeSharp, IoMailOutline } from 'react-icons/io5'
 import { BsCalendar3, BsPeople, BsHeartFill } from 'react-icons/bs'
 import { GrMapLocation } from 'react-icons/gr'

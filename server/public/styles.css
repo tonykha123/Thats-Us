@@ -860,6 +860,10 @@ video {
   width: 200px;
 }
 
+.w-10\/12 {
+  width: 83.333333%;
+}
+
 .w-\[85vw\] {
   width: 85vw;
 }
@@ -874,10 +878,6 @@ video {
 
 .w-\[60vw\] {
   width: 60vw;
-}
-
-.w-10\/12 {
-  width: 83.333333%;
 }
 
 .w-11\/12 {
@@ -1397,11 +1397,6 @@ video {
 }
 
 @media (min-width: 768px) {
-  .md\:my-8 {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-
   .md\:ml-12 {
     margin-left: 3rem;
   }
@@ -1486,44 +1481,22 @@ video {
     width: 75%;
   }
 
-  .md\:w-\[30vw\] {
-    width: 30vw;
-  }
-
-  .md\:w-7\/12 {
-    width: 58.333333%;
-  }
-
   .md\:flex-row {
     flex-direction: row;
   }
 
-  .md\:items-start {
-    align-items: flex-start;
-  }
-
-  .md\:items-end {
-    align-items: flex-end;
+  .md\:flex-row-reverse {
+    flex-direction: row-reverse;
   }
 
   .md\:justify-between {
     justify-content: space-between;
   }
 
-  .md\:justify-evenly {
-    justify-content: space-evenly;
-  }
-
   .md\:space-y-5 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
     margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
-  }
-
-  .md\:space-y-40 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-y-reverse: 0;
-    margin-top: calc(10rem * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(10rem * var(--tw-space-y-reverse));
   }
 
   .md\:self-start {
@@ -1567,11 +1540,6 @@ video {
 
   .md\:text-center {
     text-align: center;
-  }
-
-  .md\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 
   .md\:shadow-xl {
