@@ -40,7 +40,7 @@ const Details = () => {
         
       </div>
       <div>
-      <img src={`../../../server/images/${img}`}/>
+      <img src={`/Images/${img}`}/>
       </div>
       <div className="w-full h-10/12 ">
         <Map pin={coords} />

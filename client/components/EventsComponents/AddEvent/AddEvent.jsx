@@ -135,6 +135,13 @@ function AddEvent({ setVisible }) {
               <option value="Card Game" name="CardGame">Card Game</option>
               <option value="Casual Game" name="CasualGame">Casual Game</option>
               <option value="Video Game" name="VideoGame">Video Game</option>
+              <option value="Music" name="Music">Music</option>
+              <option value="Lunch" name="Lunch">Food</option>
+              <option value="Exercise" name="Exercise">Exercise</option>
+              <option value="Arts" name="Arts">Arts</option>
+              <option value="Social" name="Social">Social</option>
+              <option value="Corporate" name="Corporate">Corporate</option>
+              <option value="Networking" name="Networking">Networking</option>
             </select>
           </div>
           <input
