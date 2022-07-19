@@ -19,6 +19,7 @@ function addEvent(newEvent, db = connection) {
     category,
     coordsX,
     coordsY,
+    display_name,
   } = newEvent
 
   return db('events').insert({
@@ -32,6 +33,7 @@ function addEvent(newEvent, db = connection) {
     category,
     coordsX,
     coordsY,
+    display_name,
   })
 }
 
