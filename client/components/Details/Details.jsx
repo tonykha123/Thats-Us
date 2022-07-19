@@ -9,7 +9,6 @@ import AttendButton from './AttendButton'
 import EventDetails from './EventDetails'
 import Events from '../EventsComponents/Events'
 
-
 const Details = () => {
   const [event, setEvent] = useState({})
   const { id } = useParams()
@@ -23,13 +22,11 @@ const Details = () => {
     }
   }, [])
 
-  console.log(event.coords, 'events details')
+  const img = event.IMG
 
   const coords = event.coords
-  const img = event.IMG
-  console.log(event)
 
-  return 
+  return (
     // entire section
 
     <section className="w-full h-[120vh]">
@@ -43,6 +40,11 @@ const Details = () => {
           <div className="mx-4">
             <p className="text-xl font-semibold">Details</p>
             <p>{event.description}</p>
+            <p>Category:</p>
+            <p>{event.category}</p>
+          </div>
+          <div>
+            <img src={`../../../server/images/${img}`} />
           </div>
         </div>
 
@@ -50,9 +52,8 @@ const Details = () => {
 
         <div className="w-10/12 h-10/12 md:w-7/12 md:h-full ">
           <Map pin={coords} className="rounded-md" />
-        </div
-        
-<div>
+        </div>
+      </div>
       <div className="flex flex-row justify-center">
         <AttendButton />
       </div>
