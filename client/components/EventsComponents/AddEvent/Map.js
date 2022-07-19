@@ -13,6 +13,7 @@ const position = [-36.86447, 174.7763]
 function ResetCenterView(props) {
   const { selectPosition } = props
   const map = useMap()
+  console.log(selectPosition, 'MODEL OBJ')
 
   useEffect(() => {
     if (selectPosition) {
@@ -37,7 +38,7 @@ const Map = (props) => {
     <div className="w-[65vw] h-[20vh]  sm:h-[25vh] md:h-[50vh] md:self-start">
       <MapContainer
         center={position}
-        zoom={10}
+        zoom={12}
         scrollWheelZoom={true}
         className="w-full h-full rounded-md shadow-xl"
         // className="w-[60vw] h-[40vw] sm:[40vw] sm:h-[35vh] shadow-xl rounded-md "
