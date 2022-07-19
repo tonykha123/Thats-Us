@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
-import { IfAuthenticated, IfNotAuthenticated } from '../Authenticated/Authenticated'
+import {
+  IfAuthenticated,
+  IfNotAuthenticated,
+} from '../Authenticated/Authenticated'
 import { useAuth0 } from '@auth0/auth0-react'
-import { Link } from 'react-router-dom'
-
-
+import { Link, useNavigate } from 'react-router-dom'
+import { MdLogin, MdLogout } from 'react-icons/md'
 
 const NavBar = () => {
-  const [showAdmin, SetShowAdmin] = useState(false)
+  // const [showAdmin, SetShowAdmin] = useState(false)
   // TODO: call the useAuth0 hook and destructure logout and loginWithRedirect
-  const {logout, loginWithRedirect} = useAuth0()
+  const navigate = useNavigate()
+  const { logout, loginWithRedirect } = useAuth0()
 
   function handleLogoff(e) {
     e.preventDefault()
@@ -20,58 +23,59 @@ const NavBar = () => {
     e.preventDefault()
 
     return loginWithRedirect({
-      redirectUri:`${window.location.origin}/register` 
-  })
+      redirectUri: `${window.location.origin}/register`,
+    })
   }
 
   function handleLogin(e) {
     e.preventDefault()
-    
+
     return loginWithRedirect()
   }
 
   return (
-    <nav className="w-full h-[75px] flex flex-row justify-between p-5 bg-slate-600">
-      {/* left side nav */}
-      {/* insert logo maybe */}
-      <div className="flex">
-        <div
-          className="hover:text-white cursor-pointer"
-          onClick={() => {
-            SetShowAdmin(!showAdmin)
-          }}
-        >
-          X
-        </div>
-        {/* transition in softly */}
-        {showAdmin && (
-          <a
-            className=" hover:text-white mx-4 ease-in-out duration-500"
-            href="https://www.google.com"
-          >
-            Your Events
-          </a>
-        )}
+    <nav className="w-full h-[75px] flex flex-row justify-between p-5 items-center bg-slate-600">
+      <div
+        className="w-20 h-auto hover:animate-pulse hover:cursor-pointer "
+        onClick={() => navigate('/')}
+      >
+        <img src="/images/THAT'S.svg" alt="Logo" className=""></img>
       </div>
       {/* right side nav   */}
       <div>
-        <IfNotAuthenticated>          
-        <a onClick={handleLogin} className="mx-4 hover:text-white" href="https://www.google.com">
-          Login
-        </a>
-        <a onClick={handleSignup} className="hover:text-white" href="/register">
-          Signup
-        </a>
-        </IfNotAuthenticated>
+        <div className="flex flex-row-reverse space-x-4">
+          <IfNotAuthenticated>
+            <MdLogin
+              size={28}
+              className="hover:text-gray-400"
+              onClick={handleLogin}
+            />
+            <a
+              onClick={handleSignup}
+              className="hover:text-white"
+              href="/register"
+            >
+              Signup
+            </a>
+          </IfNotAuthenticated>
+        </div>
         <IfAuthenticated>
-        <a onClick={handleLogoff} className="hover:text-white" href="https://www.google.com">
-          Log off
-        </a>
+          <MdLogout
+            size={28}
+            className="hover:text-gray-400"
+            onClick={handleLogoff}
+          />
+          {/* <a
+            onClick={handleLogoff}
+            className="hover:text-white"
+            href="https://www.google.com"
+          >
+            Log off
+          </a> */}
         </IfAuthenticated>
       </div>
     </nav>
   )
 }
-
 
 export default NavBar
