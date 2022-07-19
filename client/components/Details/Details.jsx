@@ -23,13 +23,41 @@ const Details = () => {
       console.error('elo')
     }
   }, [])
+  console.log(event)
 
   return (
-    // entire section
+    // entire section//background
 
     <section className="w-full h-[120vh]">
+      {/* main cotainer */}
       <div className="w-full h-[70vh] flex flex-col bg-slate-200 items-center space-y-6 md:flex-row md:items-start">
-        <div className="self-start md:w-5/12">
+        <div className="flex flex-col">
+          {/* image and title and date goes here */}
+          <div>
+            <img src={`/Images/${img}`} />
+          </div>
+          <div>
+            <h2 className="text-3xl font-semibold ">{event.name}</h2>
+            <p> x amount of views</p>
+            {/* eye icon? */}
+          </div>
+        </div>
+        <div>{/* share button and attend - hidden show on m */}</div>
+        <div>
+          {/* column phone- row desktop? */}
+          <div>{/* date and time goes here */}</div>
+          <div>
+            {/* location goes here * max people?/}</div>
+        </div>
+        <div>{/* share with friends */}
+          </div>
+          {/* map div */}
+
+          <div className="w-10/12 h-10/12 md:w-7/12 md:h-full ">
+            <Map pin={coords} className="rounded-md" />
+          </div>
+
+          {/* <div className="self-start md:w-5/12">
           <div className="mt-4 space-y-2 mx-4">
             <h2 className="text-3xl font-semibold ">{event.name}</h2>
             <p>{event.date}</p>
@@ -44,16 +72,11 @@ const Details = () => {
           <div>
             <img src={`/Images/${img}`} />
           </div>
+        </div>  */}
         </div>
-
-        {/* map div */}
-
-        <div className="w-10/12 h-10/12 md:w-7/12 md:h-full ">
-          <Map pin={coords} className="rounded-md" />
-        </div>
-      </div>
-      <div className="flex flex-row justify-center">
+        {/* <div className="flex flex-row justify-center">
         <AttendButton />
+   
       </div>
     </section>
   )
