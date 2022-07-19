@@ -12,13 +12,13 @@ const NavBar = () => {
 
   function handleLogoff(e) {
     e.preventDefault()
-    console.log('log off')
+
     return logout()
   }
 
   function handleSignup(e) {
     e.preventDefault()
-    console.log('register')
+
     return loginWithRedirect({
       redirectUri:`${window.location.origin}/register` 
   })
@@ -26,7 +26,7 @@ const NavBar = () => {
 
   function handleLogin(e) {
     e.preventDefault()
-    console.log('sign in')
+    
     return loginWithRedirect()
   }
 

@@ -47,7 +47,6 @@ function AddEvent({ setVisible }) {
   }
 
   function handleCategory(event) {
-    console.log(event.target.value)
     setCategory(event.target.value)
   }
 
@@ -84,11 +83,8 @@ function AddEvent({ setVisible }) {
       })
   }
   if (selectPosition != null) {
-    //
-    //console.log('letss gooo position', selectPosition.lat, selectPosition.lon)
   }
 
-  
   return (
     // Container for form
 
@@ -127,9 +123,13 @@ function AddEvent({ setVisible }) {
             placeholder="Max Participants"
             onChange={handleMax}
           />
-          
+
           <div>
-            <select placeholder='Category' onChange={handleCategory}  onClick={handleImage}>
+            <select
+              placeholder="Category"
+              onChange={handleCategory}
+              onClick={handleImage}
+            >
               <option>Choose category</option>
               <option value="Sports" name="Sports">Sports</option>
               <option value="Card Game" name="CardGame">Card Game</option>
@@ -166,7 +166,7 @@ function AddEvent({ setVisible }) {
         </div>
 
         <button
-          className="my-10 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 lg:w-[12vw] lg:h-[4vw]"
+          className="my-10 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 lg:w-[12vw] lg:h-[5vh]"
           placeholder="Submit"
           onClick={handleSubmit}
         >

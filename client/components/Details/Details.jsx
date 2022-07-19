@@ -9,10 +9,11 @@ import AttendButton from './AttendButton'
 import EventDetails from './EventDetails'
 import Events from '../EventsComponents/Events'
 
-
 const Details = () => {
   const [event, setEvent] = useState({})
   const { id } = useParams()
+  const img = event.IMG
+  const coords = event.coords
 
   useEffect(async () => {
     const evt = await getEvtById(id)
@@ -23,13 +24,8 @@ const Details = () => {
     }
   }, [])
 
-  console.log(event.coords, 'events details')
-
-  const coords = event.coords
-  const img = event.IMG
-  console.log(event)
-
   return (
+<<<<<<< HEAD
     <section className="w-full h-[90vh] flex flex-col bg-slate-300 items-center">
       <div className="my-5">
         <h2 className="text-2xl font-semibold">{event.name}</h2>
@@ -41,12 +37,38 @@ const Details = () => {
       </div>
       <div>
       <img src={`/Images/${img}`}/>
+=======
+    // entire section
+
+    <section className="w-full h-[120vh]">
+      <div className="w-full h-[70vh] flex flex-col bg-slate-200 items-center space-y-6 md:flex-row md:items-start">
+        <div className="self-start md:w-5/12">
+          <div className="mt-4 space-y-2 mx-4">
+            <h2 className="text-3xl font-semibold ">{event.name}</h2>
+            <p>{event.date}</p>
+            <p>{event.time}</p>
+          </div>
+          <div className="mx-4">
+            <p className="text-xl font-semibold">Details</p>
+            <p>{event.description}</p>
+            <p>Category:</p>
+            <p>{event.category}</p>
+          </div>
+          <div>
+            <img src={`/Images/${img}`} />
+          </div>
+        </div>
+
+        {/* map div */}
+
+        <div className="w-10/12 h-10/12 md:w-7/12 md:h-full ">
+          <Map pin={coords} className="rounded-md" />
+        </div>
+>>>>>>> 972a88d078b87afe1ba6e3eb7087bedefe3ff9f2
       </div>
-      <div className="w-full h-10/12 ">
-        <Map pin={coords} />
+      <div className="flex flex-row justify-center">
+        <AttendButton />
       </div>
-      <div>{event.description}</div>
-      <AttendButton />
     </section>
   )
 }
