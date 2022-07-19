@@ -23,10 +23,9 @@ const Details = () => {
   }, [])
 
   //props being passed down after event
-  //console.log(event.coords, 'details jsx', typeof event.coords)
-  // console.log(event.coords, 'EVENT COORDS')
+
   const coords = [event.coordsX, event.coordsY]
-  // console.log(coords, 'gummon')
+  console.log(coords, 'gummon')
 
   return (
     <section className="w-full h-[90vh] flex flex-col bg-slate-300 items-center">
@@ -36,7 +35,7 @@ const Details = () => {
         <p>{event.time}</p>
       </div>
       <div className="w-full h-10/12 ">
-        {coords == null ? <p>loading...</p> : <Map coords={coords} />}
+        {coords[0] === undefined ? <p>loading...</p> : <Map coords={coords} />}
       </div>
       <div>{event.description}</div>
       <AttendButton />
