@@ -4,7 +4,7 @@ import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 
 const icon = L.icon({
-  iconUrl: './images/placeholder.png',
+  iconUrl: '/images/placeholder.png',
   iconSize: [36, 36],
 })
 

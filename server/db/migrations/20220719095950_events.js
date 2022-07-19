@@ -9,6 +9,8 @@ exports.up = (knex) => {
     table.string('IMG')
     table.string('description')
     table.string('category')
+    table.integer('coordsX')
+    table.integer('coordsY')
   })
 }
 
