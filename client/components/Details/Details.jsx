@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 // API IMPORT:
 import { getEvtById } from '../apiFuncs/eventApi'
-
 //imported components that we want in details
 import Map from './Map'
 
@@ -15,22 +14,25 @@ import { FaInstagram, FaWalking, FaBusAlt } from 'react-icons/fa'
 import { AiOutlineFacebook, AiFillCar } from 'react-icons/ai'
 import { FiTwitter, FiShare } from 'react-icons/fi'
 import { MdDirectionsBike } from 'react-icons/md'
+import L from 'leaflet'
 
 const Details = () => {
   const [event, setEvent] = useState({})
   const { id } = useParams()
-  const img = event.IMG
-  const coords = event.coords
 
   useEffect(async () => {
-    const evt = await getEvtById(id)
     try {
+      const evt = await getEvtById(id)
       setEvent(evt)
     } catch {
       console.error('elo')
     }
   }, [])
   console.log(event)
+
+  const coords = [event.coordsX, event.coordsY]
+  const img = event.IMG
+  event.display_name
 
   return (
     // entire section//background
@@ -41,6 +43,7 @@ const Details = () => {
         <div className="w-full flex flex-col md:flex-row">
           <div className="h-[1/3] md:w-2/3">
             <img src={`/Images/${img}`} />
+            <p>{event.display_name}</p>
           </div>
 
           <div className="border-b mt-2 md:self-center md:w-1/3 md:border-none md:text-center md:bg-slate-200 md:h-auto shadow-inner md:p-4">

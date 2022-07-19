@@ -27,7 +27,7 @@ const Hero = () => {
       <div className="self-center">
         <img
           className=" w-full h-auto shadow-xl object-fill my-5 mx-auto block"
-          src="/images/Friendly.jpeg"
+          src="/Images/Friendly.jpeg"
           alt="Group of friendly people laughing"
         />
       </div>

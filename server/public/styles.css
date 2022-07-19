@@ -860,10 +860,6 @@ video {
   width: 200px;
 }
 
-.w-10\/12 {
-  width: 83.333333%;
-}
-
 .w-\[85vw\] {
   width: 85vw;
 }
@@ -878,6 +874,10 @@ video {
 
 .w-\[60vw\] {
   width: 60vw;
+}
+
+.w-10\/12 {
+  width: 83.333333%;
 }
 
 .w-11\/12 {
@@ -1498,10 +1498,6 @@ video {
     flex-direction: row;
   }
 
-  .md\:flex-row-reverse {
-    flex-direction: row-reverse;
-  }
-
   .md\:items-start {
     align-items: flex-start;
   }
@@ -1629,10 +1625,6 @@ video {
 
   .lg\:h-\[65vh\] {
     height: 65vh;
-  }
-
-  .lg\:w-\[30vw\] {
-    width: 30vw;
   }
 
   .lg\:w-\[12vw\] {
