@@ -68,9 +68,12 @@ function AddEvent({ setVisible }) {
         max: max,
         description: description,
         status: 'upcoming',
+        coordsX: JSON.parse(selectPosition.lat),
+        coordsY: JSON.parse(selectPosition.lon),
         coords: [selectPosition.lat, selectPosition.lon],
         category: category,
         IMG: image,
+
       },
       token
     )
@@ -83,47 +86,43 @@ function AddEvent({ setVisible }) {
       })
   }
   if (selectPosition != null) {
+    console.log('letss gooo position', selectPosition.lat, selectPosition.lon)
   }
 
   return (
     // Container for form
 
     <>
-      <div className=" w-[85vw] self-start text-2xl font-semibold border-b border-black border-solid mb-4 md:space-y-40 md:w-full">
-        <h1 className="mb-4 md:text-4xl">Create Event</h1>
+      <div className=" w-[85vw] self-start text-2xl font-semibold border-b border-black border-solid mb-4">
+        <h1 className="mb-4">Create Event</h1>
       </div>
       {/* title goes here */}
 
-      <form className="flex flex-col items-center w-full">
-        <div className=" mb-2 md:w-[30vw]">
+      <form className="flex flex-col items-center">
+        <div className=" mb-2">
           {/* image and title goes here */}
-          <input
-            className="w-full border rounded-md lg:w-[30vw]"
-            placeholder="Event Title"
-            onChange={handleName}
-          />
+          <input className="" placeholder="Event Title" onChange={handleName} />
         </div>
 
-        <div className="flex flex-col items-start md:flex-row md:w-full md:justify-evenly md:my-8">
+        <div className="flex flex-col items-start lg:flex-row space-y-2">
           {/* date time and max container */}
           <input
-            className="border rounded-md"
             type="date"
+            className="date-input"
             placeholder="Event Date"
             onChange={handleDate}
           />
           <input
-            className="border rounded-md"
             type="time"
+            className="time-input"
             placeholder="Event Time"
             onChange={handleTime}
           />
           <input
-            className="border rounded-md"
+            className="max-input"
             placeholder="Max Participants"
             onChange={handleMax}
           />
-
           <div>
             <select
               placeholder="Category"
@@ -153,19 +152,22 @@ function AddEvent({ setVisible }) {
 
         {/* container with map and search */}
 
-        <div className="w-[80vw] h-auto flex flex-col items-center md:flex-row-reverse md:items-end ">
+        <div className="w-[80vw] h-auto flex flex-col items-center">
           <Map selectPosition={selectPosition} />
-          {/* search container */}
-          <div className="flex flex-col items-center md:items-start w-full md:w-7/12 md:self-start">
-            <SearchBox
-              className=""
-              setSelectPosition={setSelectPosition}
-              selectPosition={selectPosition}
-            />
-          </div>
+
+          <SearchBox
+            setSelectPosition={setSelectPosition}
+            selectPosition={selectPosition}
+          />
         </div>
 
+        <input
+          className="description-input"
+          placeholder="Event Description"
+          onChange={handleDescription}
+        />
         <button
+
           className="my-10 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 lg:w-[12vw] lg:h-[5vh]"
           placeholder="Submit"
           onClick={handleSubmit}

@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 // API IMPORT:
 import { getEvtById } from '../apiFuncs/eventApi'
-
 //imported components that we want in details
 import Map from './Map'
 import AttendButton from './AttendButton'
 import EventDetails from './EventDetails'
 import Events from '../EventsComponents/Events'
+import L from 'leaflet'
 
 const Details = () => {
   const [event, setEvent] = useState({})
@@ -16,13 +16,19 @@ const Details = () => {
   const coords = event.coords
 
   useEffect(async () => {
-    const evt = await getEvtById(id)
     try {
+      const evt = await getEvtById(id)
       setEvent(evt)
     } catch {
       console.error('elo')
     }
   }, [])
+
+
+  //props being passed down after event
+
+  const coords = [event.coordsX, event.coordsY]
+  console.log(coords, 'gummon')
 
   return (
     <section className="w-full h-[120vh]">
@@ -46,12 +52,12 @@ const Details = () => {
 
         {/* map div */}
 
-        <div className="w-10/12 h-10/12 md:w-7/12 md:h-full ">
-          <Map pin={coords} className="rounded-md" />
-        </div>
-      </div>
+      <div className="w-full h-10/12 ">
+        {coords[0] === undefined ? <p>loading...</p> : <Map coords={coords} />}
+
       <div className="flex flex-row justify-center">
         <AttendButton />
+
       </div>
     </section>
   )

@@ -8,8 +8,21 @@ function getEvents(db = connection) {
 }
 
 function addEvent(newEvent, db = connection) {
-  const { name, status, date, time, max, IMG, description, category, coords } =
-    newEvent
+
+  const {
+    name,
+    status,
+    date,
+    time,
+    max,
+    IMG,
+    description,
+    category
+    coords,
+    coordsX,
+    coordsY,
+  } = newEvent
+
   return db('events').insert({
     name,
     status,
@@ -20,6 +33,8 @@ function addEvent(newEvent, db = connection) {
     description,
     category,
     coords: JSON.stringify(coords),
+    coordsX,
+    coordsY,
   })
 }
 
