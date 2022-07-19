@@ -9,21 +9,6 @@ const icon = L.icon({
 })
 const position = [-36.86447, 174.7763]
 
-// const ResetCenterView = ({ coords }) => {
-//   const [view, setView] = useState(position)
-//   const map = useMap()
-//   console.log(coords, 'MODEL OBJ')
-
-//   useEffect(() => {
-//     if (coords) {
-//       map.setView(L.latLng(coords?.[0], coords?.[1]), map.getZoom(), {
-//         animate: true,
-//       })
-//     }
-//   }, [coords])
-
-//   return null
-// }
 function ResetView({ coords }) {
   const map = useMap()
 
@@ -39,21 +24,6 @@ function ResetView({ coords }) {
 const Map = ({ coords }) => {
   console.log(coords, 'coords map.jsx')
   const [pin, setPin] = useState(position)
-
-  // useEffect(() => {
-  //   if (coords)
-  //     return coords[0] == undefined ? setPin(position) : setPin(coords)
-  // }, [coords])
-
-  // useEffect(() => {
-  //   if (coords[0] != undefined) {
-  //     resetView()
-  //   } else {
-  //     return
-  //   }
-  // }, [])
-
-  // console.log(setView(coords))
 
   return (
     <MapContainer
@@ -71,8 +41,6 @@ const Map = ({ coords }) => {
           A pretty CSS3 popup. <br /> Easily customizable.
         </Popup>
       </Marker>
-      {/* <ResetCenterView coords={coords} /> */}
-      {/* <ResetView selectPosition={coords} /> */}
     </MapContainer>
   )
 }

@@ -5,15 +5,12 @@ import { getEvtById } from '../apiFuncs/eventApi'
 //imported components that we want in details
 import Map from './Map'
 import AttendButton from './AttendButton'
-import EventDetails from './EventDetails'
 import Events from '../EventsComponents/Events'
 import L from 'leaflet'
 
 const Details = () => {
   const [event, setEvent] = useState({})
   const { id } = useParams()
-  const img = event.IMG
-  // const coords = event.coords
 
   useEffect(async () => {
     try {
@@ -26,7 +23,8 @@ const Details = () => {
 
   //props being passed down after event
   const coords = [event.coordsX, event.coordsY]
-  console.log(coords, 'gummon')
+  const img = event.IMG
+  event.display_name
 
   return (
     <section className="w-full h-[120vh]">
@@ -45,9 +43,10 @@ const Details = () => {
             <p>Category:</p>
             <p>{event.category}</p>
           </div>
-          {/* IMG DIV */}
+
           <div>
             <img src={`/Images/${img}`} />
+            <p>{event.display_name}</p>
           </div>
         </div>
 

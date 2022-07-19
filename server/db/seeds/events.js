@@ -13,6 +13,8 @@ exports.seed = async function (knex) {
       coordsX: -36.86447,
       coordsY: 174.7763,
       category: 'Casual Game',
+      display_name:
+        'Sydney, Council of the City of Sydney, New South Wales, Australia',
     },
     {
       name: 'Tag',
