@@ -29,24 +29,33 @@ const Details = () => {
   const img = event.IMG
   console.log(event)
 
-  return (
-    <section className="w-full h-[90vh] flex flex-col bg-slate-300 items-center">
-      <div className="my-5">
-        <h2 className="text-2xl font-semibold">{event.name}</h2>
-        <p>{event.date}</p>
-        <p>{event.time}</p>
-        <p>Category:</p>
-        <p>{event.category}</p>
+  return 
+    // entire section
+
+    <section className="w-full h-[120vh]">
+      <div className="w-full h-[70vh] flex flex-col bg-slate-200 items-center space-y-6 md:flex-row md:items-start">
+        <div className="self-start md:w-5/12">
+          <div className="mt-4 space-y-2 mx-4">
+            <h2 className="text-3xl font-semibold ">{event.name}</h2>
+            <p>{event.date}</p>
+            <p>{event.time}</p>
+          </div>
+          <div className="mx-4">
+            <p className="text-xl font-semibold">Details</p>
+            <p>{event.description}</p>
+          </div>
+        </div>
+
+        {/* map div */}
+
+        <div className="w-10/12 h-10/12 md:w-7/12 md:h-full ">
+          <Map pin={coords} className="rounded-md" />
+        </div
         
+<div>
+      <div className="flex flex-row justify-center">
+        <AttendButton />
       </div>
-      <div>
-      <img src={`../../../server/images/${img}`}/>
-      </div>
-      <div className="w-full h-10/12 ">
-        <Map pin={coords} />
-      </div>
-      <div>{event.description}</div>
-      <AttendButton />
     </section>
   )
 }
