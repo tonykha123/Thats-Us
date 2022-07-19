@@ -6,15 +6,15 @@ import { getEvtById } from '../apiFuncs/eventApi'
 //imported components that we want in details
 import Map from './Map'
 
-
 import EventDetails from './EventDetails'
 import Events from '../EventsComponents/Events'
 import { IoEyeSharp, IoMailOutline } from 'react-icons/io5'
 import { BsCalendar3, BsPeople, BsHeartFill } from 'react-icons/bs'
 import { GrMapLocation } from 'react-icons/gr'
-import { FaInstagram } from 'react-icons/fa'
-import { AiOutlineFacebook } from 'react-icons/ai'
+import { FaInstagram, FaWalking, FaBusAlt } from 'react-icons/fa'
+import { AiOutlineFacebook, AiFillCar } from 'react-icons/ai'
 import { FiTwitter, FiShare } from 'react-icons/fi'
+import { MdDirectionsBike } from 'react-icons/md'
 
 const Details = () => {
   const [event, setEvent] = useState({})
@@ -155,8 +155,26 @@ const Details = () => {
         <div className="w-full  mt-10">
           <Map pin={coords} className="rounded-md" />
         </div>
-
-        {/* <AttendButton />  */}
+        <div className="w-full flex flex-col items-center">
+          <div>{event.name}</div>
+          <p>at</p>
+          <p>Mt Smart Stadium</p>
+          <p className="">12 Morgan Street, Auckland ,2025</p>
+          <div className="flex justify-center w-full gap-3">
+            <a href="https://www.facebook.com/">
+              <FaWalking size={32} className="hover:text-gray-400" />
+            </a>
+            <a href="https://www.instagram.com/">
+              <MdDirectionsBike size={30} className="hover:text-gray-400" />
+            </a>
+            <a href="https://www.twitter.com/">
+              <AiFillCar size={32} className="hover:text-gray-400" />
+            </a>
+            <a href="https://gmail.com">
+              <FaBusAlt size={30} className="hover:text-gray-400" />
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   )
