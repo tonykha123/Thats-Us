@@ -200,7 +200,7 @@ const Details = () => {
                 {/* <BsPeople size={18} /> */}
                 {/* <p className="text-lg">Max People:</p> */}
               </div>
-              <div className="ml-6">
+              <div className="">
                 {/* <p className="">
                   The limit for this event is {event.max} people <br /> {event.max == eventAttendees ? 'Event is '}
                   Only {event?.max - eventAttendees?.length} spots left!
