@@ -135,9 +135,9 @@ const Details = () => {
   return (
     // entire section//background
 
-    <section className="w-full h-[200vh] md:bg-slate-100 md:h-[220vh] ">
+    <section className="w-full h-[230vh] md:bg-slate-100 md:h-[220vh] ">
       {/* main cotainer */}
-      <div className="w-full h-[70vh] flex flex-col mx-auto md:w-9/12 md:bg-white md:h-full md:shadow-xl md:rounded-md md:border">
+      <div className="w-full h-[220vh] flex flex-col mx-auto md:w-9/12 md:bg-white md:h-full md:shadow-xl md:rounded-md md:border">
         <div className="w-full flex flex-col md:flex-row">
           <div className="h-[1/3] md:w-2/3">
             <img src={`/Images/${img} `} alt="category" />
