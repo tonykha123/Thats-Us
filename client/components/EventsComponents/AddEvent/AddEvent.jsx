@@ -20,7 +20,7 @@ function AddEvent({ setVisible }) {
   const { id } = useParams()
   const navigate = useNavigate()
   const [selectPosition, setSelectPosition] = useState(null)
-  
+
   const token = useSelector((state) => state.user.token)
 
   function handleName(event) {
@@ -85,7 +85,7 @@ function AddEvent({ setVisible }) {
 
     <>
       <div className=" w-[85vw] self-start text-2xl font-semibold border-b border-black border-solid mb-4 md:space-y-40 md:w-full">
-        <h1 className="mb-4 md:text-4xl">Create Event</h1>
+        <h1 className="mb-4 md:text-4xl text-[#00AEFF]">Create Event</h1>
       </div>
       {/* title goes here */}
 

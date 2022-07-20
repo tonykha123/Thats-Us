@@ -80,7 +80,7 @@ const Events = () => {
 
       {/* add event button */}
       <button
-        className="my-10 mx-auto font-semibold text-white bg-gray-600 hover:bg-gray-300 w-[120px] h-[60px] shadow-xl rounded-md p-2 lg:w-[12vw] lg:h-[4vw]"
+        className="my-10 mx-auto font-semibold  text-white bg-sky-500 hover:bg-sky-400 w-[120px] h-[60px] shadow-xl rounded-md p-2 lg:w-[12vw] lg:h-[4vw]"
         onClick={showAddEvt}
       >
         Add Event

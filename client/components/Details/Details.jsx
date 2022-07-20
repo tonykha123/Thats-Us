@@ -45,7 +45,6 @@ const Details = () => {
   useEffect(async () => {
     try {
       eventAttendees.find((attendee) => {
-    
         return attendee == event.user
           ? setUserIsAttending(true)
           : setUserIsAttending(false)
@@ -56,10 +55,8 @@ const Details = () => {
   }, [eventAttendees])
 
   function attendEventHandler() {
-    attendEvent(id, `${event.attendees}, ${event.user}`)
-    .then((res) => {
-  
-      setTimeout(()=> {
+    attendEvent(id, `${event.attendees}, ${event.user}`).then((res) => {
+      setTimeout(() => {
         setUserIsAttending(true)
       }, 500)
     })
@@ -88,12 +85,18 @@ const Details = () => {
     </a>
   )
   const greyButton = (
-    <button onClick={attendEventHandler} className="my-5 mx-auto  text-white bg-gray-500 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh] ">
+    <button
+      onClick={attendEventHandler}
+      className="my-5 mx-auto  text-white bg-gray-500 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh] "
+    >
       Attended
     </button>
   )
   const greyButton2 = (
-    <button onClick={attendEventHandler} className="my-5 mx-auto  text-white bg-gray-500 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:hidden ">
+    <button
+      onClick={attendEventHandler}
+      className="my-5 mx-auto  text-white bg-gray-500 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:hidden "
+    >
       Attended
     </button>
   )
@@ -108,8 +111,10 @@ const Details = () => {
             <img src={`/Images/${img} `} alt="category" />
           </div>
 
-          <div className="border-b mt-2 md:self-center md:w-1/3 md:border-none md:text-center md:bg-slate-200 md:h-auto shadow-inner md:p-4">
-            <h2 className="text-2xl font-semibold mx-auto">{event.name}</h2>
+          <div className="border-b mt-2 md:self-center md:w-1/3 md:border-none md:text-center  md:h-auto  md:p-4">
+            <h2 className="text-2xl font-semibold mx-auto  text-[#00AEFF]">
+              {event.name}
+            </h2>
             <p className="text-xl italic">{event.category}</p>
             <div className="flex space-x-2 items-center justify-start md:justify-center">
               <p className="italic">
@@ -174,7 +179,7 @@ const Details = () => {
           {/* about container */}
 
           <div className="flex flex-col md:w-3/5">
-            <p className="text-lg font-semibold ml-4 md:ml-12">
+            <p className="text-lg font-semibold ml-4 md:ml-12  text-[#00AEFF]">
               About This Event
             </p>
             <p className="w-10/12 self-center text-left md:w-3/4 md:mr-16">
@@ -215,7 +220,9 @@ const Details = () => {
           )}
         </div>
         <div className="w-full flex flex-col items-center space-y-2">
-          <div className="text-xl font-semibold">{event.name}</div>
+          <div className="text-xl font-semibold  text-[#00AEFF]">
+            {event.name}
+          </div>
           <p>at</p>
           <p className="text-lg font-semibold">{event.display_name}</p>
           <div className="flex justify-center w-full space-x-4 mt-6">
@@ -223,26 +230,26 @@ const Details = () => {
               href={`https://maps.google.com/?daddr=${event.coordsX},${event.coordsY}&dirflg=w`}
               target="_blank"
             >
-              <FaWalking size={32} className="hover:text-gray-400" />
+              <FaWalking size={32} className="hover:text-gray-400 " />
             </a>
 
             <a
               href={`https://maps.google.com/?daddr=${event.coordsX},${event.coordsY}&dirflg=bike`}
               target="_blank"
             >
-              <MdDirectionsBike size={30} className="hover:text-gray-400" />
+              <MdDirectionsBike size={30} className="hover:text-gray-400 " />
             </a>
             <a
               href={`https://maps.google.com/?daddr=${event.coordsX},${event.coordsY}&dirflg=d`}
               target="_blank"
             >
-              <AiFillCar size={32} className="hover:text-gray-400" />
+              <AiFillCar size={32} className="hover:text-gray-400 " />
             </a>
             <a
               href={`https://maps.google.com/?daddr=${event.coordsX},${event.coordsY}&dirflg=transit`}
               target="_blank"
             >
-              <FaBusAlt size={30} className="hover:text-gray-400" />
+              <FaBusAlt size={30} className="hover:text-gray-400 " />
             </a>
           </div>
           <div></div>
