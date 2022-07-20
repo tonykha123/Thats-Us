@@ -904,6 +904,10 @@ video {
   width: 5rem;
 }
 
+.w-9 {
+  width: 2.25rem;
+}
+
 .flex-shrink {
   flex-shrink: 1;
 }
@@ -934,6 +938,10 @@ video {
 
 .flex-col {
   flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .items-start {
@@ -990,6 +998,10 @@ video {
 
 .self-center {
   align-self: center;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .overflow-y-auto {
@@ -1668,6 +1680,10 @@ video {
 
   .lg\:flex-row {
     flex-direction: row;
+  }
+
+  .lg\:flex-wrap {
+    flex-wrap: wrap;
   }
 
   .lg\:flex-nowrap {
