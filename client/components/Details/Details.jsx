@@ -36,17 +36,17 @@ const Details = () => {
 
   useEffect(async () => {
     try {
-      setEventAttendees(event.attendees.replace(/\s/g, '').split(','))
+      setEventAttendees(await event.attendees.replace(/\s/g, '').split(','))
     } catch {
       console.error('setEventAttendees failed')
     }
   }, [event])
-  console.log(eventAttendees, 'attendees')
 
   useEffect(async () => {
     try {
       eventAttendees.find((attendee) => {
-        return attendee === event.user
+      console.log(attendee === event.user, 'inside 3rd effect')
+        return attendee == event.user
           ? setUserIsAttending(true)
           : setUserIsAttending(false)
       })
@@ -54,11 +54,15 @@ const Details = () => {
       console.error('useEffect shit itself')
     }
   }, [eventAttendees])
-  console.log(event, 'eveNTS')
 
   function attendEventHandler() {
     attendEvent(id, `${event.attendees}, ${event.user}`)
-    navigate(`/event/${id}`)
+    .then((res) => {
+      console.log('code executed')
+      setTimeout(()=> {
+        setUserIsAttending(true)
+      }, 500)
+    })
   }
 
   // const coords = event.coords
@@ -67,21 +71,21 @@ const Details = () => {
   const img = event.IMG
 
   const largeButton = (
-    <button
+    <a
       className=" hidden md:block my-5 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh] "
       onClick={attendEventHandler}
     >
       Attend
-    </button>
+    </a>
   )
 
   const smallButton = (
-    <button
+    <a
       className="my-5 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2  md:hidden"
       onClick={attendEventHandler}
     >
       Attend
-    </button>
+    </a>
   )
   const greyButton = (
     <button className="my-5 mx-auto  text-white bg-gray-500 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh] ">
