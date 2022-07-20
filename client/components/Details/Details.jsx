@@ -6,6 +6,7 @@ import { getEvtById, attendEvent } from '../apiFuncs/eventApi'
 import { activeUser } from '../../slices/user'
 //imported components that we want in details
 import Map from './Map'
+import WeatherWidget from './WeatherWidget'
 import { IoEyeSharp, IoMailOutline } from 'react-icons/io5'
 import { BsCalendar3, BsPeople, BsHeartFill } from 'react-icons/bs'
 import { GrMapLocation } from 'react-icons/gr'
@@ -100,7 +101,7 @@ const Details = () => {
       <div className="w-full h-[70vh] flex flex-col mx-auto md:w-9/12 md:bg-white md:h-full md:shadow-xl md:rounded-md md:border">
         <div className="w-full flex flex-col md:flex-row">
           <div className="h-[1/3] md:w-2/3">
-            <img src={`/Images/${img}`} />
+            <img src={`/Images/${img} `} alt="category" />
             <p>{event.display_name}</p>
           </div>
 
@@ -204,7 +205,11 @@ const Details = () => {
         </div>
 
         <div className="w-full  mt-10 mb-6">
-          {coords[0] === undefined ? <p>Loading map...</p> : <Map coords={coords} className="rounded-md" />}
+          {coords[0] === undefined ? (
+            <p>Loading map...</p>
+          ) : (
+            <Map coords={coords} className="rounded-md" />
+          )}
         </div>
         <div className="w-full flex flex-col items-center space-y-2">
           <div className="text-xl font-semibold">{event.name}</div>
@@ -233,6 +238,9 @@ const Details = () => {
             >
               <FaBusAlt size={30} className="hover:text-gray-400" />
             </a>
+          </div>
+          <div>
+            <WeatherWidget coords={coords} />
           </div>
         </div>
       </div>

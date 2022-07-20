@@ -21,9 +21,6 @@ function AddEvent({ setVisible }) {
   const navigate = useNavigate()
   const [selectPosition, setSelectPosition] = useState(null)
 
-  // const eventData = useSelector((state) => state.events)
-  // const eventslah =  eventData.find((data) => data.event_id === Number(id))
-
   const token = useSelector((state) => state.user.token)
 
   function handleName(event) {
@@ -83,8 +80,6 @@ function AddEvent({ setVisible }) {
         console.error(err.message)
       })
   }
-  if (selectPosition != null) {
-  }
 
   return (
     // Container for form
@@ -130,7 +125,6 @@ function AddEvent({ setVisible }) {
             <select
               className="border rounded-md"
               placeholder="Category"
-              className="border rounded-md"
               onChange={handleCategory}
               onClick={handleImage}
             >
