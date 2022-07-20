@@ -111,8 +111,10 @@ const Details = () => {
       </div>
       <div className="ml-6">
         <p>
-          This event is for {event.max} people. Only{' '}
-          {event?.max - eventAttendees?.length} spots left!
+          This event is for <span className="italic">{event.max} </span>people.
+          Only{' '}
+          <span className="italic">{event?.max - eventAttendees?.length}</span>{' '}
+          spots left!
         </p>
       </div>
     </>
