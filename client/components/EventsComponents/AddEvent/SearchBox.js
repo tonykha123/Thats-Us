@@ -39,7 +39,7 @@ export default function SearchBox(props) {
   }
 
   function mapPin(e, item) {
-    console.log('item', item.lat, item.lon)
+    //console.log('item', item.lat, item.lon)
     setSelectPosition(item)
     setShowList(false)
   }

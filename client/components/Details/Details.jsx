@@ -5,6 +5,7 @@ import { getEvtById } from '../apiFuncs/eventApi'
 //imported components that we want in details
 import Map from './Map'
 import AttendButton from './AttendButton'
+import WeatherWidget from './WeatherWidget'
 import Events from '../EventsComponents/Events'
 import L from 'leaflet'
 
@@ -61,11 +62,13 @@ const Details = () => {
           <div className="flex flex-row justify-center">
             <AttendButton />
           </div>
+          <div>
+            <WeatherWidget coords={coords} />
+          </div>
         </div>
       </div>
     </section>
   )
-  ß
 }
 
 export default Details

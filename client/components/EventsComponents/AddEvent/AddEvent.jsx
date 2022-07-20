@@ -21,9 +21,6 @@ function AddEvent({ setVisible }) {
   const navigate = useNavigate()
   const [selectPosition, setSelectPosition] = useState(null)
 
-  // const eventData = useSelector((state) => state.events)
-  // const eventslah =  eventData.find((data) => data.event_id === Number(id))
-
   const token = useSelector((state) => state.user.token)
 
   function handleName(event) {
@@ -83,7 +80,7 @@ function AddEvent({ setVisible }) {
       })
   }
   if (selectPosition != null) {
-    console.log('letss gooo position', selectPosition.display_name)
+    console.log('letss gooo position', selectPosition.address)
   }
 
   return (

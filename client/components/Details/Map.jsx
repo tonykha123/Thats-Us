@@ -22,7 +22,7 @@ function ResetView({ coords }) {
 }
 
 const Map = ({ coords }) => {
-  console.log(coords, 'coords map.jsx')
+  //console.log(coords, 'coords map.jsx')
   const [pin, setPin] = useState(position)
 
   return (
