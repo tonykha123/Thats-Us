@@ -24,12 +24,13 @@ const Details = () => {
   const activeuser = useSelector(activeUser)
 
   useEffect(() => {
-    return getEvtById(Number(id)).then((response) => {
-      setEvent({ ...response, user: activeuser.email })
-    })
-    .catch(() => {
-      console.error('could not get event by id')
-    })
+    return getEvtById(Number(id))
+      .then((response) => {
+        setEvent({ ...response, user: activeuser.email })
+      })
+      .catch(() => {
+        console.error('could not get event by id')
+      })
   }, [])
 
   useEffect(async () => {
@@ -211,13 +212,18 @@ const Details = () => {
           <p>Mt Smart Stadium</p>
           <p className="">{event.display_name}</p>
           <div className="flex justify-center w-full space-x-4 mt-6">
-            <a href="https://www.facebook.com/">
+            <a
+              href={`https://maps.google.com/?daddr=${event.coordsX},${event.coordsY}&dirflg=w`}
+            >
               <FaWalking size={32} className="hover:text-gray-400" />
             </a>
+
             <a href="https://www.instagram.com/">
               <MdDirectionsBike size={30} className="hover:text-gray-400" />
             </a>
-            <a href="https://www.twitter.com/">
+            <a
+              href={`https://maps.google.com/?saddr=Current+Location&daddr=${event.coordsX},${event.coordsY}&mode=driving`}
+            >
               <AiFillCar size={32} className="hover:text-gray-400" />
             </a>
             <a href="https://gmail.com">
