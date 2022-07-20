@@ -15,6 +15,7 @@ import { AiOutlineFacebook, AiFillCar } from 'react-icons/ai'
 import { FiTwitter, FiShare } from 'react-icons/fi'
 import { MdDirectionsBike } from 'react-icons/md'
 import L from 'leaflet'
+import ThanksForAttending from './ThanksForAttending'
 
 const Details = () => {
   const [event, setEvent] = useState({})
@@ -58,12 +59,10 @@ const Details = () => {
     attendEvent(id, `${event.attendees}, ${event.user}`).then((res) => {
       setTimeout(() => {
         setUserIsAttending(true)
-        navigate('/')
+        navigate(`/thanks/${id}`)
       }, 500)
     })
   }
-
-  console.log(event, 'events')
 
   // const coords = event.coords
   const coords = [event.coordsX, event.coordsY]
