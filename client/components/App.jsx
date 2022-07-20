@@ -17,14 +17,12 @@ import Details from './Details/Details'
 import Footer from './Footer/Footer'
 import AddEvent from './EventsComponents/AddEvent/AddEvent'
 
-
-
 const App = () => {
   cacheUser(useAuth0)
   return (
     <>
       {/* outer most container */}
-      <div className="w-full bg-neutral-400 flex flex-col items-center">
+      <div className="w-full bg-white flex flex-col items-center">
         <Router>
           <NavBar />
           <Routes>

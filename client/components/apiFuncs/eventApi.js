@@ -10,7 +10,7 @@ export const getAllEvents = async () => {
 }
 
 export async function addEvent(event) {
-    const newEvent = await request.post('/api/v1/events').send(event)
+  const newEvent = await request.post('/api/v1/events').send(event)
   try {
     return newEvent.body
   } catch (error) {
@@ -22,6 +22,18 @@ export const getEvtById = async (id) => {
   const event = await request.get(`/api/v1/events/${id}`)
   try {
     return event.body[0]
+  } catch (err) {
+    console.error(err.message)
+  }
+}
+
+export const attendEvent = async (eventId, updatedAttendees) => {
+  try {
+    const updatedAttendingEvent = await request
+      .patch(`/api/v1/events/attend/${eventId}`)
+      .send({ updatedAttendees })
+
+    return updatedAttendingEvent.body
   } catch (err) {
     console.error(err.message)
   }
