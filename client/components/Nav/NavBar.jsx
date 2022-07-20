@@ -44,14 +44,14 @@ const NavBar = () => {
       {/* right side nav   */}
       <div>
         <div className="flex flex-row space-x-2 justify-between">
-          <a
-            onClick={handleSignup}
-            className="hover:text-white pr-4"
-            href="/register"
-          >
-            Signup
-          </a>
           <IfNotAuthenticated>
+            <a
+              onClick={handleSignup}
+              className="hover:text-white pr-4"
+              href="/register"
+            >
+              Signup
+            </a>
             <MdLogin
               size={28}
               className="hover:text-gray-400"
