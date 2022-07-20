@@ -107,8 +107,8 @@ const Details = () => {
 
           <div className="border-b mt-2 md:self-center md:w-1/3 md:border-none md:text-center md:bg-slate-200 md:h-auto shadow-inner md:p-4">
             <h2 className="text-2xl font-semibold mx-auto">{event.name}</h2>
-            <p className="text-xl italic">Sports</p>
-            <div className="flex space-x-2 items-center justify-center">
+            <p className="text-xl italic">{event.category}</p>
+            <div className="flex space-x-2 items-center justify-start md:justify-center">
               <p className="italic">
                 {Math.floor(Math.random() * 1000) + 100} Views
               </p>
