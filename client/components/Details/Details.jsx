@@ -39,6 +39,7 @@ const Details = () => {
       console.error('setEventAttendees failed')
     }
   }, [event])
+  console.log(eventAttendees, 'attendees')
 
   useEffect(async () => {
     try {
@@ -51,6 +52,7 @@ const Details = () => {
       console.error('useEffect shit itself')
     }
   }, [eventAttendees])
+  console.log(event, 'eveNTS')
 
   function attendEventHandler() {
     attendEvent(id, `${event.attendees}, ${event.user}`)
