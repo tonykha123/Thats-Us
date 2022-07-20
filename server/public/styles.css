@@ -856,13 +856,7 @@ video {
   height: 75px;
 }
 
-<<<<<<< HEAD
-.h-\[110vh\] {
-  height: 110vh;
-}
 
-=======
->>>>>>> main
 .w-full {
   width: 100%;
 }
@@ -1538,6 +1532,10 @@ video {
 
   .md\:items-end {
     align-items: flex-end;
+  }
+
+  .md\:justify-center {
+    justify-content: center;
   }
 
   .md\:justify-between {
