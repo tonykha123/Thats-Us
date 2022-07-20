@@ -15,7 +15,7 @@ export const SingleUpcomingTile = ({
     >
       <h2 className="font-bold text-xl">{name}</h2>
       <p className="self-start my-2">
-        {date} {max} players
+        {date} {max} Needed
       </p>
       <article className="self-start my-1 overflow-hidden flex-wrap w-full">
         {description}
