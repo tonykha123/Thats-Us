@@ -217,22 +217,26 @@ const Details = () => {
           <div className="flex justify-center w-full space-x-4 mt-6">
             <a
               href={`https://maps.google.com/?daddr=${event.coordsX},${event.coordsY}&dirflg=w`}
+              target="_blank"
             >
               <FaWalking size={32} className="hover:text-gray-400" />
             </a>
 
             <a
               href={`https://maps.google.com/?daddr=${event.coordsX},${event.coordsY}&dirflg=bike`}
+              target="_blank"
             >
               <MdDirectionsBike size={30} className="hover:text-gray-400" />
             </a>
             <a
               href={`https://maps.google.com/?daddr=${event.coordsX},${event.coordsY}&dirflg=d`}
+              target="_blank"
             >
               <AiFillCar size={32} className="hover:text-gray-400" />
             </a>
             <a
               href={`https://maps.google.com/?daddr=${event.coordsX},${event.coordsY}&dirflg=transit`}
+              target="_blank"
             >
               <FaBusAlt size={30} className="hover:text-gray-400" />
             </a>
