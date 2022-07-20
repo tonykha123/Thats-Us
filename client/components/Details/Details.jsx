@@ -31,7 +31,6 @@ const Details = () => {
       console.error('setEvent failed')
     }
   }, [activeuser])
-  console.log(event.attendees, 'go')
 
   useEffect(async () => {
     try {
@@ -40,7 +39,6 @@ const Details = () => {
       console.error('setEventAttendees failed')
     }
   }, [event])
-  console.log(event.user, 'time')
 
   useEffect(async () => {
     try {
@@ -50,10 +48,10 @@ const Details = () => {
           : setUserIsAttending(false)
       })
     } catch {
-      console.log('useEffect shit itself')
+      console.error('useEffect shit itself')
     }
   }, [eventAttendees])
-  console.log(userIsAttending, 'attending?')
+  
 
   function attendEventHandler() {
     attendEvent(id, `${event.attendees}, ${event.user}`)
@@ -61,8 +59,8 @@ const Details = () => {
   }
 
   const coords = event.coords
+
   const img = event.IMG
-  event.display_name
 
   const largeButton = (
     <a
@@ -76,14 +74,13 @@ const Details = () => {
 
   const smallButton = (
     <a
-    className="my-5 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh] md:hidden"
-    href="https://www.google.com"
-    onClick={attendEventHandler}
-  >
-    Attend
-  </a>
+      className="my-5 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh] md:hidden"
+      href="https://www.google.com"
+      onClick={attendEventHandler}
+    >
+      Attend
+    </a>
   )
-
 
   return (
     // entire section//background
@@ -119,7 +116,11 @@ const Details = () => {
             <BsHeartFill size={22} className="hover:text-red-500" />
           </div>
           <div className="mx-4">
-           {userIsAttending ? <p>Youre attending this event already </p> : largeButton}
+            {userIsAttending ? (
+              <p>Youre attending this event already </p>
+            ) : (
+              largeButton
+            )}
           </div>
         </div>
 
@@ -143,7 +144,7 @@ const Details = () => {
                 <p className="text-lg">Location:</p>
               </div>
               <div className="ml-6">
-                <p className="">12 Morgan Street, Auckland ,2025</p>
+                <p className="">{event.display_name}</p>
               </div>
             </div>
 
@@ -176,7 +177,11 @@ const Details = () => {
           </div>
         </div>
 
-        {userIsAttending ? <p>Youre attending this event already </p> : smallButton}       
+        {userIsAttending ? (
+          <p>Youre attending this event already </p>
+        ) : (
+          smallButton
+        )}
 
         <div className="flex flex-col ml-4">
           <p className="text-md font-semibold">Share With Friends</p>
@@ -203,7 +208,7 @@ const Details = () => {
           <div className="text-xl font-semibold">{event.name}</div>
           <p>at</p>
           <p>Mt Smart Stadium</p>
-          <p className="">12 Morgan Street, Auckland ,2025</p>
+          <p className="">{event.display_name}</p>
           <div className="flex justify-center w-full space-x-4 mt-6">
             <a href="https://www.facebook.com/">
               <FaWalking size={32} className="hover:text-gray-400" />

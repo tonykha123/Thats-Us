@@ -50,7 +50,7 @@ router.patch('/attend/:id', async (req, res) => {
   try {
     const eventId = Number(req.params.id)
     const update = req.body.updatedAttendees
-    console.log(eventId, update, 'route')
+
     const updateEvent = await db.attendEvent(eventId, update)
     res.json(updateEvent)
   }

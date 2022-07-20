@@ -16,17 +16,14 @@ function Nav() {
   // TODO: call the useAuth0 hook and destructure logout and loginWithRedirect
   function handleLogoff(e) {
     e.preventDefault()
-    console.log('log off')
   }
 
   function handleRegister(e) {
     e.preventDefault()
-
   }
 
   function handleSignIn(e) {
     e.preventDefault()
-  
   }
   return (
     <>

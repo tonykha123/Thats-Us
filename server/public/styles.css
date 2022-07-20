@@ -1397,6 +1397,11 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:my-8 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
   .md\:ml-12 {
     margin-left: 3rem;
   }
@@ -1421,8 +1426,8 @@ video {
     height: 4vh;
   }
 
-  .md\:h-\[200vh\] {
-    height: 200vh;
+  .md\:h-\[220vh\] {
+    height: 220vh;
   }
 
   .md\:h-full {
@@ -1449,8 +1454,8 @@ video {
     height: 300px;
   }
 
-  .md\:h-\[220vh\] {
-    height: 220vh;
+  .md\:w-\[12vw\] {
+    width: 12vw;
   }
 
   .md\:w-9\/12 {
@@ -1481,6 +1486,14 @@ video {
     width: 75%;
   }
 
+  .md\:w-\[30vw\] {
+    width: 30vw;
+  }
+
+  .md\:w-7\/12 {
+    width: 58.333333%;
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
@@ -1489,14 +1502,32 @@ video {
     flex-direction: row-reverse;
   }
 
+  .md\:items-start {
+    align-items: flex-start;
+  }
+
+  .md\:items-end {
+    align-items: flex-end;
+  }
+
   .md\:justify-between {
     justify-content: space-between;
+  }
+
+  .md\:justify-evenly {
+    justify-content: space-evenly;
   }
 
   .md\:space-y-5 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
     margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+  }
+
+  .md\:space-y-40 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(10rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(10rem * var(--tw-space-y-reverse));
   }
 
   .md\:self-start {
@@ -1542,6 +1573,11 @@ video {
     text-align: center;
   }
 
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
   .md\:shadow-xl {
     --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
     --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
@@ -1565,10 +1601,6 @@ video {
 
   .lg\:flex {
     display: flex;
-  }
-
-  .lg\:h-\[150vh\] {
-    height: 150vh;
   }
 
   .lg\:h-\[5vh\] {
@@ -1597,6 +1629,10 @@ video {
 
   .lg\:h-\[65vh\] {
     height: 65vh;
+  }
+
+  .lg\:w-\[30vw\] {
+    width: 30vw;
   }
 
   .lg\:w-\[12vw\] {

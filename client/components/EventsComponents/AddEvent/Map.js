@@ -13,7 +13,6 @@ const position = [-36.86447, 174.7763]
 function ResetCenterView(props) {
   const { selectPosition } = props
   const map = useMap()
-  console.log(selectPosition, 'MODEL OBJ')
 
   useEffect(() => {
     if (selectPosition) {
