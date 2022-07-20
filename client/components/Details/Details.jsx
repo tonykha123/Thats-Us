@@ -203,7 +203,7 @@ const Details = () => {
         </div>
 
         <div className="w-full  mt-10 mb-6">
-          <Map pin={coords} className="rounded-md" />
+          {coords[0] === undefined ? <p>Loading map...</p> : <Map coords={coords} className="rounded-md" />}
         </div>
         <div className="w-full flex flex-col items-center space-y-2">
           <div className="text-xl font-semibold">{event.name}</div>
