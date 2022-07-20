@@ -62,21 +62,26 @@ const Details = () => {
   const img = event.IMG
 
   const largeButton = (
-    <div
+    <button
       className=" hidden md:block my-5 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh] "
       onClick={attendEventHandler}
     >
       Attend
-    </div>
+    </button>
   )
 
   const smallButton = (
-    <div
+    <button
       className="my-5 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh] md:hidden"
       onClick={attendEventHandler}
     >
       Attend
-    </div>
+    </button>
+  )
+  const greyButton = (
+    <button className="my-5 mx-auto  text-white bg-gray-500 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh]">
+      Already Attended
+    </button>
   )
 
   return (
@@ -113,11 +118,7 @@ const Details = () => {
             <BsHeartFill size={22} className="hover:text-red-500" />
           </div>
           <div className="mx-4">
-            {userIsAttending ? (
-              <p>Youre attending this event already </p>
-            ) : (
-              largeButton
-            )}
+            {userIsAttending ? greyButton : largeButton}
           </div>
         </div>
 
@@ -174,11 +175,7 @@ const Details = () => {
           </div>
         </div>
 
-        {userIsAttending ? (
-          <p>Youre attending this event already </p>
-        ) : (
-          smallButton
-        )}
+        {userIsAttending ? greyButton : smallButton}
 
         <div className="flex flex-col ml-4">
           <p className="text-md font-semibold">Share With Friends</p>
