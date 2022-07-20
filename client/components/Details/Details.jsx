@@ -15,6 +15,7 @@ import { AiOutlineFacebook, AiFillCar } from 'react-icons/ai'
 import { FiTwitter, FiShare } from 'react-icons/fi'
 import { MdDirectionsBike } from 'react-icons/md'
 import L from 'leaflet'
+import ThanksForAttending from './ThanksForAttending'
 
 const Details = () => {
   const [event, setEvent] = useState({})
@@ -58,6 +59,7 @@ const Details = () => {
     attendEvent(id, `${event.attendees}, ${event.user}`).then((res) => {
       setTimeout(() => {
         setUserIsAttending(true)
+        navigate(`/thanks/${id}`)
       }, 500)
     })
   }
@@ -100,6 +102,34 @@ const Details = () => {
       Attended
     </button>
   )
+
+  const spotsRemaining = (
+    <>
+      <div className="flex space-x-2 items-center">
+        <BsPeople size={18} />
+        <p className="text-lg">Max People:</p>
+      </div>
+      <div className="ml-6">
+        <p>
+          This event is for {event.max} people. Only{' '}
+          {event?.max - eventAttendees?.length} spots left!
+        </p>
+      </div>
+    </>
+  )
+
+  const eventIsFull = (
+    <>
+      <div className="flex space-x-2 items-center">
+        {/* <BsPeople size={18} /> */}
+        {/* <p className="text-lg">Max People:</p> */}
+      </div>
+      <div className="ml-6">
+        <p style={{ color: 'red' }}>This event is full!</p>
+      </div>
+    </>
+  )
+
   return (
     // entire section//background
 
@@ -165,13 +195,18 @@ const Details = () => {
 
             <div className="flex flex-col ml-4 mx-6">
               <div className="flex space-x-2 items-center">
-                <BsPeople size={18} />
-                <p className="text-lg">Max People:</p>
+                {/* <BsPeople size={18} /> */}
+                {/* <p className="text-lg">Max People:</p> */}
               </div>
               <div className="ml-6">
-                <p className="">
-                  The limit for this event is {event.max} people
-                </p>
+                {/* <p className="">
+                  The limit for this event is {event.max} people <br /> {event.max == eventAttendees ? 'Event is '}
+                  Only {event?.max - eventAttendees?.length} spots left!
+                </p> */}
+                {event?.max <= eventAttendees?.length
+                  ? eventIsFull
+                  : spotsRemaining}
+                {console.log(event?.max, eventAttendees?.length)}
               </div>
             </div>
           </div>

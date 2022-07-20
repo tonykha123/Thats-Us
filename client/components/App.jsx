@@ -16,6 +16,7 @@ import Home from './Home/Home'
 import Details from './Details/Details'
 import Footer from './Footer/Footer'
 import AddEvent from './EventsComponents/AddEvent/AddEvent'
+import ThanksForAttending from './Details/ThanksForAttending'
 
 const App = () => {
   cacheUser(useAuth0)
@@ -32,6 +33,7 @@ const App = () => {
             <Route path="/event/:id" element={<Details />} />
             {/* </IfAuthenticated> */}
             <Route path="/add" element={<AddEvent />} />
+            <Route path="/thanks/:id" element={<ThanksForAttending />} />
           </Routes>
           <Footer />
         </Router>
