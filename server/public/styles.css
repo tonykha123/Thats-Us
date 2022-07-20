@@ -792,8 +792,8 @@ video {
   height: 40px;
 }
 
-.h-\[180vh\] {
-  height: 180vh;
+.h-\[200vh\] {
+  height: 200vh;
 }
 
 .h-\[70vh\] {
@@ -1051,6 +1051,11 @@ video {
 .bg-sky-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(14 165 233 / var(--tw-bg-opacity));
+}
+
+.bg-gray-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 
 .bg-slate-100 {
@@ -1348,6 +1353,10 @@ video {
 
   .sm\:h-\[30vh\] {
     height: 30vh;
+  }
+
+  .sm\:h-\[150px\] {
+    height: 150px;
   }
 
   .sm\:w-\[30vw\] {
