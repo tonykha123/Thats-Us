@@ -15,10 +15,12 @@ const Hero = () => {
         />
         <p className="text-5xl w-full font-extrabold sm:text-6xl ">Thats us.</p>
         <p className="mt-2 mb:4 sm:my-5 ">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-          veritatis et accusantium deserunt atque molestias, molestiae assumenda
-          id, praesentium unde temporibus nihil modi expedita corporis autem
-          libero sunt natus aspernatur!
+          That's us is platform created by a group of friends for finding and
+          building local communities. Anyone can use the app! That's us allows
+          anyone to create ,share and find experiences with one another. From
+          pickup basketball games, lunch gatherings, gaming competitons or just
+          heading down to the pub, It can all be sorted out in a few clicks. Our
+          mission is to connect our local communities through events.
         </p>
       </div>
       {/* text container of hero div ends */}
