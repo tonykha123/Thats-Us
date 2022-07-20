@@ -54,8 +54,6 @@ function AddEvent({ setVisible }) {
 
   function handleSubmit(event) {
     event.preventDefault()
-    // setName('')
-
     addEvent(
       {
         event_id: id,
@@ -69,7 +67,7 @@ function AddEvent({ setVisible }) {
         coordsY: JSON.parse(selectPosition.lon),
         category: category,
         IMG: image,
-        display_image: selectPosition.display_name,
+        display_name: selectPosition.display_name,
       },
       token
     )
