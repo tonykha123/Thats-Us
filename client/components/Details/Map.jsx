@@ -28,7 +28,7 @@ const Map = ({ coords }) => {
   return (
     <MapContainer
       center={coords}
-      zoom={9}
+      zoom={12}
       scrollWheelZoom={false}
       className="w-full  shadow-xl h-[270px] sm:h-[230px] md:h-[60vh]"
     >

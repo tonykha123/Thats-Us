@@ -32,15 +32,19 @@ function ResetCenterView(props) {
 const Map = (props) => {
   const { selectPosition } = props
   const locationSelection = [selectPosition?.lat, selectPosition?.lon]
-
-
+  console.log(
+    selectPosition?.lat,
+    selectPosition?.lon,
+    selectPosition?.display_name,
+    'OBJ'
+  )
   return (
     <div className="w-[65vw] h-[20vh]  sm:h-[25vh] md:h-[50vh] md:self-start">
       <MapContainer
         center={
           locationSelection[0] == undefined ? position : locationSelection
         }
-        zoom={9}
+        zoom={12}
         scrollWheelZoom={true}
         className="w-full h-full rounded-md shadow-xl"
       >
