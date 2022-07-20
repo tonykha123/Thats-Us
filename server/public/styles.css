@@ -852,6 +852,10 @@ video {
   height: 75px;
 }
 
+.h-\[200vh\] {
+  height: 200vh;
+}
+
 .w-full {
   width: 100%;
 }
@@ -1067,6 +1071,11 @@ video {
 .bg-slate-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(71 85 105 / var(--tw-bg-opacity));
+}
+
+.bg-gray-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 
 .object-fill {
@@ -1448,6 +1457,14 @@ video {
 
   .md\:h-\[300px\] {
     height: 300px;
+  }
+
+  .md\:h-\[6vh\] {
+    height: 6vh;
+  }
+
+  .md\:h-\[7vh\] {
+    height: 7vh;
   }
 
   .md\:w-\[12vw\] {

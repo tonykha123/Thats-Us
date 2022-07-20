@@ -72,22 +72,26 @@ const Details = () => {
 
   const smallButton = (
     <button
-      className="my-5 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh] md:hidden"
+      className="my-5 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2  md:hidden"
       onClick={attendEventHandler}
     >
       Attend
     </button>
   )
   const greyButton = (
-    <button className="my-5 mx-auto  text-white bg-gray-500 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh]">
-      Already Attended
+    <button className="my-5 mx-auto  text-white bg-gray-500 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh] ">
+      Attended
     </button>
   )
-
+  const greyButton2 = (
+    <button className="my-5 mx-auto  text-white bg-gray-500 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:hidden ">
+      Attended
+    </button>
+  )
   return (
     // entire section//background
 
-    <section className="w-full h-[180vh] md:bg-slate-100 md:h-[220vh] ">
+    <section className="w-full h-[200vh] md:bg-slate-100 md:h-[220vh] ">
       {/* main cotainer */}
       <div className="w-full h-[70vh] flex flex-col mx-auto md:w-9/12 md:bg-white md:h-full md:shadow-xl md:rounded-md md:border">
         <div className="w-full flex flex-col md:flex-row">
@@ -174,8 +178,8 @@ const Details = () => {
             </p>
           </div>
         </div>
-
-        {userIsAttending ? greyButton : smallButton}
+        {/* mobile button */}
+        {userIsAttending ? greyButton2 : smallButton}
 
         <div className="flex flex-col ml-4">
           <p className="text-md font-semibold">Share With Friends</p>
