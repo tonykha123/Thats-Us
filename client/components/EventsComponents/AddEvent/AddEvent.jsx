@@ -21,9 +21,6 @@ function AddEvent({ setVisible }) {
   const navigate = useNavigate()
   const [selectPosition, setSelectPosition] = useState(null)
 
-  // const eventData = useSelector((state) => state.events)
-  // const eventslah =  eventData.find((data) => data.event_id === Number(id))
-
   const token = useSelector((state) => state.user.token)
 
   function handleName(event) {
@@ -57,8 +54,6 @@ function AddEvent({ setVisible }) {
 
   function handleSubmit(event) {
     event.preventDefault()
-    // setName('')
-
     addEvent(
       {
         event_id: id,
@@ -68,9 +63,11 @@ function AddEvent({ setVisible }) {
         max: max,
         description: description,
         status: 'upcoming',
-        coords: [selectPosition.lat, selectPosition.lon],
+        coordsX: JSON.parse(selectPosition.lat),
+        coordsY: JSON.parse(selectPosition.lon),
         category: category,
         IMG: image,
+        display_name: selectPosition.display_name
       },
       token
     )
@@ -81,8 +78,6 @@ function AddEvent({ setVisible }) {
       .catch((err) => {
         console.error(err.message)
       })
-  }
-  if (selectPosition != null) {
   }
 
   return (
@@ -129,7 +124,6 @@ function AddEvent({ setVisible }) {
             <select
               className="border rounded-md"
               placeholder="Category"
-              className="border rounded-md"
               onChange={handleCategory}
               onClick={handleImage}
             >

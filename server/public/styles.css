@@ -812,6 +812,10 @@ video {
   height: 270px;
 }
 
+.h-\[120px\] {
+  height: 120px;
+}
+
 .h-auto {
   height: auto;
 }
@@ -852,10 +856,13 @@ video {
   height: 75px;
 }
 
+<<<<<<< HEAD
 .h-\[110vh\] {
   height: 110vh;
 }
 
+=======
+>>>>>>> main
 .w-full {
   width: 100%;
 }
@@ -1461,6 +1468,10 @@ video {
     height: 60vh;
   }
 
+  .md\:h-\[250px\] {
+    height: 250px;
+  }
+
   .md\:h-\[50vh\] {
     height: 50vh;
   }
@@ -1499,6 +1510,10 @@ video {
 
   .md\:w-3\/4 {
     width: 75%;
+  }
+
+  .md\:w-\[200px\] {
+    width: 200px;
   }
 
   .md\:w-\[30vw\] {

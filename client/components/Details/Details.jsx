@@ -6,6 +6,7 @@ import { getEvtById, attendEvent } from '../apiFuncs/eventApi'
 import { activeUser } from '../../slices/user'
 //imported components that we want in details
 import Map from './Map'
+import WeatherWidget from './WeatherWidget'
 import { IoEyeSharp, IoMailOutline } from 'react-icons/io5'
 import { BsCalendar3, BsPeople, BsHeartFill } from 'react-icons/bs'
 import { GrMapLocation } from 'react-icons/gr'
@@ -23,14 +24,15 @@ const Details = () => {
   const navigate = useNavigate()
   const activeuser = useSelector(activeUser)
 
-  useEffect(async () => {
-    const evt = await getEvtById(Number(id))
-    try {
-      setEvent({ ...evt, user: activeuser.email })
-    } catch {
-      console.error('setEvent failed')
-    }
-  }, [activeuser])
+  useEffect(() => {
+    return getEvtById(Number(id))
+      .then((response) => {
+        setEvent({ ...response, user: activeuser.email })
+      })
+      .catch(() => {
+        console.error('could not get event by id')
+      })
+  }, [])
 
   useEffect(async () => {
     try {
@@ -39,8 +41,7 @@ const Details = () => {
       console.error('setEventAttendees failed')
     }
   }, [event])
-
-
+  console.log(eventAttendees, 'attendees')
 
   useEffect(async () => {
     try {
@@ -53,13 +54,15 @@ const Details = () => {
       console.error('useEffect shit itself')
     }
   }, [eventAttendees])
+  console.log(event, 'eveNTS')
 
   function attendEventHandler() {
     attendEvent(id, `${event.attendees}, ${event.user}`)
     navigate(`/event/${id}`)
   }
 
-  const coords = event.coords
+  // const coords = event.coords
+  const coords = [event.coordsX, event.coordsY]
 
   const img = event.IMG
 
@@ -98,8 +101,7 @@ const Details = () => {
       <div className="w-full h-[70vh] flex flex-col mx-auto md:w-9/12 md:bg-white md:h-full md:shadow-xl md:rounded-md md:border">
         <div className="w-full flex flex-col md:flex-row">
           <div className="h-[1/3] md:w-2/3">
-            <img src={`/Images/${img}`} />
-            <p>{event.display_name}</p>
+            <img src={`/Images/${img} `} alt="category" />
           </div>
 
           <div className="border-b mt-2 md:self-center md:w-1/3 md:border-none md:text-center md:bg-slate-200 md:h-auto shadow-inner md:p-4">
@@ -202,27 +204,44 @@ const Details = () => {
         </div>
 
         <div className="w-full  mt-10 mb-6">
-          <Map pin={coords} className="rounded-md" />
+          {coords[0] === undefined ? (
+            <p>Loading map...</p>
+          ) : (
+            <Map coords={coords} className="rounded-md" />
+          )}
         </div>
         <div className="w-full flex flex-col items-center space-y-2">
           <div className="text-xl font-semibold">{event.name}</div>
           <p>at</p>
-          <p>Mt Smart Stadium</p>
-          <p className="">{event.display_name}</p>
+          <p className="text-lg font-semibold">{event.display_name}</p>
           <div className="flex justify-center w-full space-x-4 mt-6">
-            <a href="https://www.facebook.com/">
+            <a
+              href={`https://maps.google.com/?daddr=${event.coordsX},${event.coordsY}&dirflg=w`}
+              target="_blank"
+            >
               <FaWalking size={32} className="hover:text-gray-400" />
             </a>
-            <a href="https://www.instagram.com/">
+
+            <a
+              href={`https://maps.google.com/?daddr=${event.coordsX},${event.coordsY}&dirflg=bike`}
+              target="_blank"
+            >
               <MdDirectionsBike size={30} className="hover:text-gray-400" />
             </a>
-            <a href="https://www.twitter.com/">
+            <a
+              href={`https://maps.google.com/?daddr=${event.coordsX},${event.coordsY}&dirflg=d`}
+              target="_blank"
+            >
               <AiFillCar size={32} className="hover:text-gray-400" />
             </a>
-            <a href="https://gmail.com">
+            <a
+              href={`https://maps.google.com/?daddr=${event.coordsX},${event.coordsY}&dirflg=transit`}
+              target="_blank"
+            >
               <FaBusAlt size={30} className="hover:text-gray-400" />
             </a>
           </div>
+          <div></div>
         </div>
       </div>
     </section>
