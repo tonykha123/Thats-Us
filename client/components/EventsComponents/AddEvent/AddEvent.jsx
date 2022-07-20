@@ -69,6 +69,7 @@ function AddEvent({ setVisible }) {
         coordsY: JSON.parse(selectPosition.lon),
         category: category,
         IMG: image,
+        display_image: selectPosition.display_name,
       },
       token
     )
@@ -80,7 +81,7 @@ function AddEvent({ setVisible }) {
         console.error(err.message)
       })
   }
-
+  console.log(selectPosition, 'OBJECT TO SEED')
   return (
     // Container for form
 
