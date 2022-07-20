@@ -51,7 +51,6 @@ const Details = () => {
       console.error('useEffect shit itself')
     }
   }, [eventAttendees])
-  
 
   function attendEventHandler() {
     attendEvent(id, `${event.attendees}, ${event.user}`)
@@ -63,23 +62,21 @@ const Details = () => {
   const img = event.IMG
 
   const largeButton = (
-    <a
+    <div
       className=" hidden md:block my-5 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh] "
-      href="https://www.google.com"
       onClick={attendEventHandler}
     >
       Attend
-    </a>
+    </div>
   )
 
   const smallButton = (
-    <a
+    <div
       className="my-5 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh] md:hidden"
-      href="https://www.google.com"
       onClick={attendEventHandler}
     >
       Attend
-    </a>
+    </div>
   )
 
   return (
