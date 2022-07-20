@@ -187,7 +187,7 @@ function AddEvent({ setVisible }) {
         </div>
 
         <button
-          className="my-10 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 lg:w-[12vw] lg:h-[5vh]"
+          className="mb-10 mt-5 mx-auto  text-white bg-sky-500 hover:bg-sky-400 w-[200px] h-[40px] shadow-xl rounded-md p-2 lg:w-[12vw] lg:h-[5vh]"
           placeholder="Submit"
           onClick={handleSubmit}
         >
