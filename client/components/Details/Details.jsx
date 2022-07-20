@@ -261,7 +261,7 @@ const Details = () => {
             {event.name}
           </div>
           <p>at</p>
-          <p className="text-lg font-semibold">{event.display_name}</p>
+          <p className="text-lg font-semibold w-9/12">{event.display_name}</p>
           <div className="flex justify-center w-full space-x-4 mt-6">
             <a
               href={`https://maps.google.com/?daddr=${event.coordsX},${event.coordsY}&dirflg=w`}
