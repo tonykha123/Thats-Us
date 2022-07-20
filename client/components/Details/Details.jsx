@@ -45,7 +45,7 @@ const Details = () => {
   useEffect(async () => {
     try {
       eventAttendees.find((attendee) => {
-      console.log(attendee === event.user, 'inside 3rd effect')
+    
         return attendee == event.user
           ? setUserIsAttending(true)
           : setUserIsAttending(false)
@@ -58,7 +58,7 @@ const Details = () => {
   function attendEventHandler() {
     attendEvent(id, `${event.attendees}, ${event.user}`)
     .then((res) => {
-      console.log('code executed')
+  
       setTimeout(()=> {
         setUserIsAttending(true)
       }, 500)

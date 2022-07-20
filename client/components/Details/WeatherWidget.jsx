@@ -12,7 +12,7 @@ const Weather = ({ coords }) => {
 
   function fetchWeather() {
     return request.get(url).then((response) => {
-      console.log(response.body.weather)
+   
       return response?.body
     })
   }
@@ -22,7 +22,7 @@ const Weather = ({ coords }) => {
     fetchWeather()
       .then((data) => {
         setWeatherData(data.weather)
-        console.log(data.weather, 'setWeatherData')
+        
       })
       .catch((err) => console.error(err.message))
   }, [coords[0], coords[1]])
@@ -32,7 +32,7 @@ const Weather = ({ coords }) => {
     fetchWeather()
       .then((data) => {
         setWeatherData2(data)
-        console.log(data, 'setWeatherData2')
+       
       })
       .catch((err) => console.error(err.message))
   }, [coords[0], coords[1]])

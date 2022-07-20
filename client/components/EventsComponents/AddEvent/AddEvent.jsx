@@ -20,7 +20,7 @@ function AddEvent({ setVisible }) {
   const { id } = useParams()
   const navigate = useNavigate()
   const [selectPosition, setSelectPosition] = useState(null)
-
+  
   const token = useSelector((state) => state.user.token)
 
   function handleName(event) {
@@ -79,7 +79,7 @@ function AddEvent({ setVisible }) {
         console.error(err.message)
       })
   }
-  console.log(selectPosition, 'OBJECT TO SEED')
+
   return (
     // Container for form
 

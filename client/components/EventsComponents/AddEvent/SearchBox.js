@@ -42,7 +42,7 @@ export default function SearchBox(props) {
     setSelectPosition(item)
     setShowList(false)
   }
-  console.log(selectPostion, 'obj?')
+
   return (
     // entire search container
     <div className="flex flex-col w-10/12 mt-2 text-sm  ">
