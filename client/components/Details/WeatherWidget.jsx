@@ -4,17 +4,10 @@ import request from 'superagent'
 const Weather = ({ coords }) => {
   const key = '024efa9e18689986e452a3bb9e2bfdde'
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${coords[0]}&lon=${coords[1]}&appid=${key}`
-  //console.log(coords, 'weather.jsx')
-  // console.log(key, 'key')
-  //console.log(url, 'coords array from weather.jsx')
 
   const [weatherData, setWeatherData] = useState([{ name: '' }])
   const [loading, setLoading] = useState(false)
   const [weatherData2, setWeatherData2] = useState([{ name: '' }])
-
-  //useEffect
-  //dependancy pass coords
-  // [coords[0], coords[1]]
 
   function fetchWeather() {
     return request.get(url).then((response) => {
@@ -43,8 +36,6 @@ const Weather = ({ coords }) => {
       .catch((err) => console.error(err.message))
   }, [coords[0], coords[1]])
 
-  // console.log(weatherData, 'weather data')
-  // console.log(weatherData2, 'weather data')
   return (
     <div className="app">
       <div className="container">

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
+import WeatherWidget from './WeatherWidget'
 
 const icon = L.icon({
   iconUrl: '/images/placeholder.png',
@@ -22,7 +23,6 @@ function ResetView({ coords }) {
 }
 
 const Map = ({ coords }) => {
-  //console.log(coords, 'coords map.jsx')
   const [pin, setPin] = useState(position)
 
   return (
@@ -38,7 +38,7 @@ const Map = ({ coords }) => {
       />
       <Marker position={coords} icon={icon}>
         <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
+          <WeatherWidget />
         </Popup>
       </Marker>
     </MapContainer>
