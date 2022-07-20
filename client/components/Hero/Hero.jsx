@@ -4,13 +4,12 @@ import TypeAnimation from 'react-type-animation'
 const Hero = () => {
   return (
     // main hero container
-    <section className="w-full h-[90vh] flex flex-col sm:flex-row sm:w-11/12  s:pt-6 sm:justify-center">
-      <div className=" w-2/3 mr-5 sm:w-6/12 self-center text-center sm:text-left">
+    <section className="w-full h-[110vh] flex flex-col sm:flex-row sm:w-11/12  s:pt-6 sm:justify-center">
+      <div className=" w-2/3 mr-5 sm:w-6/12 self-center text-center sm:text-left mt-10">
         {/*text side */}
         <TypeAnimation
           cursor={true}
           sequence={['Ball?', 3500, 'Drinks?', 3500, 'Lunch?', 3500]}
-          wrapper="p"
           repeat={Infinity}
           className="text-5xl w-full font-extrabold sm:text-6xl text-[#00AEFF] bg-slate-100 "
         />

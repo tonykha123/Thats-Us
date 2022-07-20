@@ -34,7 +34,7 @@ const NavBar = () => {
   }
 
   return (
-    <nav className="w-full h-[75px] flex flex-row justify-between p-5 items-center bg-slate-600">
+    <nav className="w-full h-[75px] flex flex-row justify-between p-5 items-center bg-white shadow-md">
       <div
         className="w-20 h-auto hover:animate-pulse hover:cursor-pointer "
         onClick={() => navigate('/')}
@@ -43,20 +43,20 @@ const NavBar = () => {
       </div>
       {/* right side nav   */}
       <div>
-        <div className="flex flex-row-reverse space-x-4">
+        <div className="flex flex-row space-x-2 justify-between">
           <IfNotAuthenticated>
+            <a
+              onClick={handleSignup}
+              className="hover:text-white pr-4"
+              href="/register"
+            >
+              Signup
+            </a>
             <MdLogin
               size={28}
               className="hover:text-gray-400"
               onClick={handleLogin}
             />
-            <a
-              onClick={handleSignup}
-              className="hover:text-white"
-              href="/register"
-            >
-              Signup
-            </a>
           </IfNotAuthenticated>
         </div>
         <IfAuthenticated>
@@ -65,13 +65,6 @@ const NavBar = () => {
             className="hover:text-gray-400"
             onClick={handleLogoff}
           />
-          {/* <a
-            onClick={handleLogoff}
-            className="hover:text-white"
-            href="https://www.google.com"
-          >
-            Log off
-          </a> */}
         </IfAuthenticated>
       </div>
     </nav>

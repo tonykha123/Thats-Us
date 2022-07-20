@@ -54,8 +54,6 @@ function AddEvent({ setVisible }) {
 
   function handleSubmit(event) {
     event.preventDefault()
-    // setName('')
-
     addEvent(
       {
         event_id: id,
@@ -69,6 +67,7 @@ function AddEvent({ setVisible }) {
         coordsY: JSON.parse(selectPosition.lon),
         category: category,
         IMG: image,
+        display_name: selectPosition.display_name,
       },
       token
     )
@@ -80,7 +79,7 @@ function AddEvent({ setVisible }) {
         console.error(err.message)
       })
   }
-
+  console.log(selectPosition, 'OBJECT TO SEED')
   return (
     // Container for form
 
