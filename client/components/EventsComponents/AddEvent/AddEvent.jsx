@@ -129,6 +129,7 @@ function AddEvent({ setVisible }) {
               placeholder="Category"
               onChange={handleCategory}
               onClick={handleImage}
+              className="border rounded-md"
             >
               <option>Choose category</option>
               <option value="Sports" name="Sports">
