@@ -126,10 +126,10 @@ function AddEvent({ setVisible }) {
 
           <div>
             <select
+              className="border rounded-md"
               placeholder="Category"
               onChange={handleCategory}
               onClick={handleImage}
-              className="border rounded-md"
             >
               <option>Choose category</option>
               <option value="Sports" name="Sports">
