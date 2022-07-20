@@ -23,14 +23,14 @@ const Details = () => {
   const navigate = useNavigate()
   const activeuser = useSelector(activeUser)
 
-  useEffect(async () => {
-    const evt = await getEvtById(Number(id))
-    try {
-      setEvent({ ...evt, user: activeuser.email })
-    } catch {
-      console.error('setEvent failed')
-    }
-  }, [activeuser])
+  useEffect(() => {
+    return getEvtById(Number(id)).then((response) => {
+      setEvent({ ...response, user: activeuser.email })
+    })
+    .catch(() => {
+      console.error('could not get event by id')
+    })
+  }, [])
 
   useEffect(async () => {
     try {
@@ -39,8 +39,7 @@ const Details = () => {
       console.error('setEventAttendees failed')
     }
   }, [event])
-
-
+  console.log(eventAttendees, 'attendees')
 
   useEffect(async () => {
     try {
@@ -53,13 +52,15 @@ const Details = () => {
       console.error('useEffect shit itself')
     }
   }, [eventAttendees])
+  console.log(event, 'eveNTS')
 
   function attendEventHandler() {
     attendEvent(id, `${event.attendees}, ${event.user}`)
     navigate(`/event/${id}`)
   }
 
-  const coords = event.coords
+  // const coords = event.coords
+  const coords = [event.coordsX, event.coordsY]
 
   const img = event.IMG
 
