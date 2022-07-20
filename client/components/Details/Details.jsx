@@ -102,7 +102,6 @@ const Details = () => {
         <div className="w-full flex flex-col md:flex-row">
           <div className="h-[1/3] md:w-2/3">
             <img src={`/Images/${img} `} alt="category" />
-            <p>{event.display_name}</p>
           </div>
 
           <div className="border-b mt-2 md:self-center md:w-1/3 md:border-none md:text-center md:bg-slate-200 md:h-auto shadow-inner md:p-4">
@@ -214,8 +213,7 @@ const Details = () => {
         <div className="w-full flex flex-col items-center space-y-2">
           <div className="text-xl font-semibold">{event.name}</div>
           <p>at</p>
-          <p>Mt Smart Stadium</p>
-          <p className="">{event.display_name}</p>
+          <p className="text-lg font-semibold">{event.display_name}</p>
           <div className="flex justify-center w-full space-x-4 mt-6">
             <a
               href={`https://maps.google.com/?daddr=${event.coordsX},${event.coordsY}&dirflg=w`}
