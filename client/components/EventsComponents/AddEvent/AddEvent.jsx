@@ -119,18 +119,22 @@ function AddEvent({ setVisible }) {
             onChange={handleTime}
           />
           <input
+            type="number"
             className="border rounded-md"
-            placeholder="Max Participants"
+            placeholder="Enter # of participants"
             onChange={handleMax}
           />
 
           <div>
             <select
               placeholder="Category"
+              className="border rounded-md"
               onChange={handleCategory}
               onClick={handleImage}
             >
-              <option>Choose category</option>
+              <option selected disabled hidden>
+                Choose category
+              </option>
               <option value="Sports" name="Sports">
                 Sports
               </option>
