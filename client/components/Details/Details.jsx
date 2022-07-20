@@ -218,15 +218,19 @@ const Details = () => {
               <FaWalking size={32} className="hover:text-gray-400" />
             </a>
 
-            <a href="https://www.instagram.com/">
+            <a
+              href={`https://maps.google.com/?daddr=${event.coordsX},${event.coordsY}&dirflg=bike`}
+            >
               <MdDirectionsBike size={30} className="hover:text-gray-400" />
             </a>
             <a
-              href={`https://maps.google.com/?saddr=Current+Location&daddr=${event.coordsX},${event.coordsY}&mode=driving`}
+              href={`https://maps.google.com/?daddr=${event.coordsX},${event.coordsY}&dirflg=d`}
             >
               <AiFillCar size={32} className="hover:text-gray-400" />
             </a>
-            <a href="https://gmail.com">
+            <a
+              href={`https://maps.google.com/?daddr=${event.coordsX},${event.coordsY}&dirflg=transit`}
+            >
               <FaBusAlt size={30} className="hover:text-gray-400" />
             </a>
           </div>
