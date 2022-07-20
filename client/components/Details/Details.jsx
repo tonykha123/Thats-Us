@@ -15,6 +15,7 @@ import { AiOutlineFacebook, AiFillCar } from 'react-icons/ai'
 import { FiTwitter, FiShare } from 'react-icons/fi'
 import { MdDirectionsBike } from 'react-icons/md'
 import L from 'leaflet'
+import ThanksForAttending from './ThanksForAttending'
 
 const Details = () => {
   const [event, setEvent] = useState({})
@@ -58,6 +59,7 @@ const Details = () => {
     attendEvent(id, `${event.attendees}, ${event.user}`).then((res) => {
       setTimeout(() => {
         setUserIsAttending(true)
+        navigate(`/thanks/${id}`)
       }, 500)
     })
   }
@@ -100,12 +102,42 @@ const Details = () => {
       Attended
     </button>
   )
+
+  const spotsRemaining = (
+    <>
+      <div className="flex space-x-2 items-center">
+        <BsPeople size={18} />
+        <p className="text-lg">Max People:</p>
+      </div>
+      <div className="ml-6">
+        <p>
+          This event is for <span className="italic">{event.max} </span>people.
+          Only{' '}
+          <span className="italic">{event?.max - eventAttendees?.length}</span>{' '}
+          spots left!
+        </p>
+      </div>
+    </>
+  )
+
+  const eventIsFull = (
+    <>
+      <div className="flex space-x-2 items-center">
+        {/* <BsPeople size={18} /> */}
+        {/* <p className="text-lg">Max People:</p> */}
+      </div>
+      <div className="ml-6">
+        <p style={{ color: 'red' }}>This event is full!</p>
+      </div>
+    </>
+  )
+
   return (
     // entire section//background
 
-    <section className="w-full h-[200vh] md:bg-slate-100 md:h-[220vh] ">
+    <section className="w-full h-[230vh] md:bg-slate-100 md:h-[220vh] ">
       {/* main cotainer */}
-      <div className="w-full h-[70vh] flex flex-col mx-auto md:w-9/12 md:bg-white md:h-full md:shadow-xl md:rounded-md md:border">
+      <div className="w-full h-[220vh] flex flex-col mx-auto md:w-9/12 md:bg-white md:h-full md:shadow-xl md:rounded-md md:border">
         <div className="w-full flex flex-col md:flex-row">
           <div className="h-[1/3] md:w-2/3">
             <img src={`/Images/${img} `} alt="category" />
@@ -165,13 +197,18 @@ const Details = () => {
 
             <div className="flex flex-col ml-4 mx-6">
               <div className="flex space-x-2 items-center">
-                <BsPeople size={18} />
-                <p className="text-lg">Max People:</p>
+                {/* <BsPeople size={18} /> */}
+                {/* <p className="text-lg">Max People:</p> */}
               </div>
-              <div className="ml-6">
-                <p className="">
-                  The limit for this event is {event.max} people
-                </p>
+              <div className="">
+                {/* <p className="">
+                  The limit for this event is {event.max} people <br /> {event.max == eventAttendees ? 'Event is '}
+                  Only {event?.max - eventAttendees?.length} spots left!
+                </p> */}
+                {event?.max <= eventAttendees?.length
+                  ? eventIsFull
+                  : spotsRemaining}
+                {console.log(event?.max, eventAttendees?.length)}
               </div>
             </div>
           </div>
