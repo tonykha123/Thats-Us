@@ -127,6 +127,7 @@ function AddEvent({ setVisible }) {
 
           <div>
             <select
+              className="border rounded-md"
               placeholder="Category"
               className="border rounded-md"
               onChange={handleCategory}
