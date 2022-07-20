@@ -40,6 +40,8 @@ const Details = () => {
     }
   }, [event])
 
+
+
   useEffect(async () => {
     try {
       eventAttendees.find((attendee) => {
@@ -51,7 +53,6 @@ const Details = () => {
       console.error('useEffect shit itself')
     }
   }, [eventAttendees])
-  
 
   function attendEventHandler() {
     attendEvent(id, `${event.attendees}, ${event.user}`)
@@ -141,7 +142,7 @@ const Details = () => {
             <div className="flex flex-col ml-4 mx-6">
               <div className="flex space-x-2 items-center">
                 <GrMapLocation size={18} />
-                <p className="text-lg">Location:</p>
+                <p className="text-lg">Location : {event.location}</p>
               </div>
               <div className="ml-6">
                 <p className="">{event.display_name}</p>
