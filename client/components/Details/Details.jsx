@@ -88,12 +88,12 @@ const Details = () => {
     </a>
   )
   const greyButton = (
-    <button className="my-5 mx-auto  text-white bg-gray-500 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh] ">
+    <button onClick={attendEventHandler} className="my-5 mx-auto  text-white bg-gray-500 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:w-[12vw] md:h-[4vh] ">
       Attended
     </button>
   )
   const greyButton2 = (
-    <button className="my-5 mx-auto  text-white bg-gray-500 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:hidden ">
+    <button onClick={attendEventHandler} className="my-5 mx-auto  text-white bg-gray-500 w-[200px] h-[40px] shadow-xl rounded-md p-2 md:hidden ">
       Attended
     </button>
   )
