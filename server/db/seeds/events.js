@@ -12,7 +12,7 @@ exports.seed = async function (knex) {
       description: 'tag at vic park, need 6 to make a game and run a few subs',
       coordsX: -36.86447,
       coordsY: 174.7763,
-      category: 'Casual Game',
+      category: 'Sports',
       display_name:
         'Sydney, Council of the City of Sydney, New South Wales, Australia',
     },

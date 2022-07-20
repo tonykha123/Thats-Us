@@ -38,7 +38,7 @@ const Map = ({ coords }) => {
       />
       <Marker position={coords} icon={icon}>
         <Popup>
-          <WeatherWidget />
+          <WeatherWidget coords={coords} />
         </Popup>
       </Marker>
     </MapContainer>
