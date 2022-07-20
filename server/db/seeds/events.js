@@ -13,7 +13,7 @@ exports.seed = async function (knex) {
         'Congrats Matai, we made it! Thank you Prue, Ahmad, Rich, Clementine and Sophia (+ Eli)!',
       coordsX: -36.8642358,
       coordsY: 174.7768566,
-      category: 'Sports',
+      category: 'Social',
       display_name:
         'Morgan Street, Newmarket, Auckland, Waitematā, Auckland, 1052, New Zealand',
       attendees: 'ThatsUs',
