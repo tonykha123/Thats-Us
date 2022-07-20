@@ -31,13 +31,22 @@ const Events = () => {
 
   const eventBtnsMarkup = (
     <div className="w-full h-auto flex flex-row justify-center sm:justify-start">
-      <span className="mr-2" onClick={() => setShowEvents(0)}>
+      <span
+        className="mr-2 hover:cursor-pointer hover:bg-slate-100 hover:animate-pulse"
+        onClick={() => setShowEvents(0)}
+      >
         Live Events
       </span>
-      <span className="mx-2" onClick={() => setShowEvents(1)}>
+      <span
+        className="mx-2 hover:cursor-pointer hover:bg-slate-100 hover:animate-pulse"
+        onClick={() => setShowEvents(1)}
+      >
         Upcoming Events
       </span>
-      <span className="mx-2" onClick={() => setShowEvents(2)}>
+      <span
+        className="mx-2 hover:cursor-pointer hover:bg-slate-100 hover:animate-pulse"
+        onClick={() => setShowEvents(2)}
+      >
         Past Events
       </span>
     </div>

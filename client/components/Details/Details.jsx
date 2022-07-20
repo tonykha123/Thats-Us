@@ -174,7 +174,7 @@ const Details = () => {
               About This Event
             </p>
             <p className="w-10/12 self-center text-left md:w-3/4 md:mr-16">
-              {event.description}
+              {event.description + ' '}
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Voluptates quod ratione, dignissimos velit consequatur tenetur
               dolore, autem obcaecati asperiores magnam sequi? Provident, illo
