@@ -239,9 +239,7 @@ const Details = () => {
               <FaBusAlt size={30} className="hover:text-gray-400" />
             </a>
           </div>
-          <div>
-            <WeatherWidget coords={coords} />
-          </div>
+          <div></div>
         </div>
       </div>
     </section>
