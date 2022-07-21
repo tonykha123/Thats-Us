@@ -10,7 +10,7 @@ exports.seed = async function (knex) {
       max: '75',
       IMG: 'Social.jpg',
       description:
-        'Congrats Matai, we made it! Thank you Prue, Ahmad, Rich, Clementine and Sophia (+ Eli)!',
+        'Congrats Matai, we made it! Thank you Prue, Ahmad, Rich, Clementine, Alex and Sophia (+ Eli) and all our friends and family!!!!',
       coordsX: -36.8642358,
       coordsY: 174.7768566,
       category: 'Social',
