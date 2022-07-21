@@ -14,7 +14,6 @@ function AddEvent({ setVisible }) {
   const [time, setTime] = useState('')
   const [max, setMax] = useState('')
   const [description, setDescription] = useState('')
-  const [image, setImage] = useState('')
   const [category, setCategory] = useState('')
   const dispatch = useDispatch()
   const { id } = useParams()
@@ -47,11 +46,6 @@ function AddEvent({ setVisible }) {
     setCategory(event.target.value)
   }
 
-  function handleImage(event) {
-    const img = event.target.value.replace(/\s/g, '')
-    setImage(`${img}.jpg`)
-  }
-
   function handleSubmit(event) {
     event.preventDefault()
     addEvent(
@@ -66,7 +60,7 @@ function AddEvent({ setVisible }) {
         coordsX: JSON.parse(selectPosition.lat),
         coordsY: JSON.parse(selectPosition.lon),
         category: category,
-        IMG: image,
+        IMG: `${category}.jpg`.replace(/\s/g, ''),
         display_name: selectPosition.display_name,
       },
       token
@@ -125,7 +119,6 @@ function AddEvent({ setVisible }) {
               className="border rounded-md"
               placeholder="Category"
               onChange={handleCategory}
-              onClick={handleImage}
             >
               <option selected disabled hidden>
                 Choose category
@@ -145,7 +138,7 @@ function AddEvent({ setVisible }) {
               <option value="Music" name="Music">
                 Music
               </option>
-              <option value="Lunch" name="Lunch">
+              <option value="Food" name="Food">
                 Food
               </option>
               <option value="Exercise" name="Exercise">
