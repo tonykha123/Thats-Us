@@ -257,7 +257,7 @@ const Details = () => {
           )}
         </div>
         <div className="w-full flex flex-col items-center space-y-2">
-          <div className="text-xl font-semibold  text-[#00AEFF]">
+          <div className="text-xl font-semibold  text-[#00AEFF] text-center">
             {event.name}
           </div>
           <p>at</p>
