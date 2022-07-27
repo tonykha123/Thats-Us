@@ -74,6 +74,8 @@ The application can be accessed on `http://localhost:3000/`.
 - Show a list of users at the event
 - Edit and delete existing events
 - Migrate to MongoDB
+
+- Add ability to upload images to Events
 - Anything else you feel that might improve the app :) !
 
 For other developers who may want to contribute , please visit the following links:
