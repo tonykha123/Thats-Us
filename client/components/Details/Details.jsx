@@ -10,9 +10,9 @@ import Directions from './Directions'
 import Social from './Social'
 import Description from './Description'
 
-import { IoEyeSharp, IoMailOutline } from 'react-icons/io5'
-import { BsCalendar3, BsPeople, BsHeartFill } from 'react-icons/bs'
-import { GrMapLocation } from 'react-icons/gr'
+import { IoEyeSharp } from 'react-icons/io5'
+import { BsPeople, BsHeartFill } from 'react-icons/bs'
+
 import { FiShare } from 'react-icons/fi'
 
 const Details = () => {
@@ -167,7 +167,11 @@ const Details = () => {
 
         {/* column phone- row desktop? */}
         {/* Entire attributes container */}
-        <Description event={event} eventAttendees={eventAttendees} spotsRemaining={spotsRemaining} />
+        <Description
+          event={event}
+          eventAttendees={eventAttendees}
+          spotsRemaining={spotsRemaining}
+        />
         {/* mobile button */}
         {userIsAttending ? greyButton2 : smallButton}
 

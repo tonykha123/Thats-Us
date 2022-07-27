@@ -27,7 +27,7 @@ const Footer = () => {
             <a href="https://www.twitter.com/">
               <FaTwitterSquare size={30} className="hover:text-gray-400" />
             </a>
-            <a href="https://github.com/matai-2022/Player-finder">
+            <a href="https://github.com/tonykha123/Thats-Us">
               <FaGithubSquare size={30} className="hover:text-gray-400" />
             </a>
           </div>
@@ -50,13 +50,11 @@ const Footer = () => {
         <div className="my-6 w-10/12 lg:ml-[-4rem]">
           <h6 className="text-lg font-medium text-gray-200 mb-4"> Discover</h6>
           <ul>
-            <li className="hover:text-gray-400 hover:underline mb-2 mb-2">
+            <li className="hover:text-gray-400 hover:underline mb-2 ">
               Groups
             </li>
-            <li className="hover:text-gray-400 hover:underline mb-2 mb-2">
-              Topic
-            </li>
-            <li className="hover:text-gray-400 hover:underline mb-2 mb-2">
+            <li className="hover:text-gray-400 hover:underline mb-2 ">Topic</li>
+            <li className="hover:text-gray-400 hover:underline mb-2 ">
               Cities
             </li>
           </ul>

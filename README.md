@@ -1,32 +1,14 @@
-# Project Thats Us:
-An app that gathers people around local games/events.
+# That's Us
 
-Description:
-What your application does
+This project is a mock meet up web application, similar to meetup or eventbrite. Fully responsive on MOST devices. Users can create an account to create new events or attend various local events.
 
-At its core the Thats Us App is a irl match maker that lets our users know, participate in and make connections through shared interests and mutually fun activities.
+## Motivation
 
-Why you used the technologies you used
+The motivation behind the development of this web app is to create a platform for connect people in the local community to one another.
 
-We used
+## Technology Stack
 
-React
-Redux toolkit
-SQLite
-node.js
-express
-Auth-o
-
-Because they are the technologies that we had the means of wielding and that were fit for purpose when carrying out this task 
-
-Some of the challenges you faced and features you hope to implement in the future
-
-future implementations include
-
-# Client Documentation
-
-Add what you think is relevant
-
-#User Interface
-
-[Wireframe source on Figma] (https://www.figma.com/file/L5yZ6Hkg3Xnp64xaPJZVZI/Untitled?node-id=0%3A1)
+**Node and Express** (Backend)
+**React** (Frontend)
+**Sqlite3**(Database)
+**Tailwind** (Styling)
