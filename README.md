@@ -16,9 +16,7 @@ The motivation behind the development of this web app is to create a platform fo
 
 ## Installation and how to use
 
-The project can be obtained by either downloading directly via this GitHub repo or cloned by running the following command:
-
-`git clone https://github.com/tonykha123/Thats-Us`
+The project can be obtained by either downloading directly via this GitHub repo or cloned by running the following command: `git clone https://github.com/tonykha123/Thats-Us`
 
 It is required that [node](https://nodejs.org/en/) is installed before running the following commands.
 
@@ -33,3 +31,18 @@ webpack 5.73.0 compiled successfully in 4506 ms
 ```
 
 The application can be accessed on `http://localhost:3000/`.
+
+## How to contribute
+
+#### Features to implement in the future
+
+- Sort Events by Category- Eg Location , Date, Title etc
+- Show a list of users at the event
+- Edit and delete existing events
+- Migrate to MongoDB
+- Anything else you feel that might improve the app :) !
+
+For other developers who may want to contribute , please visit the following links:
+
+- [Pull Requests (PR)](https://github.com/tonykha123/Thats-Us/pulls>)
+- [Figma Wireframes](https://www.figma.com/file/L5yZ6Hkg3Xnp64xaPJZVZI/Meetup-app-saia%2Cra-Tony-ysmael>)
