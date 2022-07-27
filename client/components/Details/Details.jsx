@@ -208,7 +208,7 @@ const Details = () => {
                 {event?.max <= eventAttendees?.length
                   ? eventIsFull
                   : spotsRemaining}
-                {console.log(event?.max, eventAttendees?.length)}
+               
               </div>
             </div>
           </div>
