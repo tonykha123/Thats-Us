@@ -21,3 +21,6 @@ The project can be obtained by either downloading directly via this GitHub repo 
 `git clone https://github.com/tonykha123/Thats-Us`
 
 It is required that [node](https://nodejs.org/en/) is installed before running the following commands.
+
+Once cloned install dependencies by entering into the terminal
+`npm install`
