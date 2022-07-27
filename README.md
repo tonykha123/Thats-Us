@@ -8,7 +8,8 @@ The motivation behind the development of this web app is to create a platform fo
 
 ## Technology Stack
 
-**Node and Express** (Backend)
-**React** (Frontend)
-**Sqlite3**(Database)
-**Tailwind** (Styling)
+--**Node and Express** (Backend)
+--**React** (Frontend)
+--**Sqlite3**(Database)
+--**Tailwind** (Styling)
+--**Auth0** (Authentication)
