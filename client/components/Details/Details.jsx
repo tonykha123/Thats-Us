@@ -7,14 +7,13 @@ import { activeUser } from '../../slices/user'
 //imported components that we want in details
 import Map from './Map'
 import Directions from './Directions'
+import Social from './Social'
 import WeatherWidget from './WeatherWidget'
 import { IoEyeSharp, IoMailOutline } from 'react-icons/io5'
 import { BsCalendar3, BsPeople, BsHeartFill } from 'react-icons/bs'
 import { GrMapLocation } from 'react-icons/gr'
-import { FaInstagram, FaWalking, FaBusAlt } from 'react-icons/fa'
-import { AiOutlineFacebook, AiFillCar } from 'react-icons/ai'
-import { FiTwitter, FiShare } from 'react-icons/fi'
-import { MdDirectionsBike } from 'react-icons/md'
+import { FiShare } from 'react-icons/fi'
+
 import L from 'leaflet'
 import ThanksForAttending from './ThanksForAttending'
 
@@ -123,10 +122,7 @@ const Details = () => {
 
   const eventIsFull = (
     <>
-      <div className="flex space-x-2 items-center">
-        {/* <BsPeople size={18} /> */}
-        {/* <p className="text-lg">Max People:</p> */}
-      </div>
+      <div className="flex space-x-2 items-center"></div>
       <div className="ml-6">
         <p style={{ color: 'red' }}>This event is full!</p>
       </div>
@@ -209,7 +205,6 @@ const Details = () => {
                 {event?.max <= eventAttendees?.length
                   ? eventIsFull
                   : spotsRemaining}
-               
               </div>
             </div>
           </div>
@@ -228,23 +223,7 @@ const Details = () => {
         {/* mobile button */}
         {userIsAttending ? greyButton2 : smallButton}
 
-        <div className="flex flex-col ml-4">
-          <p className="text-md font-semibold">Share With Friends</p>
-          <div className="flex justify-start w-full gap-3">
-            <a href="https://www.facebook.com/">
-              <AiOutlineFacebook size={32} className="hover:text-gray-400" />
-            </a>
-            <a href="https://www.instagram.com/">
-              <FaInstagram size={30} className="hover:text-gray-400" />
-            </a>
-            <a href="https://www.twitter.com/">
-              <FiTwitter size={32} className="hover:text-gray-400" />
-            </a>
-            <a href="https://gmail.com">
-              <IoMailOutline size={30} className="hover:text-gray-400" />
-            </a>
-          </div>
-        </div>
+        <Social />
 
         <div className="w-full  mt-10 mb-6">
           {coords[0] === undefined ? (
@@ -253,7 +232,7 @@ const Details = () => {
             <Map coords={coords} className="rounded-md" />
           )}
         </div>
-        <Directions event ={event}/>
+        <Directions event={event} />
       </div>
     </section>
   )
