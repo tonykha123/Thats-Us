@@ -22,5 +22,14 @@ The project can be obtained by either downloading directly via this GitHub repo 
 
 It is required that [node](https://nodejs.org/en/) is installed before running the following commands.
 
-Once cloned install dependencies by entering into the terminal
-`npm install`
+Once cloned install dependencies by entering `npm install` into the terminal.
+
+After dependencies are installed enter `npm run dev` to start up the application
+
+#### We should expect this to be the last line in the terminal after the npm run dev command
+
+```
+webpack 5.73.0 compiled successfully in 4506 ms
+```
+
+The application can be accessed on `http://localhost:3000/`.
