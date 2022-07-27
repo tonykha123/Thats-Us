@@ -6,6 +6,24 @@ This project is a mock meet up web application, similar to meetup or eventbrite.
 
 The motivation behind the development of this web app is to create a platform for connect people in the local community to one another.
 
+## Project Showcase
+
+#### Desktop devices
+
+<div>
+  <img alt="Hero" src="https://imgur.com/5ze6Keb" width="25%">
+
+  <img alt="Create Event Page" src="https://imgur.com/SzzjNIl" width="25%">
+
+  <img alt="Event Details" src="https://imgur.com/HDmi9Kn" width="25%">
+  <img alt="Map Feature" src="https://imgur.com/TAK53WS" width="25%">
+
+</div>
+
+#### Mobile devices
+
+#### Tablet devices
+
 ## Technology Stack
 
 - **Node and Express** (Backend)
@@ -46,3 +64,7 @@ For other developers who may want to contribute , please visit the following lin
 
 - [Pull Requests (PR)](https://github.com/tonykha123/Thats-Us/pulls>)
 - [Figma Wireframes](https://www.figma.com/file/L5yZ6Hkg3Xnp64xaPJZVZI/Meetup-app-saia%2Cra-Tony-ysmael>)
+
+## Contributors
+
+- [The list of contributors can be found here](https://github.com/matai-2022/Player-finder/graphs/contributors>)
