@@ -11,12 +11,12 @@ The motivation behind the development of this web app is to create a platform fo
 #### Desktop devices
 
 <div>
-  <img alt="Hero" src="https://imgur.com/5ze6Keb" width="25%">
+  <img alt="Hero" src="https://i.imgur.com/HDmi9Kn.png" width="25%">
 
-  <img alt="Create Event Page" src="https://imgur.com/SzzjNIl" width="25%">
+  <img alt="Create Event Page" src="https://i.imgur.com/SzzjNIl.png" width="25%">
 
-  <img alt="Event Details" src="https://imgur.com/HDmi9Kn" width="25%">
-  <img alt="Map Feature" src="https://imgur.com/TAK53WS" width="25%">
+  <img alt="Event Details" src="https://i.imgur.com/HDmi9Kn.png" width="25%">
+  <img alt="Map Feature" src="https://i.imgur.com/TAK53WS.png" width="25%">
 
 </div>
 
