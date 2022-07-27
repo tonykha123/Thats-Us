@@ -11,18 +11,34 @@ The motivation behind the development of this web app is to create a platform fo
 #### Desktop devices
 
 <div>
-  <img alt="Hero" src="https://i.imgur.com/HDmi9Kn.png" width="25%">
-
-  <img alt="Create Event Page" src="https://i.imgur.com/SzzjNIl.png" width="25%">
-
-  <img alt="Event Details" src="https://i.imgur.com/HDmi9Kn.png" width="25%">
-  <img alt="Map Feature" src="https://i.imgur.com/TAK53WS.png" width="25%">
+  <img alt="Hero" src="https://i.imgur.com/HDmi9Kn.png" width="30%">
+  <img alt="Create Event Page" src="https://i.imgur.com/SzzjNIl.png" width="30%">
+  <img alt="Event Details" src="https://i.imgur.com/HDmi9Kn.png" width="30%">
+  <img alt="Map Feature" src="https://i.imgur.com/TAK53WS.png" width="30%">
 
 </div>
 
 #### Mobile devices
 
+<div>
+  <img alt="Hero" src="https://i.imgur.com/FGeG0zg.png" width="30%">
+  <img alt="Events" src="https://i.imgur.com/uvxJjLL.png" width="30%">
+  <img alt="Create Event Page" src="https://i.imgur.com/pHlqMvo.png" width="30%">
+  <img alt="Event Details" src="https://i.imgur.com/DjTZ8eu.png" width="30%">
+  <img alt="Map Feature" src="https://i.imgur.com/jrlHxmB.png" width="30%">
+
+</div>
+
 #### Tablet devices
+
+<div>
+  <img alt="Hero" src="https://i.imgur.com/iAO0RAe.png" width="30%">
+  <img alt="Events" src="https://i.imgur.com/bqu9b1E.png" width="30%">
+  <img alt="Bottom of landing" src="https://i.imgur.com/ZO9fLsx.png" width="30%">
+  <img alt="Create Event" src="https://i.imgur.com/tm5NHjR.png" width="30%">
+  <img alt="Map Feature" src="https://i.imgur.com/RYyWqaX.png" width="30%">
+
+</div>
 
 ## Technology Stack
 
