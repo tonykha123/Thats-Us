@@ -4,7 +4,7 @@ This project is a mock meet up web application, similar to meetup or eventbrite.
 
 ## Motivation
 
-The motivation behind the development of this web app is to create a platform for connect people in the local community to one another.
+The motivation behind the development of this web app is to create a platform for people in the local community to connect with one another.
 
 ## Project Showcase
 
