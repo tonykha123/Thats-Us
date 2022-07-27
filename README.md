@@ -8,8 +8,16 @@ The motivation behind the development of this web app is to create a platform fo
 
 ## Technology Stack
 
---**Node and Express** (Backend)
---**React** (Frontend)
---**Sqlite3**(Database)
---**Tailwind** (Styling)
---**Auth0** (Authentication)
+- **Node and Express** (Backend)
+- **React** (Frontend)
+- **Sqlite3**(Relational Database)
+- **TailwindCSS**(Styling)
+- **Auth0**(Authentication)
+
+## Installation and how to use
+
+The project can be obtained by either downloading directly via this GitHub repo or cloned by running the following command:
+
+`git clone https://github.com/tonykha123/Thats-Us`
+
+It is required that [node](https://nodejs.org/en/) is installed before running the following commands.
