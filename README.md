@@ -75,7 +75,7 @@ The application can be accessed on `http://localhost:3000/`.
 - Edit and delete existing events
 - Migrate to MongoDB
 
--TESTS TESTS TESTS!!!!
+- TESTS TESTS TESTS!!!!
 
 - Add ability to upload images to Events
 - Anything else you feel that might improve the app :) !
