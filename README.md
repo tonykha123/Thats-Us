@@ -56,7 +56,9 @@ It is required that [node](https://nodejs.org/en/) is installed before running t
 
 Once cloned install dependencies by entering `npm install` into the terminal.
 
-After dependencies are installed enter `npm run dev` to start up the application
+After dependencies are installed, enter `npm run postinstall` into the terminal to seed all the sample data.
+
+Finally, enter `npm run dev` to start up the application.
 
 #### We should expect this to be the last line in the terminal after the npm run dev command
 
